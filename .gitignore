@@ -1,0 +1,4 @@
+.venv_portafolio
+workspace_portafolio_chimallidev.code-workspace
+__pycache__/
+*.pyc
