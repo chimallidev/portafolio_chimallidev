@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('/static/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/static/fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/static/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url("/static/fonts/PressStart2P-Regular.ttf") format('truetype');
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --font-base: "Roboto";
+    --font-title: "Press Start 2P";
+    --font-universal-weight: 400;
+    --font-universal-size: 16px;
+    --main-color: oklch(0.6179 0.1046 199.77);
+    --secondary-color: oklch(1 0 0);
+    --third-color: oklch(0 0 0);
+    --fourth-color: oklch(0.754 0 0);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-base), Arial, Helvetica, sans-serif;
+    font-size: var(--font-universal-size);
+    font-weight: var(--font-universal-weight);
+    color: var(--secondary-color);
+}
+
+.base__content {
+    padding: 1;
+}
+
+section {
+    min-height: 100vh;
+    scroll-margin-top: 70px;
+}
