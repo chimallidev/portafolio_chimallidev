@@ -1,0 +1,39 @@
+<head>
+    <meta charset="utf-8"> {# Codificación #}
+
+    {# Ajusta el ancho de la página al dispositivo y fija el zoom inicial al 100% #}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {# Título de la página y meta descripción #}
+    <title>Portafolio | {{(meta | default({})).get("titulo", "...")}}</title>
+    <meta name="description" content="{{(meta | default({})).get("descripcion", "...")}}"
+
+    {# favicon #}
+    <link rel="icon" href="{{url_for('static', path='img/icons/chimallidev.ico')}}"
+    type="image/x-icon">
+
+    {# Hoja de estilos principal #}
+    <link rel="stylesheet" href="{{url_for('static', path='css/base_style.css')}}">
+
+    {# Estilos de componentes más usados #}
+
+    {# Estilos de componentes de cada página #}
+    {% block components_style %}
+    {% endblock %}
+
+</head>
+<body>
+    {# Barra de navegación para celulares #}
+    {% include 'components/nav_bar.html' %}
+
+    {# Barra lateral (pc y celulares) #}
+    {% include 'components/sidebar.html' %}
+
+    <main class="base__content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {# JS global #}
+    <script src="/static/js/principal.js"></script>
+</body>
