@@ -1,0 +1,19 @@
+.base__content {
+    background-color: var(--third-color);
+    padding: 25px;
+}
+
+.index__portafolio-section {
+    min-height: 100vh;
+    scroll-margin-top: 70px;
+}
+
+.index__redes-sociales {
+    display: flex;
+    height: 40px;
+    gap: 10px;
+}
+
+.index__redes-sociales a img {
+    height: 30px;
+}

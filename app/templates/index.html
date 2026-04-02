@@ -1,1 +1,41 @@
 {% extends 'base.html' %}
+
+{% block components_style %}
+<link rel="stylesheet" href="{{url_for('static', path='css/index_style.css')}}">
+{% endblock %}
+
+{% block content %}
+<section class="index__portafolio-section" id="chimallidev">
+    <h1 class="index__h1">Chimallidev</h1>
+    <h2 class="index__h2">Erick Roman</h2>
+    <p>Bienvenidx a mi portafolio. Soy desarrollador full stack y creo experiencias digitales funcionales, rápidas y atractivas.</p>
+    <section class="index__email-box">
+        <div class="index__email-box-inner">
+            <span class="index__email-box-text" id="emailText">
+                chimalli.dev@gmail.com
+            </span>
+            <div class="index__email-box-actions">
+                <button class="index__email-btn index__email-btn--copy">Copiar</button>
+                <a href="mailto:chimallidev.dev@gmail.com" class="index__email-btn index__email-btn--send">Enviar</a></div>
+        </div>
+    </section>
+    <section class="index__cv">
+        <h3 class="index__h3">Puedes consultar mi CV:</h3>
+        <div class="index__btns-cv">
+            <button class="index__ver-cv">Ver</button>
+            <button class="index__descargar-cv">Descargar</button>
+        </div>
+    </section>
+    <section class="index__redes-sociales">
+        <a href="#"><img src="{{url_for('static', path='/img/icons/github.png')}}" alt="enlace a github" title="github"></a>
+        <a href="#"><img src="{{url_for('static', path='/img/icons/youtube.png')}}" alt="enlace a youtube" title="youtube"></a>
+        <a href="#"><img src="{{url_for('static', path='/img/icons/tik_tok.png')}}" alt="enlace a tiktok" title="tiktok"></a>
+        <a href="#"><img src="{{url_for('static', path='/img/icons/instagram.png')}}" alt="enlace a instagram" title="instagram"></a>
+    </section>
+
+</section>
+<section class="index__portafolio-section" id="sobre_mi"></section>
+<section class="index__portafolio-section" id="habilidades"></section>
+<section class="index__portafolio-section" id="portafolio"></section>
+<section class="index__portafolio-section" id="contacto"></section>
+{% endblock %}

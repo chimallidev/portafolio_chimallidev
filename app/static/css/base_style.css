@@ -49,12 +49,3 @@ body {
     font-weight: var(--font-universal-weight);
     color: var(--secondary-color);
 }
-
-.base__content {
-    padding: 1;
-}
-
-section {
-    min-height: 100vh;
-    scroll-margin-top: 70px;
-}
