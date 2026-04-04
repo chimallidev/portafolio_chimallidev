@@ -35,5 +35,9 @@
     </main>
 
     {# JS global #}
-    <script src="/static/js/principal.js"></script>
+    <script src="/static/js/index/principal.js"></script>
+
+    {# JS para cada página #}
+    {% block components_scripts %}
+    {% endblock %}
 </body>
