@@ -1,0 +1,16 @@
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill__title {
+    font-size: 18px;
+    font-family: var(--font-title);
+}
+
+.skill img {
+    width: 100px;
+}
