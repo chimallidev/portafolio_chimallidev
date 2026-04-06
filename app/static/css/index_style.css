@@ -297,6 +297,16 @@ p {
     margin-top: 20px;
 }
 
+.index__h2 + .index__h3 {
+    margin-top: 20px;
+}
+
+.index__section-class {
+    display: flex;
+    justify-content: left;
+    gap: 25px;
+    margin-bottom: 10px;
+}
 @keyframes flip {
     0% {
         transform: rotateX(0deg);

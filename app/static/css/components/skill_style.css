@@ -7,10 +7,10 @@
 }
 
 .skill__title {
-    font-size: 18px;
+    font-size: 16px;
     font-family: var(--font-title);
 }
 
 .skill img {
-    width: 100px;
+    width: 80px;
 }

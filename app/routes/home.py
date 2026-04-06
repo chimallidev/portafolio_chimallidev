@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request, HTTPException, status
 from fastapi.responses import HTMLResponse
 from app.core.templates import templates
-from app.core.constants import META, REDES
+from app.core.constants import META, REDES, SKILLS
 
 router = APIRouter()
 
@@ -10,7 +10,8 @@ router = APIRouter()
 async def home(request: Request):
     context = {
         "meta": META,
-        "redes" : REDES
+        "redes" : REDES,
+        "skills": SKILLS
     }
 
     try: 

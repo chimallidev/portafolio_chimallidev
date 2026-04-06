@@ -73,14 +73,36 @@
     <h2 class="index__h2">HABILIDADES</h2>
     <h3 class="index__h3">LENGUAJE</h3>
     <section class="index__section-class">
-        {{ skill("Python", "logo de python","/static/img/icons/chimallidev.ico") }}
+        {% if skills %}
+            {% for s in skills.get('principal', {}) %}
+                {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
+            {% endfor %}
+        {% endif %}
     </section>
     <h3 class="index__h3">FRONTEND</h3>
-    <section class="index__section-class"></section>
+    <section class="index__section-class">
+        {% if skills %}
+            {% for s in skills.get('frontend', {}) %}
+                {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
+            {% endfor %}
+        {% endif %}
+    </section>
     <h3 class="index__h3">BACKEND</h3>
-    <section class="index__section-class"></section>
+    <section class="index__section-class">
+        {% if skills %}
+            {% for s in skills.get('backend', {}) %}
+                {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
+            {% endfor %}
+        {% endif %}
+    </section>
     <h3 class="index__h3">HERRAMIENTAS</h3>
-    <section class="index__section-class"></section>
+    <section class="index__section-class">
+        {% if skills %}
+            {% for s in skills.get('herramientas', {}) %}
+                {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
+            {% endfor %}
+        {% endif %}
+    </section>
 </section>
 <section class="index__portafolio-section" id="portafolio"></section>
 <section class="index__portafolio-section" id="contacto"></section>
