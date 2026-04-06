@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% from 'components/skill.html' import skill %}
 
 {% block components_style %}
 <link rel="stylesheet" href="{{url_for('static', path='css/index_style.css')}}">
@@ -68,7 +69,17 @@
     <p>Mi objetivo es integrarme en proyectos profesionales donde pueda aportar mis habilidades y experiencia, enfrentar nuevos retos y continuar creciendo tanto a nivel profesional como personal e intelectual, construyendo una trayectoria sólida a mediano y largo plazo.</p>
 </section>
 <section class="index__portafolio-section" id="habilidades">
-    
+    <h2 class="index__h2">HABILIDADES</h2>
+    <h3 class="index__h3">LENGUAJE</h3>
+    <section class="index__section-class">
+        {{ skill("Python", "logo de python","/static/img/icons/chimallidev.ico") }}
+    </section>
+    <h3 class="index__h3">FRONTEND</h3>
+    <section class="index__section-class"></section>
+    <h3 class="index__h3">BACKEND</h3>
+    <section class="index__section-class"></section>
+    <h3 class="index__h3">HERRAMIENTAS</h3>
+    <section class="index__section-class"></section>
 </section>
 <section class="index__portafolio-section" id="portafolio"></section>
 <section class="index__portafolio-section" id="contacto"></section>
