@@ -1,6 +1,9 @@
 .base__content {
     background-color: var(--third-color);
-    padding: 60px 25px;
+    padding: 60px 300px 30px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 }
 
 .base__content::selection {
@@ -85,6 +88,7 @@
 
 p {
     font-size: 18px;
+    line-height: 1.5;
 }
 
 .index__h1 ~ .index__h2 {
@@ -287,6 +291,10 @@ p {
     0 0 8px rgba(3, 152, 158, 0.8),   /* luz cercana */
     0 0 16px rgba(3, 152, 158, 0.6),  /* expansión */
     0 0 24px rgba(3, 152, 158, 0.4);  /* halo exterior */
+}
+
+.index__h2 + p {
+    margin-top: 20px;
 }
 
 @keyframes flip {
