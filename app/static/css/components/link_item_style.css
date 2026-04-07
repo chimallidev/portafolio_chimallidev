@@ -1,0 +1,8 @@
+.item-link__a img {
+    height: 25px;
+    transition: all .3s linear;
+}
+
+.item-link__a img:hover {
+    transform: scale(1.2);
+}
