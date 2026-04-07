@@ -1,0 +1,17 @@
+.banner__border {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--banner-color);
+    padding: 4px 6px;
+    width: fit-content;
+}
+
+.banner__border img {
+    height: 18px;
+}
+
+.banner__border span {
+    color: var(--banner-color);
+}
