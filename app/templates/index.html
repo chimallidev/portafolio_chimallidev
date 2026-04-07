@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% from 'components/skill.html' import skill %}
-{% from 'components/link_item.html' import link_item %}
-{% from 'components/banner_item.html' import banner_item %}
+{% from 'components/card_item.html' import card_item %}
 
 {% block components_style %}
 <link rel="stylesheet" href="{{url_for('static', path='css/index_style.css')}}">
@@ -111,11 +110,10 @@
 <section class="index__portafolio-section" id="portafolio">
     <h2 class="index__h2">PORTAFOLIO</h2>
     <section class="cards-section">
-        {% if links %}
-        {{link_item(links.get("github", {}))}}
-        {% endif %}
-        {% if banners %}
-        {{banner_item(banners.get("html", {}))}}
+        {% if cards %}
+            {% for c in cards %}
+                {{card_item(c)}}
+            {% endfor %}
         {% endif %}
     </section>
 </section>

@@ -41,3 +41,22 @@ LINKS = {
 BANNERS = {
     "html": {"img": "/static/img/html.webp", "title": "HTML", "color": "#fb6121"}
 }
+
+#Cards
+CARDS = [
+     {
+        "title" : "Soluciones Inteligentes",
+        "img" : "/static/img/icons/chimallidev.ico",
+        "img_title": "Soluciones Inteligentes",
+        "img_alt": "página web soluciones inteligentes",
+        "banners": [
+            {"img": "/static/img/html.webp", "title": "HTML", "color": "#fb6121"},
+            {"img": "/static/img/html.webp", "title": "HTML2", "color": "#fb6121"}
+        ],
+        "description": "descripcion...",
+        "links": [
+            {"url": "https://github.com/chimallidev", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
+        ],
+        "url": "#"
+     }
+]

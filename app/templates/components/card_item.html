@@ -1,0 +1,30 @@
+{% from 'components/link_item.html' import link_item %}
+{% from 'components/banner_item.html' import banner_item %}
+{% macro card_item(card) %}
+<article class="card">
+    <header class="card__title-border">
+        <h3 class="card__h3">{{card.title}}</h3>
+    </header>
+    <section class="card__img-border">
+        <img src="{{card.img}}" title="{{card.img_title}}" alt="{{card.img_alt}}">
+    </section>
+    <section class="card__banners-section">
+        {% if card.banners %}
+            {% for b in card.banners %}
+            {{banner_item(b)}}
+            {% endfor %}
+        {% endif %}
+    </section>
+    <section class="card__description-border">
+        <p>{{card.description}}</p>
+    </section>
+    <section class="card__enlaces-section">
+        {% if card.links %}
+            {% for l in card.links %}
+            {{link_item(l)}}
+            {% endfor %}
+        {% endif %}
+    </section>
+    <a href="{{card.url}}" target="_blank" rel="noopener" class="card__button">Ver</a>
+</article>
+{% endmacro %}
