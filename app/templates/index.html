@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% from 'components/skill.html' import skill %}
+{% from 'components/link_item.html' import link_item %}
 
 {% block components_style %}
 <link rel="stylesheet" href="{{url_for('static', path='css/index_style.css')}}">
@@ -104,7 +105,14 @@
         {% endif %}
     </section>
 </section>
-<section class="index__portafolio-section" id="portafolio"></section>
+<section class="index__portafolio-section" id="portafolio">
+    <h2 class="index__h2">PORTAFOLIO</h2>
+    <section class="cards-section">
+        {% if links %}
+        {{link_item(links.get("github", {}))}}
+        {% endif %}
+    </section>
+</section>
 <section class="index__portafolio-section" id="contacto"></section>
 {% endblock %}
 

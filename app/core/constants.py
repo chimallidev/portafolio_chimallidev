@@ -31,3 +31,8 @@ SKILLS = {
         {"title": "GitHub", "alt": "Logo de github","img": "/static/img/github.webp"}
     ]
 }
+
+#Enlaces link_item
+LINKS = {
+    "github" : {"url": "https://github.com/chimallidev", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
+}

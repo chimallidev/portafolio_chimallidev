@@ -1,0 +1,5 @@
+{% macro link_item(link) %}
+<a href="{{link.url}}" class="item-link__a" target="_blank" rel="noopener">
+    <img src="{{link.img}}" title="{{link.title}}" alt="link.alt" >
+</a>
+{% endmacro %}
