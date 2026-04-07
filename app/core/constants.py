@@ -36,3 +36,8 @@ SKILLS = {
 LINKS = {
     "github" : {"url": "https://github.com/chimallidev", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
 }
+
+#Banners baner_item
+BANNERS = {
+    "html": {"img": "/static/img/html.webp", "title": "HTML", "color": "#fb6121"}
+}

@@ -1,0 +1,6 @@
+{% macro banner_item(banner) %}
+<div class="banner__board" style="--banner-color: {{banner.color}}">
+    <img src="{{banner.img}}">
+    <span>{{banner.title}}</span>
+</div>
+{% endmacro %}

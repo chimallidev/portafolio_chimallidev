@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% from 'components/skill.html' import skill %}
 {% from 'components/link_item.html' import link_item %}
+{% from 'components/banner_item.html' import banner_item %}
 
 {% block components_style %}
 <link rel="stylesheet" href="{{url_for('static', path='css/index_style.css')}}">
@@ -111,6 +112,9 @@
     <section class="cards-section">
         {% if links %}
         {{link_item(links.get("github", {}))}}
+        {% endif %}
+        {% if banners %}
+        {{banner_item(banners.get("html", {}))}}
         {% endif %}
     </section>
 </section>
