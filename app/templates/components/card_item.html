@@ -16,7 +16,7 @@
         {% endif %}
     </section>
     <section class="card__description-border">
-        <p>{{card.description}}</p>
+        <p>{{card.description | truncate(90)}}</p>
     </section>
     <section class="card__enlaces-section">
         {% if card.links %}
@@ -25,6 +25,8 @@
             {% endfor %}
         {% endif %}
     </section>
-    <a href="{{card.url}}" target="_blank" rel="noopener" class="card__button">Ver</a>
+    <section class="card__action-section">
+        <a href="{{card.url}}" target="_blank" rel="noopener" class="card__button">Ver</a>
+    </section>
 </article>
 {% endmacro %}
