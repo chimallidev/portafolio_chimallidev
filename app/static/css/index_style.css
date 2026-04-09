@@ -113,7 +113,8 @@ p {
 
 .index__email-box-e {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
 }
 
 .index__email-outline {
@@ -142,7 +143,8 @@ p {
 
 .index__email-box-actions {
     display: flex;
-    gap: 8px;
+    align-items: center;
+    gap: 10px;
 }
 
 
@@ -150,6 +152,7 @@ p {
 .index__email-btn,
 .index__ver-cv,
 .index__descargar-cv {
+    height: 60px;
     position: relative;
     display: flex;
     cursor: pointer;
@@ -312,6 +315,10 @@ p {
     margin-top: 25px;
     display: flex;
     gap: 15px;
+}
+
+.index__img-email {
+    height: 80px;
 }
 
 @keyframes flip {

@@ -1,14 +1,16 @@
-const copyBtn = document.getElementById("copyBtn")
-const emailText = document.getElementById("emailText")
+const buttons = document.querySelectorAll(".copyBtn")
+const emailText = document.querySelector(".emailText")
 
-copyBtn.addEventListener("click", ()=> {
-    const email = emailText.textContent.trim()
+buttons.forEach(btn => {
+    btn.addEventListener("click", ()=> {
+        const text = btn.dataset.copy
 
-    navigator.clipboard.writeText(email).then(()=>{
-        copyBtn.textContent = "Copiado ✔"
+        navigator.clipboard.writeText(text).then(()=>{
+            btn.textContent = "Copiado ✔"
 
-        setTimeout(()=>{
-            copyBtn.textContent = "Copiar"
-        }, 1500)
+            setTimeout(()=>{
+            btn.textContent = "Copiar"
+            }, 1500)
     })
+})
 })

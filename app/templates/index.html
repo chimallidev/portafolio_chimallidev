@@ -32,13 +32,13 @@
         <div class="index__email-box-e">
             <div class="index__email-outline">
                 <div class="index__email-box-inner">
-                    <span class="index__email-box-text" id="emailText">
+                    <span class="index__email-box-text">
                         chimalli.dev@gmail.com
                     </span>
                 </div>
             </div>
             <div class="index__email-box-actions">
-                <button id="copyBtn" class="index__email-btn index__email-btn--copy">Copiar</button>
+                <button class="index__email-btn index__email-btn--copy copyBtn" data-copy="chimalli.dev@gmail.com">Copiar</button>
                 <a href="mailto:chimallidev.dev@gmail.com" class="index__email-btn index__email-btn--send">Contactar</a>
             </div>
         </div>
@@ -118,7 +118,23 @@
         {% endif %}
     </section>
 </section>
-<section class="index__portafolio-section" id="contacto"></section>
+<section class="index__portafolio-section" id="contacto">
+    <h2 class="index__h2">¡CONTÁCTAME!</h2>
+    <div class="index__email-box-e">
+        <img class="index__img-email" src="{{url_for('static', path='/img/mail.webp')}}" title="Correo electrónico" alt="Logo de correo electrónico">
+        <div class="index__email-outline">
+            <div class="index__email-box-inner">
+                <span class="index__email-box-text">
+                    chimalli.dev@gmail.com
+                </span>
+            </div>
+        </div>
+        <div class="index__email-box-actions">
+            <button class="index__email-btn index__email-btn--copy copyBtn" data-copy="chimalli.dev@gmail.com">Copiar</button>
+            <a href="mailto:chimallidev.dev@gmail.com" class="index__email-btn index__email-btn--send">Contactar</a>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block components_scripts %}
