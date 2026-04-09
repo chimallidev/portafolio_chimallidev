@@ -87,3 +87,14 @@ CARDS = [
         "url": "https://chimallidev-links-web.vercel.app/"
      }
 ]
+
+
+#Banners: este sitio esta desarrollado con
+SITIO_BANNERS = [
+    {"img": "/static/img/html.webp", "title": "HTML", "color": "#fb6121"},
+    {"img": "/static/img/css.webp", "title": "CSS", "color": "#016fba"},
+    {"img": "/static/img/js.webp", "title": "JS", "color": "#f0dc4e"},
+    {"img": "/static/img/python.webp", "title": "Python", "color": "#2596be"},
+    {"img": "/static/img/jinja.webp", "title": "Jinja2", "color": "#c20706"},
+    {"img": "/static/img/fastapi.webp", "title": "FastAPI", "color": "#029a85"}
+]

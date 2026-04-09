@@ -111,20 +111,23 @@ p {
     gap: 25px;
 }
 
-.index__email-box-e {
+.index__email-box-e,
+.index__box-e {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.index__email-outline {
+.index__email-outline,
+.index__box-outline {
     border: 2px solid var(--main-color);
     padding: 6px;
     display: inline-block;
     background: var(--third-color);
 }
 
-.index__email-box-inner {
+.index__email-box-inner,
+.index__box-inner {
     border: 2px solid var(--fourth-color);
     padding: 12px 16px;
     display: flex;
@@ -134,14 +137,16 @@ p {
     box-shadow: 0 0 10px rgba(3, 152, 158, 0.4);
 }
 
-.index__email-box-text {
+.index__email-box-text,
+.index__box-text {
     color: var(--third-color);
     user-select: all;
     cursor: text;
     letter-spacing: 1;
 }
 
-.index__email-box-actions {
+.index__email-box-actions,
+.index__wattsapp-box-actions {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -151,7 +156,8 @@ p {
 
 .index__email-btn,
 .index__ver-cv,
-.index__descargar-cv {
+.index__descargar-cv,
+.index__wattsapp-btn {
     height: 60px;
     position: relative;
     display: flex;
@@ -175,7 +181,8 @@ p {
 
 .index__email-btn::before,
 .index__ver-cv::before,
-.index__descargar-cv::before {
+.index__descargar-cv::before,
+.index__wattsapp-btn::before {
     position: absolute;
     content: '';
     width: 100%;
@@ -195,7 +202,8 @@ p {
 
 .index__email-btn:hover,
 .index__ver-cv:hover,
-.index__descargar-cv:hover {
+.index__descargar-cv:hover,
+.index__wattsapp-btn:hover {
     background: #747474;
     -webkit-transform: translate(0, 0.25em);
     transform: translate(0, 0.25em);
@@ -203,7 +211,8 @@ p {
 
 .index__email-btn:hover::before,
 .index__ver-cv:hover::before,
-.index__descargar-cv:hover::before {
+.index__descargar-cv:hover::before,
+.index__wattsapp-btn:hover::before {
     -webkit-box-shadow: 0 0 0 2px #dbdbdb, 0 0.5em 0 0 #afaeae;
     box-shadow: 0 0 0 2px #dbdbdb, 0 0.5em 0 0 #afaeae;
     -webkit-transform: translate3d(0, 0.5em, -1em);
@@ -212,7 +221,8 @@ p {
 
 .index__email-btn:active,
 .index__ver-cv:active,
-.index__descargar-cv:active {
+.index__descargar-cv:active,
+.index__wattsapp-btn:active {
     background: #04c7ce;
     -webkit-transform: translate(0em, 0.75em);
     transform: translate(0em, 0.75em);
@@ -220,39 +230,46 @@ p {
 
 .index__email-btn:active::before,
 .index__ver-cv:active::before,
-.index__descargar-cv:active::before {
+.index__descargar-cv:active::before,
+.index__wattsapp-btn:active::before {
     -webkit-box-shadow: 0 0 0 2px #afafaf, 0 0 #ffffff;
     box-shadow: 0 0 0 2px #afafaf, 0 0 #ffffff;
     -webkit-transform: translate3d(0, 0, -1em);
     transform: translate3d(0, 0, -1em);
 }
 
-.index__email-btn--send {
+.index__email-btn--send,
+.index__email-btn--contactar {
     background: var(--main-color);
 }
 
-.index__email-btn--send::before {
+.index__email-btn--send::before,
+.index__email-btn--contactar::before {
     background: #037377;
     -webkit-box-shadow: 0 0 0 2px #04a3a8, 0 0.625em 0 0 #03d9e0;
     box-shadow: 0 0 0 2px #04a3a8, 0 0.625em 0 0 #03d9e0;
 
 }
 
-.index__email-btn--send:hover {
+.index__email-btn--send:hover,
+.index__email-btn--contactar:hover {
     background: #037377;
 }
 
-.index__email-btn--send:hover::before {
+.index__email-btn--send:hover::before,
+.index__email-btn--contactar:hover::before {
     -webkit-box-shadow: 0 0 0 2px #79d1d4, 0 0.5em 0 0 #048f94;
     box-shadow: 0 0 0 2px #79d1d4, 0 0.5em 0 0 #048f94;
 }
 
-.index__email-btn--send:active {
+.index__email-btn--send:active,
+.index__email-btn--contactar:active {
     background: #3fedf3;
     color: var(--third-color);
 }
 
-.index__email-btn--send:active::before {
+.index__email-btn--send:active::before,
+.index__email-btn--contactar:active::before {
     -webkit-box-shadow: 0 0 0 2px var(--main-color), 0 0 #ffffff;
     box-shadow: 0 0 0 2px var(--main-color), 0 0 #ffffff;
     -webkit-transform: translate3d(0, 0, -1em);
@@ -317,8 +334,26 @@ p {
     gap: 15px;
 }
 
-.index__img-email {
+.index__img-email,
+.index__img-box {
     height: 80px;
+}
+
+.index__h2 + .index__email-box-e {
+    margin-top: 20px;
+}
+
+.index__email-box-e + .index__box-e {
+    margin-top: 15px;
+}
+
+.index__box-e + .index__h3 {
+    margin-top: 25px;
+}
+
+.index__banner-section {
+    display: flex;
+    gap: 10px;
 }
 
 @keyframes flip {
