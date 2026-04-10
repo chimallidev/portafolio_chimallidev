@@ -1,6 +1,6 @@
 .base__content {
     background-color: var(--third-color);
-    padding: 60px 300px 30px 25px;
+    padding: 60px 300px 30px 30px;
     display: flex;
     flex-direction: column;
     gap: 100px;

@@ -34,6 +34,7 @@
     --font-universal-weight: 400;
     --font-universal-size: 16px;
     --main-color: oklch(0.6179 0.1046 199.77);
+    --main-color-light: oklch(0.8783 0.1046 199.77);
     --secondary-color: oklch(1 0 0);
     --third-color: oklch(0 0 0);
     --fourth-color: oklch(0.754 0 0);
@@ -50,4 +51,15 @@ body {
     font-size: var(--font-universal-size);
     font-weight: var(--font-universal-weight);
     color: var(--secondary-color);
+}
+
+.base__content {
+    margin-left: 220px;
+}
+
+@media(max-width: 768px) {
+    .base__content {
+        margin-left: 0;
+        margin-top: 60px;
+    }
 }
