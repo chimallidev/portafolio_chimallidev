@@ -344,11 +344,11 @@ p {
 }
 
 .index__email-box-e + .index__box-e {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
-.index__box-e + .index__h3 {
-    margin-top: 25px;
+.index__redes-sociales + .index__h3 {
+    margin-top: 20px;
 }
 
 .index__banner-section {
