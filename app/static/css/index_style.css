@@ -356,6 +356,10 @@ p {
     gap: 10px;
 }
 
+.index__portafolio-section#contacto .item-link__a img {
+    height: 40px;
+}
+
 @keyframes flip {
     0% {
         transform: rotateX(0deg);

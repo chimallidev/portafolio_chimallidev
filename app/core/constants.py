@@ -33,9 +33,8 @@ SKILLS = {
 }
 
 #Enlaces link_item
-LINKS = {
-    "github" : {"url": "https://github.com/chimallidev", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
-}
+PAGE_GITHUB_LINKS = {"url": "https://github.com/chimallidev/portafolio_chimallidev", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
+
 
 #Banners baner_item
 BANNERS = {

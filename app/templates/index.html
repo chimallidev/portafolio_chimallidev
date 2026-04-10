@@ -2,6 +2,7 @@
 {% from 'components/skill.html' import skill %}
 {% from 'components/card_item.html' import card_item %}
 {% from 'components/banner_item.html' import banner_item %}
+{% from 'components/link_item.html' import link_item %}
 
 {% block components_style %}
 <link rel="stylesheet" href="{{url_for('static', path='css/index_style.css')}}">
@@ -171,6 +172,12 @@
             {% for sb in sitio_banners %}
                 {{banner_item(sb)}}
             {% endfor%}
+        {% endif %}
+    </section>
+    <h3 class="index__h3">Ver en:</h3>
+    <section class="index__link-items-section">
+        {% if page_github_links %}
+            {{link_item(page_github_links)}}
         {% endif %}
     </section>
 </section>
