@@ -6,10 +6,10 @@
 
     {# Título de la página y meta descripción #}
     <title>Portafolio | {{(meta | default({})).get("titulo", "...")}}</title>
-    <meta name="description" content="{{(meta | default({})).get("descripcion", "...")}}"
+    <meta name="description" content="{{(meta | default({})).get("descripcion", "...")}}">
 
     {# favicon #}
-    <link rel="icon" href="{{url_for('static', path='img/icons/chimallidev.ico')}}"
+    <link rel="icon" href="{{url_for('static', path='/img/icons/chimallidev.ico')}}"
     type="image/x-icon">
 
     {# Hoja de estilos principal #}
