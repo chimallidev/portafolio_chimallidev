@@ -34,7 +34,7 @@
 }
 
 .navbar.hidden {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
 }
 
 .navbar__menu-btn {
