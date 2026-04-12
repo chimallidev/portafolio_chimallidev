@@ -3,6 +3,7 @@
     top: 0;
     width: 100%;
     height: 60px;
+    z-index: 10;
     background: var(--fourth-color-dark);
     display: none;
     justify-content: center;
