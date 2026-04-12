@@ -31,6 +31,13 @@ export function initNavigation() {
         link.addEventListener("click", function (e){
             e.preventDefault()
 
+            const href = this.getAttribute("href");
+
+            if (href === "#") {
+                window.scrollTo({ top: 0, behavior: "smooth" })
+                return
+            }
+
             const target = document.querySelector(
                 this.getAttribute("href")
             )
