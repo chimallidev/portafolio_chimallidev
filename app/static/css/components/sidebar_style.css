@@ -11,6 +11,18 @@
     transition: transform 0.35s ease;
 }
 
+.sidebar__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+    z-index: 11;
+}
+
 .sidebar nav {
     display: flex;
     flex-direction: column; 
@@ -78,4 +90,10 @@ body:not(.menu-open) .sidebar {
     padding: 10px 0;
     }
 
+}
+
+@media(min-width: 769px) {
+    .sidebar__close {
+        display: none;
+    }
 }
