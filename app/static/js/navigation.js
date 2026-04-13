@@ -1,4 +1,29 @@
 export function initNavigation() {
+
+    function smoothScrollTo(targetY, duration = 600) {
+        const startY = window.scrollY
+        const distance = targetY - startY
+        let startTime = null
+
+        function animation(currentTime) {
+            if (!startTime) startTime = currentTime
+            const time = currentTime - startTime
+
+            const progress = Math.min(time / duration, 1)
+
+            // easing (suave tipo app)
+            const ease = 1 - Math.pow(1 - progress, 3)
+
+            window.scrollTo(0, startY + distance * ease)
+
+            if (time < duration) {
+                requestAnimationFrame(animation)
+            }
+        }
+
+        requestAnimationFrame(animation)
+    }
+
     const links = document.querySelectorAll(".sidebar a")
     const sections = document.querySelectorAll(".index__portafolio-section")
 
@@ -31,6 +56,8 @@ export function initNavigation() {
         link.addEventListener("click", function (e){
             e.preventDefault()
 
+            console.log("scrolling...")
+
             const href = this.getAttribute("href");
 
             if (href === "#") {
@@ -47,7 +74,21 @@ export function initNavigation() {
             links.forEach(l => l.classList.remove("active"))
             this.classList.add("active")
 
-            target.scrollIntoView({behavior: "smooth"})
+            document.body.classList.remove("menu-open");
+
+            requestAnimationFrame(() => {
+
+                const navbar = document.getElementById("navbar")
+
+                const offset = navbar.getBoundingClientRect().height + 30
+
+                const targetY =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                offset
+
+                smoothScrollTo(targetY, 700)
+            })
 
             setTimeout(()=>{
                 isClickScrolling = false

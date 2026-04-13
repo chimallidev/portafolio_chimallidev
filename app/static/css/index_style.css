@@ -398,9 +398,6 @@ p {
 }
 
 @media(max-width: 768px) {
-    .index__portafolio-section {
-        scroll-margin-top: 75px;
-    }
 
     .index__portafolio-section .index__h2 {
         margin-bottom: -10px;
