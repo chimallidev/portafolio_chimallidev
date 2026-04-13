@@ -40,6 +40,11 @@
 
 .menu-open .navbar {
     transform: translateY(-100%);
+    transition-delay: .25s;
+}
+
+body:not(.menu-open) .navbar {
+    transition-delay: 0.3s;
 }
 
 .navbar__menu-btn {
@@ -53,7 +58,7 @@
     height: 3px;
     background: var(--secondary-color);
     margin: 5px 0;
-    transition: 0.3s ease;
+    transition: 0.25s ease;
 }
 
 .menu-open .navbar__menu-btn span:nth-child(1) {
@@ -66,4 +71,8 @@
 
 .menu-open .navbar__menu-btn span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+}
+
+body:not(.menu-open) .navbar__menu-btn span {
+    transition-delay: 0.5s;
 }

@@ -8,7 +8,7 @@
     background: var(--fourth-color-dark);
     transform: translateX(0);
     pointer-events: auto;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease;
 }
 
 .sidebar nav {
@@ -59,8 +59,12 @@
 
 .menu-open .sidebar {
         transform: translateX(0);
-        transition-delay: 0.6s ;
+        transition-delay: 0.55s ;
     }
+
+body:not(.menu-open) .sidebar {
+    transition-delay: 0s;
+}
 
 
 @media(max-width: 768px) {
