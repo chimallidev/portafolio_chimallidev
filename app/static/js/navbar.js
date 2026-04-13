@@ -4,16 +4,27 @@ export function initNavbar(navigation){
     let lastScroll = 0
 
     window.addEventListener("scroll", ()=> {
+        if (
+            document.body.classList.contains("menu-open") || 
+            navigation.isClickScrolling()
+        ) return
+
         const currentScroll = window.scrollY
 
         if(currentScroll > lastScroll){
-            navbar.classList.add("hidden")
+            navbar.classList.add("hidden-scroll")
         } else {
-            navbar.classList.remove("hidden")
+            navbar.classList.remove("hidden-scroll")
         }
 
         lastScroll = currentScroll
 
         if(navigation.isClickScrolling()) return
     })
+}
+
+let lastScroll = 0
+
+export function resetNavbarScroll() {
+    lastScroll = window.scrollY
 }

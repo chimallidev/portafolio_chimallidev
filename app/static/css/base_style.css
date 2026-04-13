@@ -57,7 +57,7 @@ body {
     margin-left: 220px;
 }
 
-body.no-scroll {
+.menu-open {
     overflow: hidden;
 }
 

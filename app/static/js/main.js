@@ -1,6 +1,7 @@
 import { initNavigation } from "./navigation.js"
 import { initNavbar } from "./navbar.js"
 import { initSidebar } from "./sidebar.js"
+import { resetNavbarScroll } from "./navbar.js"
 
 document.addEventListener("DOMContentLoaded", () => {
     const navigation = initNavigation()
@@ -10,12 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".sidebar a").forEach(link => {
         link.addEventListener("click", () => {
-            sidebar.closeSidebar()
-            sidebar.hideNavbar()
+            document.body.classList.remove("menu-open")
 
-            setTimeout(() => {
-                sidebar.showNavbar()
-            }, 500)
+            const navbar = document.getElementById("navbar");
+            navbar.classList.remove("hidden-scroll");
+
+            resetNavbarScroll()
         })
     })
 })

@@ -34,7 +34,11 @@
     }
 }
 
-.navbar.hidden {
+.navbar.hidden-scroll {
+    transform: translateY(-100%);
+}
+
+.menu-open .navbar {
     transform: translateY(-100%);
 }
 
@@ -49,17 +53,17 @@
     height: 3px;
     background: var(--secondary-color);
     margin: 5px 0;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
-.navbar__menu-btn.active span:nth-child(1) {
+.menu-open .navbar__menu-btn span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
-.navbar__menu-btn.active span:nth-child(2) {
+.menu-open .navbar__menu-btn span:nth-child(2) {
     opacity: 0;
 }
 
-.navbar__menu-btn.active span:nth-child(3) {
+.menu-open .navbar__menu-btn span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
 }

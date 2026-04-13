@@ -57,8 +57,9 @@
     background: var(--fourth-color-dark);
 }
 
-.sidebar.active {
+.menu-open .sidebar {
         transform: translateX(0);
+        transition-delay: 0.6s ;
     }
 
 
