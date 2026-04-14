@@ -12,15 +12,26 @@
     transition: transform 0.3s ease;
 }
 
-.navbar a {
+.navbar__logo {
     text-decoration: none;
     color: var(--main-color);
     font-family: var(--font-title);
-    font-size: 30px;
+    font-size: min(6vw, 22px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    gap: 10px;
 }
 
-.navbar a img {
+.navbar__logo img {
+    display: block;
     height: 40px;
+}
+
+.navbar__logo span {
+    position: relative;
+    top: 1px;
 }
 
 .navbar button {
