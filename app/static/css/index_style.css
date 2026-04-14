@@ -26,12 +26,14 @@ body {
 .index__h1 {
     -webkit-perspective: 700px;
     perspective: 700px;
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: min(6vw, 40px);
     
 }
 
 .index__h1 > span{
     font-family: var(--font-title);
-    font-size: 40px;
     color: var(--main-color);
     display: inline-block;
     animation: flip 15s infinite linear;
@@ -118,6 +120,7 @@ p {
 .index__email-box-e,
 .index__box-e {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 15px;
 }
@@ -401,5 +404,9 @@ p {
 
     .index__portafolio-section .index__h2 {
         margin-bottom: -10px;
+    }
+
+    .base__content {
+        padding: 60px 30px 30px 30px;
     }
 }
