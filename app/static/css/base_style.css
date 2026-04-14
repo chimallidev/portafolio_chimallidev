@@ -47,6 +47,7 @@ body {
     font-family: var(--font-base), Arial, Helvetica, sans-serif;
     font-size: var(--font-universal-size);
     font-weight: var(--font-universal-weight);
+    background-color: var(--third-color);
     color: var(--secondary-color);
 }
 
