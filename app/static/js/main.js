@@ -5,9 +5,9 @@ import { resetNavbarScroll } from "./navbar.js"
 
 document.addEventListener("DOMContentLoaded", () => {
     const navigation = initNavigation()
-    const sidebar = initSidebar()
 
     initNavbar(navigation)
+    initSidebar()
 
     document.querySelectorAll(".sidebar a").forEach(link => {
         link.addEventListener("click", () => {

@@ -1,6 +1,9 @@
 export function initNavigation() {
 
-    function smoothScrollTo(targetY, duration = 600) {
+    let isClickScrolling = false
+    let lockNavbar = false
+
+    function smoothScrollTo(targetY, duration = 700) {
         const startY = window.scrollY
         const distance = targetY - startY
         let startTime = null
@@ -27,7 +30,7 @@ export function initNavigation() {
     const links = document.querySelectorAll(".sidebar a")
     const sections = document.querySelectorAll(".index__portafolio-section")
 
-    let isClickScrolling = false
+    isClickScrolling = false
 
     const obeserver = new IntersectionObserver((entries)=>{
         if(isClickScrolling) return
@@ -56,9 +59,7 @@ export function initNavigation() {
         link.addEventListener("click", function (e){
             e.preventDefault()
 
-            console.log("scrolling...")
-
-            const href = this.getAttribute("href");
+            const href = this.getAttribute("href")
 
             if (href === "#") {
                 window.scrollTo({ top: 0, behavior: "smooth" })
@@ -69,7 +70,8 @@ export function initNavigation() {
                 this.getAttribute("href")
             )
 
-            isClickScrolling = true
+            isClickScrolling = true;
+            lockNavbar = true;
 
             links.forEach(l => l.classList.remove("active"))
             this.classList.add("active")
@@ -92,10 +94,12 @@ export function initNavigation() {
 
             setTimeout(()=>{
                 isClickScrolling = false
-            }, 500)
+            }, 700)
         })
     })
     return {
-        isClickScrolling: ()=> isClickScrolling
+        isClickScrolling: ()=> isClickScrolling,
+        isNavbarLocked: () => lockNavbar,
+        unlockNavbar: () => {lockNavbar = false}
     }
 }

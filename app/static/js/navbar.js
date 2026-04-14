@@ -4,6 +4,7 @@ export function initNavbar(navigation){
     let lastScroll = 0
 
     window.addEventListener("scroll", ()=> {
+        if (navigation.isNavbarLocked()) return
         if (
             document.body.classList.contains("menu-open") || 
             navigation.isClickScrolling()
@@ -28,3 +29,11 @@ let lastScroll = 0
 export function resetNavbarScroll() {
     lastScroll = window.scrollY
 }
+
+window.addEventListener("wheel", () => {
+    navigation.unlockNavbar();
+})
+
+window.addEventListener("touchstart", () => {
+    navigation.unlockNavbar();
+})
