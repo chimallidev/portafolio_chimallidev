@@ -54,7 +54,7 @@ CARDS = [
         ],
         "description": "Página web de articulos de divulgación científca sobre estilo de vida fitness.",
         "links": [],
-        "url": "#portafolio"
+        "url": "/portafolio/soluciones_inteligentes"
      },
      {
         "title" : "app móvil Soluciones Inteligentes",
