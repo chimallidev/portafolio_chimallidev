@@ -1,1 +1,37 @@
-<h1>Soluciones Inteligentes</h1>
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"> {# Codificación #}
+
+    {# Ajusta el ancho de la página al dispositivo y fija el zoom inicial al 100% #}
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+
+    {# Título de la página y meta descripción #}
+    <title>{{(meta_soluciones_inteligentes | default({})).get("titulo", "...")}}</title>
+    <meta name="description" content="{{(meta_soluciones_inteligentes | default({})).get("descripcion", "...")}}">
+
+    {# Favicon #}
+    <link rel="icon" href="{{url_for('static', path='img/proyectos/soluciones_inteligentes/icons/soluciones_inteligentes.ico')}}"
+    type="image/x-icon">
+
+    {# Hoja de estilos principal #}
+    <link rel="stylesheet" href="{{url_for('static', path='css/proyectos/soluciones_inteligentes/base_soluciones_inteligentes.css')}}">
+
+    {# Estilos de componentes más usados #}
+
+    {# Estilos de componentes de cada página #}
+    {% block components_style %}
+    {% endblock %}
+</head>
+<body>
+    {# Barra de Navegación #}
+    {% include 'proyectos/soluciones_inteligentes/components/nav_bar.html' %}
+
+    <main class="base__content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {# JS Global #}
+
+    {# JS para cada página #}
+</body>
