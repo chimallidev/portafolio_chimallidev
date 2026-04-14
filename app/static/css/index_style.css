@@ -83,7 +83,7 @@ body {
 }
 
 .index__h2 {
-    font-size: 40px;
+    font-size: min(6vw, 40px);
     font-family: var(--font-title);
     color: var(--main-color);
 }
@@ -352,7 +352,7 @@ p {
 }
 
 .index__email-box-e + .index__box-e {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .index__redes-sociales + .index__h3 {
@@ -361,11 +361,18 @@ p {
 
 .index__banner-section {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .index__portafolio-section#contacto .item-link__a img {
     height: 40px;
+}
+
+.index__link-itmes-section {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @keyframes flip {
@@ -409,5 +416,9 @@ p {
 
     .base__content {
         padding: 60px 30px 30px 30px;
+    }
+
+    .index__email-box-e + .index__box-e {
+        margin-top: 30px;
     }
 }
