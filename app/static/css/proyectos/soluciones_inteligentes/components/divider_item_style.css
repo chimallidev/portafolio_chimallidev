@@ -1,0 +1,20 @@
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color);
+    gap: 1rem;
+}
+
+.divider::after,
+.divider::before { 
+    content: "";
+    flex: 1;
+    height: 3px;
+    background-color: var(--line-color, var(--main-color));
+}
+
+.divider span {
+  white-space: nowrap;
+  color: var(--secondary-color);
+}

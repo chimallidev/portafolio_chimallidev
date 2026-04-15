@@ -1,4 +1,14 @@
 {% extends '/proyectos/soluciones_inteligentes/base_soluciones_inteligentes.html' %}
 
+{% from '/proyectos/soluciones_inteligentes/components/divider.html' import divider_item %}
+
+{% block components_style %}
+<link rel="stylesheet" href="{{url_for('static', path='css/proyectos/soluciones_inteligentes/soluciones_inteligentes_style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', path='css/proyectos/soluciones_inteligentes/components/divider_item_style.css')}}">
+{% endblock %}
+
 {% block content %}
+<section class="principal">
+    {{divider_item("Soluciones Inteligentes")}}
+</section>
 {% endblock %}

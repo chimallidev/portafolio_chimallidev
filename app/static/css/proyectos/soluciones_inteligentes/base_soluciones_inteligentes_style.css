@@ -51,14 +51,11 @@
     --fourth-color: oklch(0.6179 0.1046 199.77);
 }
 
-body {
+html {
     font-family: var(--font-base), Arial, Helvetica, sans-serif;
-    font-size: var(--font-universal-size);
     font-weight: var(--font-universal-weight);
     background-color: var(--secondary-color);
-    color: var(--third-color)
-}
-
-html {
+    color: var(--third-color);
+    font-size: var(--font-universal-size);
     scroll-behavior: smooth;
 }
