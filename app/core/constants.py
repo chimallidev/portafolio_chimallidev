@@ -3,12 +3,6 @@ META = {
     "descripcion" : "Erick Roman | Chimallidev. Desarrollador full stack especializado en Python, con experiencia en FastAPI y Jinja2 para construir soluciones web modernas y escalables."
 }
 
-#META de proyectos
-SOLUCIONES_INTELIGENTES_META = {
-    "titulo": "Soluciones Inteligentes",
-    "descripcion" : "Soluciones Inteligentes ofrece artículos científicos sobre fitness, nutrición y salud mental, ayudándote a mejorar tu estilo de vida con información confiable y hábitos saludables."
-}
-
 #Redes sociales
 REDES = {
     "github" : "https://github.com/chimallidev",
