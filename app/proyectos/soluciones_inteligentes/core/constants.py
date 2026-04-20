@@ -6,9 +6,9 @@ SOLUCIONES_INTELIGENTES_META = {
 
 #Slider
 SLIDER_IMAGES = [
-    {"url": "/static/img/soluciones_inteligentes_portafolio.webp"},
-    {"url": "/static/img/soluciones_inteligentes_portafolio.webp"},
-    {"url": "/static/img/soluciones_inteligentes_portafolio.webp"},
+    {"url": "/static/img/proyectos/soluciones_inteligentes/soluciones_inteligentes_principal.webp"},
+    {"url": "/static/img/css.webp"},
+    {"url": "/static/img/docker.webp"},
     {"url": "/static/img/soluciones_inteligentes_portafolio.webp"},
     {"url": "/static/img/soluciones_inteligentes_portafolio.webp"}
 ]

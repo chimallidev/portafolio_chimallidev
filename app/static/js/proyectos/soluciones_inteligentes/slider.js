@@ -8,9 +8,11 @@ export class Slider {
         this.startTime = null
         this.raf = null
 
+        this.total = slidesE1.children.length;
+
         this.createDots()
         this.update()
-        this.startTime()
+        this.start()
     }
 
     createDots(){
@@ -25,7 +27,7 @@ export class Slider {
     }
 
     update() {
-        this.slidesE1.style.transform = 'translateX(-${this.index * 100}%)'
+        this.slidesE1.style.transform = `translateX(-${this.index * 100}%)`;
 
         [...this.dotsE1.children].forEach((dot, i) => {
             dot.classList.toggle('active', i === this.index)
@@ -36,30 +38,48 @@ export class Slider {
         this.index = i
         this.resetTimer()
         this.update()
+
+        //Forzar sincronización inmediata
+        this.loop(performance.now())
     }
 
     next(){
         this.index = (this.index + 1)% this.total
         this.resetTimer()
         this.update()
+
+        //Forzar sincronización inmediata
+        this.loop(performance.now())
     }
 
     prev(){
         this.index = (this.index -1 + this.total)% this.total
         this.resetTimer()
         this.update()
+
+        //Forzar sincronización inmediata
+        this.loop(performance.now())
     }
 
     start() {
         this.startTime = null
-        this.loop()
+        this.raf = requestAnimationFrame(this.loop);
     }
 
     resetTimer() {
         this.startTime = null;
+
+        // limpiar progreso inmediatamente
+        [...this.dotsE1.children].forEach(dot => {
+        dot.style.background = '';
+        });
     }
 
-    loop(){
+    stop() {
+        cancelAnimationFrame(this.raf)
+    }
+
+    loop = (time) =>{
         //1. Inicializar startTime en el frame correcto
         if(this.startTime === null){
             this.startTime = time
@@ -69,15 +89,20 @@ export class Slider {
         const elapsed = time - this.startTime
 
         //3. Normalizar progreso (0 -> 1)
-        const progress = Math.min(elapsed / this.duration, 1)
+        const progress = Math.min(elapsed / this.duration, 1);
 
-        //4. Actualizar progreso visual del dot activo
+        //4. LIMPIAR TODOS LOS DOTS
+        [...this.dotsE1.children].forEach(dot => {
+            dot.style.background = ''; // reset visual
+        })
+
+        //5. Actualizar progreso visual del dot activo
         const activeDot = this.dotsE1.children[this.index]
         if(activeDot){
-            activeDot.style.background = 'linear-gradient(to right, var(--third-color) ${progress * 100}%, var(--main-color) ${progress * 100}%)'
+            activeDot.style.background = `linear-gradient(to right, var(--third-color) ${progress * 100}%, var(--main-color) ${progress * 100}%)`
         }
 
-        //5. Cambio automático de slide
+        //6. Cambio automático de slide
         if(elapsed >= this.duration){
             this.index = (this.index + 1)% this.total
 
@@ -87,7 +112,7 @@ export class Slider {
             this.update()
         }
 
-        //6. Siguiente frame
+        //7. Siguiente frame
         this.raf = requestAnimationFrame(this.loop)
     }
 }

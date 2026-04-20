@@ -1,6 +1,7 @@
 .slider {
     position: relative;
-    max-width: 800px;
+    max-height: 320px;
+    width: 600px;
     margin: 40px auto;
     overflow: hidden;
     border-radius: 16px;
@@ -87,7 +88,7 @@
     width: 12px;
     height: 12px;
     border-radius: 15%;
-    background: rgba(255,255,255,0.4);
+    background: var(--third-color);
     overflow: hidden;
     position: relative;
 }
@@ -97,16 +98,21 @@
     position: absolute;
     inset: 0;
     width: 0%;
-    background: white;
+    background: var(--main-color);
+}
+
+.dot.active {
+  background: var(--third-color);
 }
 
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.6);
     display: none;    
     justify-content: center;
-    overflow: auto;
+    align-items: center;
+    overflow: hidden;
 }
 
 .modal.active {
@@ -115,4 +121,10 @@
 
 .modal img {
     max-width: none;
+    user-select: none;
+    cursor: grab;
+    transform-origin: center;
+    touch-action: none;
+    -webkit-user-drag: none;
+    transition: transform .1s ease-out;
 }
