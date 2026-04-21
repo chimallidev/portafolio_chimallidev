@@ -6,9 +6,13 @@ SOLUCIONES_INTELIGENTES_META = {
 
 #Slider
 SLIDER_IMAGES = [
-    {"url": "/static/img/proyectos/soluciones_inteligentes/soluciones_inteligentes_principal.webp"},
-    {"url": "/static/img/css.webp"},
-    {"url": "/static/img/docker.webp"},
-    {"url": "/static/img/soluciones_inteligentes_portafolio.webp"},
-    {"url": "/static/img/soluciones_inteligentes_portafolio.webp"}
+    {"url": "/static/img/proyectos/soluciones_inteligentes/home_ponte_en_forma_soluciones_inteligentes.webp"},
+    {"url": "/static/img/proyectos/soluciones_inteligentes/ponte_en_forma_soluciones_inteligentes.webp"},
+    {"url": "/static/img/proyectos/soluciones_inteligentes/recetas_de_cocina_soluciones_inteligentes.webp"},
+    {"url": "/static/img/proyectos/soluciones_inteligentes/articulo_ponte_en_forma_soluciones_inteligentes.webp"},
+    {"url": "/static/img/proyectos/soluciones_inteligentes/articulo_uvas_soluciones_inteligentes.webp"},
+    {"url": "/static/img/proyectos/soluciones_inteligentes/receta_barras_amaranto_soluciones_inteligentes.webp"},
+    {"url": "/static/img/proyectos/soluciones_inteligentes/acerca_de_soluciones_inteligentes.webp"},
+    {"url": "/static/img/proyectos/soluciones_inteligentes/home_obesidad_soluciones_inteligentes.webp"},
+    {"url": "/static/img/proyectos/soluciones_inteligentes/articulo_obesidad_soluciones_inteligentes.webp"}
 ]

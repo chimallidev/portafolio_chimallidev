@@ -64,12 +64,11 @@ document.querySelectorAll('.slide img').forEach(img => {
     img.addEventListener('click', () => {
         modal.classList.add('active')
 
-        // 🔥 limpiar estado SIEMPRE
+        // limpiar estado SIEMPRE
         resetTransform()
 
         modalImg.src = img.src
 
-        // 🔥 usar onload directamente
         modalImg.onload = () => {
             scale = getInitialScale(modalImg)
             offsetX = 0
@@ -77,7 +76,7 @@ document.querySelectorAll('.slide img').forEach(img => {
             applyTransform()
         }
 
-        // 🔥 fallback por si ya estaba en caché
+        // fallback por si ya estaba en caché
         if (modalImg.complete) {
             scale = getInitialScale(modalImg)
             offsetX = 0
@@ -85,9 +84,6 @@ document.querySelectorAll('.slide img').forEach(img => {
             applyTransform()
         }
     })
-    console.log(modalImg.src)
-    console.log(modalImg.complete)
-    console.log(modalImg.naturalWidth)
 })
 
 //Cerrar el modal
