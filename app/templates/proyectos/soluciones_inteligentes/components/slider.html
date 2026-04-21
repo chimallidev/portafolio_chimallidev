@@ -3,13 +3,20 @@
     <div class="slides" id="slides">
         {% if images %}
             {% for img in images %}
-                <div class="slide"><img src="{{(img | default({})).get("url", "...")}}"></div>
+                <div class="slide">
+                    <img src="{{(img | default({})).get("url", "...")}}">
+                </div>
             {% endfor %}     
         {% endif %}
     </div>
     <div class="arrow left" id="prev"></div>
     <div class="arrow right" id="next"></div>
     <div class="dots" id="dots"></div>
+
+    <div class="modal" id="modal">
+        <div class="modal__content">
+            <img id="modalImg">
+        </div>
+    </div>
 </div>
-<div class="modal" id="modal"><img src="" alt="" id="modalImg"></div>
 {% endmacro %}

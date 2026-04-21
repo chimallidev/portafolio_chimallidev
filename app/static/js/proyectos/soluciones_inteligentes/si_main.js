@@ -61,27 +61,41 @@ function getInitialScale(img){
 
 //Abrir modal
 document.querySelectorAll('.slide img').forEach(img => {
-    img.addEventListener('click', ()=>{
+    img.addEventListener('click', () => {
         modal.classList.add('active')
 
-        modalImg.addEventListener('load', () =>{
+        // 🔥 limpiar estado SIEMPRE
+        resetTransform()
+
+        modalImg.src = img.src
+
+        // 🔥 usar onload directamente
+        modalImg.onload = () => {
             scale = getInitialScale(modalImg)
             offsetX = 0
             offsetY = 0
             applyTransform()
-        }, {once: true})
+        }
 
-        modalImg.src = img.src
+        // 🔥 fallback por si ya estaba en caché
+        if (modalImg.complete) {
+            scale = getInitialScale(modalImg)
+            offsetX = 0
+            offsetY = 0
+            applyTransform()
+        }
     })
+    console.log(modalImg.src)
+    console.log(modalImg.complete)
+    console.log(modalImg.naturalWidth)
 })
 
-//Evitar que el click de la imagen cierre el modal
-modalImg.addEventListener('click', e => e.stopPropagation())
-
-//Cerrar el modal al hacer click afuera (overlay)
-modal.addEventListener('click', ()=> {
+//Cerrar el modal
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
     modal.classList.remove('active')
     resetTransform()
+  }
 })
 
 //Cerrar el modal con la tecla ESC
@@ -113,7 +127,7 @@ modalImg.addEventListener('wheel', e => {
     scale += e.deltaY * -zoomSpeed
 
     const initialScale = getInitialScale(modalImg)
-    scale = Math.min(Math.max(Math.min(initialScale, 0.2), scale), 5)
+    scale = Math.min(Math.max(initialScale, scale), 5)
 
     if(scale < initialScale){
         offsetX = 0
@@ -147,7 +161,7 @@ window.addEventListener("pointermove", e => {
     applyTransform()
 })
 
-window.addEventListener("pointerup", () => {
+window.addEventListener("pointerup", (e) => {
     isDragging = false
     modalImg.style.cursor = 'grab'
     modalImg.style.transition = 'transform 0.1s ease-out'
@@ -195,4 +209,3 @@ modalImg.addEventListener('dblclick', (e) => {
 modalImg.addEventListener('dragstart', (e) => {
   e.preventDefault();
 })
-
