@@ -38,7 +38,22 @@
         <div class="si__item1">
             {{slider(slider_images)}}
         </div>
-        <div class="si__item2"></div>
+        <div class="si__item2">
+            <div class="si__video-thumb" id="videoTrigger">
+                <video muted preload="metadata">
+                    <source src="{{url_for('static', path='videos/proyectos/soluciones_inteligentes/soluciones_inteligentes.mp4')}}" 
+                    type="video/mp4">
+                </video>
+                <div class="si__video-play">▶</div>
+            </div>
+            <div class="modal modal--video" id="videoModal">
+                <div class="modal__content">
+                    <video id="modalVideo" controls>
+                        <source src="/static/video/demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
         <div class="si__item3"></div>
         
     </section>
