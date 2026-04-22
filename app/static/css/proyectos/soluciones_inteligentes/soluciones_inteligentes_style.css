@@ -67,11 +67,11 @@
     height: clamp(500px, 80vh, 1000px);
     width: 100%;
     grid-template-columns: 66% 34%;
-    grid-template-rows: auto auto;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
     gap: 10px;
 
     grid-template-areas: 
-        "main side_top"
+        "main side-top"
         "main side-bottom";
 }
 
@@ -83,11 +83,60 @@
 
 .si__item2 {
     grid-area: side-top;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .si__item3 {
     grid-area: side-bottom;
 }
+
+.si__video-thumb {
+    position: relative;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.si__video-thumb video {
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.si__video-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--secondary-color);
+    background: rgba(0,0,0,0.3);
+    transition: opacity 0.4s;
+}
+
+.si__video-thumb:hover .si__video-play {
+    opacity: 0.7;
+    
+}
+
+.modal__content {
+    pointer-events: auto;
+}
+
+.modal__content video {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    pointer-events: auto;
+}
+
 
 @media(max-width: 768px) {
     .si__img-wrapper,

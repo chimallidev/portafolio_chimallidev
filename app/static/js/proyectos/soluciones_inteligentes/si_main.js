@@ -1,13 +1,11 @@
 import {Slider} from './slider.js'
 
-console.log("mensaje del main.js")
 const sliderE1 = document.getElementById('slider')
 const slidesE1 = document.getElementById('slides')
 const dotsE1 = document.getElementById('dots')
 const prev = document.getElementById('prev')
 const next = document.getElementById('next')
 
-console.log(slidesE1, dotsE1);
 const slider = new Slider({
   slidesE1: slidesE1,
   dotsE1: dotsE1,
@@ -204,4 +202,36 @@ modalImg.addEventListener('dblclick', (e) => {
 
 modalImg.addEventListener('dragstart', (e) => {
   e.preventDefault();
+})
+
+//Modal del video
+
+const videoTrigger = document.getElementById('videoTrigger')
+const videoModal = document.getElementById('videoModal')
+const modalVideo = document.getElementById('modalVideo')
+
+// Abrir modal
+videoTrigger.addEventListener('click', (e) => {
+    e.stopPropagation()
+
+    videoModal.classList.add('active')
+    modalVideo.currentTime = 0
+    modalVideo.play()
+})
+
+// Cerrar modal (click fuera)
+videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) {
+        videoModal.classList.remove('active')
+        modalVideo.pause()
+        modalVideo.currentTime = 0
+    }
+})
+
+// ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        videoModal.classList.remove('active')
+        modalVideo.pause()
+    }
 })
