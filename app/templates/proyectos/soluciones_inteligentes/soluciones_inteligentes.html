@@ -40,18 +40,17 @@
         </div>
         <div class="si__item2">
             <div class="si__video-thumb" id="videoTrigger">
-                <video muted preload="metadata">
-                    <source src="{{url_for('static', path='videos/proyectos/soluciones_inteligentes/soluciones_inteligentes.mp4')}}" 
-                    type="video/mp4">
-                </video>
+                <img src="https://img.youtube.com/vi/dx5On4Y54mA/hqdefault.jpg">
                 <div class="si__video-play">▶</div>
             </div>
-            <div class="modal modal__video" id="videoModal">
+            <div class="modal modal--video" id="videoModal">
                 <div class="modal__content">
-                    <video id="modalVideo" controls>
-                        <source src="{{url_for('static', path='videos/proyectos/soluciones_inteligentes/soluciones_inteligentes.mp4')}}" 
-                        type="video/mp4">
-                    </video>
+                    <iframe 
+                    id="modalVideo"
+                    src=""
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>

@@ -129,11 +129,12 @@
     pointer-events: auto;
 }
 
-.modal__content video {
-    max-width: 90vw;
+.modal__content iframe {
+    width: 90vw;
+    height: 50vw;
+    max-width: 1000px;
     max-height: 90vh;
-    width: auto;
-    height: auto;
+    border: none;
     pointer-events: auto;
 }
 

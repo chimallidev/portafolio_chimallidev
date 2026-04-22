@@ -211,20 +211,21 @@ const videoModal = document.getElementById('videoModal')
 const modalVideo = document.getElementById('modalVideo')
 
 // Abrir modal
-videoTrigger.addEventListener('click', (e) => {
-    e.stopPropagation()
+const videoId = "dx5On4Y54mA"
 
+videoTrigger.addEventListener('click', () => {
     videoModal.classList.add('active')
-    modalVideo.currentTime = 0
-    modalVideo.play()
+
+    modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`
 })
 
 // Cerrar modal (click fuera)
 videoModal.addEventListener('click', (e) => {
     if (e.target === videoModal) {
         videoModal.classList.remove('active')
-        modalVideo.pause()
-        modalVideo.currentTime = 0
+
+        //esto detiene el video
+        modalVideo.src = ""
     }
 })
 
@@ -232,6 +233,6 @@ videoModal.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         videoModal.classList.remove('active')
-        modalVideo.pause()
+        modalVideo.src = ""
     }
 })
