@@ -144,6 +144,19 @@
     pointer-events: auto;
 }
 
+.modal__video-content {
+    pointer-events: auto;
+}
+
+.modal__video-content iframe {
+    width: 90vw;
+    height: 50vw;
+    max-width: 1000px;
+    max-height: 90vh;
+    border: none;
+    pointer-events: auto;
+}
+
 @media (max-width: 768px) {
     .slider {
         height: auto;

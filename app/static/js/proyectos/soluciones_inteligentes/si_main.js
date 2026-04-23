@@ -1,32 +1,41 @@
 import {Slider} from './slider.js'
 
-const sliderE1 = document.getElementById('slider')
-const slidesE1 = document.getElementById('slides')
-const dotsE1 = document.getElementById('dots')
-const prev = document.getElementById('prev')
-const next = document.getElementById('next')
+const sliders = document.querySelectorAll('.slider')
 
-const slider = new Slider({
-  slidesE1: slidesE1,
-  dotsE1: dotsE1,
-  duration: 3000
-});
+sliders.forEach(sliderItem => {
 
-//Flechas
-prev.addEventListener('click', ()=> slider.prev())
-next.addEventListener('click', ()=> slider.next())
+    const slidesE1 = sliderItem.querySelector('.slides')
+    const dotsE1 = sliderItem.querySelector('.dots')
+    const prev = sliderItem.querySelector('.arrow.left')
+    const next = sliderItem.querySelector('.arrow.right')
 
-//Hover pause
-sliderE1.addEventListener('mouseenter', ()=> slider.stop())
-sliderE1.addEventListener('mouseleave', ()=> slider.start())
+    const slider = new Slider({
+        slidesE1,
+        dotsE1,
+        duration: 3000
+    })
 
-//Swipe
-let startX = 0
-slidesE1.addEventListener('touchstart', e => startX = e.touches[0].clientX)
-slidesE1.addEventListener('touchend', e => {
-    const diff = startX - e.changedTouches[0].clientX
-    if(diff > 50) slider.next()
-    if(diff< -50) slider.prev()
+    // Flechas
+    prev.addEventListener('click', () => slider.prev())
+    next.addEventListener('click', () => slider.next())
+
+    // Hover pause
+    sliderItem.addEventListener('mouseenter', () => slider.stop())
+    sliderItem.addEventListener('mouseleave', () => slider.start())
+
+    // Swipe
+    let startX = 0
+
+    slidesE1.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX
+    })
+
+    slidesE1.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX
+
+        if (diff > 50) slider.next()
+        if (diff < -50) slider.prev()
+    })
 })
 
 //Modal
@@ -206,17 +215,19 @@ modalImg.addEventListener('dragstart', (e) => {
 
 //Modal del video
 
-const videoTrigger = document.getElementById('videoTrigger')
 const videoModal = document.getElementById('videoModal')
 const modalVideo = document.getElementById('modalVideo')
 
 // Abrir modal
-const videoId = "dx5On4Y54mA"
+document.querySelectorAll('.si__video-thumb').forEach(thumb => {
+    thumb.addEventListener('click', (e) => {
+        e.stopPropagation()
 
-videoTrigger.addEventListener('click', () => {
-    videoModal.classList.add('active')
+        const videoId = thumb.dataset.videoId
 
-    modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`
+        videoModal.classList.add('active')
+        modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`
+    })
 })
 
 // Cerrar modal (click fuera)
@@ -235,4 +246,4 @@ document.addEventListener('keydown', (e) => {
         videoModal.classList.remove('active')
         modalVideo.src = ""
     }
-})
+}) 

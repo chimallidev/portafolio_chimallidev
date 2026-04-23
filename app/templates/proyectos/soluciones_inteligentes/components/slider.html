@@ -1,6 +1,6 @@
 {% macro slider(images) %}
-<div class="slider" id="slider">
-    <div class="slides" id="slides">
+<div class="slider" >
+    <div class="slides">
         {% if images %}
             {% for img in images %}
                 <div class="slide">
@@ -9,9 +9,9 @@
             {% endfor %}     
         {% endif %}
     </div>
-    <div class="arrow left" id="prev"></div>
-    <div class="arrow right" id="next"></div>
-    <div class="dots" id="dots"></div>
+    <div class="arrow left"></div>
+    <div class="arrow right"></div>
+    <div class="dots"></div>
 
     <div class="modal" id="modal">
         <div class="modal__content">

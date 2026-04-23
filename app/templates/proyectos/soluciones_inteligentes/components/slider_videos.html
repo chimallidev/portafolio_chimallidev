@@ -1,21 +1,23 @@
 {% macro slider_videos(videos) %}
-<div class="slider" id="slider">
-    <div class="slides" id="slides">
+<div class="slider">
+    <div class="slides">
         {% if videos %}
             {% for video in videos %}
-                <div class="si__video-thumb" id="videoTrigger">
-                    <img src="{{(video | default({}).get("url", "..."))}}">
+                <div class="slide">
+                    <div class="si__video-thumb videoTrigger" data-video-id="{{ video.id }}">
+                        <img src="{{(video | default({})).get("url", "...")}}">
                     <div class="si__video-play">▶</div>
+                </div>
                 </div>
             {% endfor %}     
         {% endif %}
     </div>
-    <div class="arrow left" id="prev"></div>
-    <div class="arrow right" id="next"></div>
-    <div class="dots" id="dots"></div>
+    <div class="arrow left"></div>
+    <div class="arrow right"></div>
+    <div class="dots"></div>
 
     <div class="modal modal--video" id="videoModal">
-        <div class="modal__content">
+        <div class="modal__video-content">
             <iframe 
             id="modalVideo"
             src=""

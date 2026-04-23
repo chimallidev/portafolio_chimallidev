@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request, HTTPException, status
 from fastapi.responses import HTMLResponse
 from app.core.templates import templates
-from app.proyectos.soluciones_inteligentes.core.constants import SOLUCIONES_INTELIGENTES_META, SLIDER_IMAGES, SLIDER_VIDEOS
+from app.proyectos.soluciones_inteligentes.core.constants import SOLUCIONES_INTELIGENTES_META, SLIDER_IMAGES, VIDEOS_SLIDER
 
 router = APIRouter()
 
@@ -10,7 +10,7 @@ async def soluciones_inteligentes(request: Request):
     context = {
         "meta_soluciones_inteligentes": SOLUCIONES_INTELIGENTES_META,
         "slider_images": SLIDER_IMAGES,
-        "videos_slider": SLIDER_VIDEOS
+        "videos_slider": VIDEOS_SLIDER
     }
 
     try: 
