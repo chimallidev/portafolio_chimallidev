@@ -16,3 +16,11 @@ SLIDER_IMAGES = [
     {"url": "/static/img/proyectos/soluciones_inteligentes/home_obesidad_soluciones_inteligentes.webp"},
     {"url": "/static/img/proyectos/soluciones_inteligentes/articulo_obesidad_soluciones_inteligentes.webp"}
 ]
+
+SLIDER_VIDEOS = [
+    {"url": "https://img.youtube.com/vi/dx5On4Y54mA/hqdefault.jpg"},
+    {"url": "https://img.youtube.com/vi/dx5On4Y54mA/hqdefault.jpg"},
+    {"url": "https://img.youtube.com/vi/dx5On4Y54mA/hqdefault.jpg"},
+    {"url": "https://img.youtube.com/vi/dx5On4Y54mA/hqdefault.jpg"},
+    {"url": "https://img.youtube.com/vi/dx5On4Y54mA/hqdefault.jpg"}
+]

@@ -2,6 +2,7 @@
 
 {% from '/proyectos/soluciones_inteligentes/components/divider.html' import divider_item %}
 {% from '/proyectos/soluciones_inteligentes/components/slider.html' import slider %}
+{% from '/proyectos/soluciones_inteligentes/components/slider_videos.html' import slider_videos %}
 
 {% block components_style %}
 <link rel="stylesheet" href="{{url_for('static', path='css/proyectos/soluciones_inteligentes/soluciones_inteligentes_style.css')}}">
@@ -54,7 +55,9 @@
                 </div>
             </div>
         </div>
-        <div class="si__item3"></div>
+        <div class="si__item3">
+            {{slider_videos(videos_slider)}}
+        </div>
         
     </section>
 </section>
