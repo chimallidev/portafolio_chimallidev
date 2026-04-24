@@ -1,13 +1,13 @@
 {% macro slider_videos(videos) %}
 <div class="slider">
-    <div class="slides">
+    <div class="slides slider--videos">
         {% if videos %}
             {% for video in videos %}
                 <div class="slide">
                     <div class="si__video-thumb videoTrigger" data-video-id="{{ video.id }}">
                         <img src="{{(video | default({})).get("url", "...")}}">
                     <div class="si__video-play">▶</div>
-                </div>
+                    </div>
                 </div>
             {% endfor %}     
         {% endif %}
