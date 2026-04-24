@@ -56,7 +56,15 @@
     color: var(--main-color);
 }
 
+.si__h2 {
+    font-family: var(--font-title);
+    font-size: 30px;
+    line-height: 1.5;
+}
+
 .si__ver-mas {
+    margin-top: 40px;
+    margin-bottom: 30px;
     padding: 0 40px;
     width: 100%;
 }
@@ -88,7 +96,9 @@
     grid-area: side-top;
     min-height: 0;
     overflow: hidden;
+    aspect-ratio: 16/9;
 }
+
 
 .si__item3 {
     grid-area: side-bottom;
@@ -172,6 +182,10 @@
         flex: 0 0 100%;
     }
 
+    .si__article {
+        padding-left: 0px;
+    }
+
     .si__description {
         height: auto;
         gap: 50px;
@@ -195,10 +209,5 @@
     .si__item2,
     .si__item3 {
         width: 100%;
-    }
-
-    .si__item2,
-    .si__item3 {
-        display: block;
     }
 }
