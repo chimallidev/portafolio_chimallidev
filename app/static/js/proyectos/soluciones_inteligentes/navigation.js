@@ -1,14 +1,14 @@
-export function initNavigation(){
+export function initNavigation() {
     let isClickScrolling = false
     let lockNavbar = false
 
-    function smoothScrollTo(targetY, duration = 700){
+    function smoothScrollTo(targetY, duration = 700) {
         const startY = window.scrollY
         const distance = targetY - startY
         let startTime = null
 
         function animation(currentTime) {
-            if(!startTime) startTime = currentTime
+            if (!startTime) startTime = currentTime
             const time = currentTime - startTime
 
             const progress = Math.min(time / duration, 1)
@@ -16,7 +16,7 @@ export function initNavigation(){
 
             window.scrollTo(0, startY + distance * ease)
 
-            if(time < duration){
+            if (time < duration) {
                 requestAnimationFrame(animation)
             }
         }
@@ -24,9 +24,9 @@ export function initNavigation(){
     }
 
     const links = document.querySelectorAll(".nav_bar__opciones a")
-    
+
     links.forEach(link => {
-        link.addEventListener("click", function (e){
+        link.addEventListener("click", function (e) {
             e.preventDefault()
 
             const target = document.querySelector(
@@ -38,24 +38,24 @@ export function initNavigation(){
 
             document.body.classList.remove("menu-open")
 
-            requestAnimationFrame(()=>{
+            requestAnimationFrame(() => {
                 const navbar = document.getElementById("navbar")
-                const offset = navbar.offsetHeight + 30
+                const offset = navbar.offsetHeight + 20
 
-                const targetY = 
+                const targetY =
                     target.getBoundingClientRect().top +
                     window.scrollY - offset
 
                 smoothScrollTo(targetY, 700)
             })
-            setTimeout(()=>{
+            setTimeout(() => {
                 isClickScrolling = false
             }, 700)
         })
     })
     return {
-        isClickScrolling: ()=> isClickScrolling,
-        isNavbarLocked: ()=> lockNavbar,
-        unlockNavbar: () => {lockNavbar = false}
+        isClickScrolling: () => isClickScrolling,
+        isNavbarLocked: () => lockNavbar,
+        unlockNavbar: () => { lockNavbar = false }
     }
 }
