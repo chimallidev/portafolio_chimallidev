@@ -8,7 +8,7 @@ export function initNavbar(navigation){
         if(navigation.isNavbarLocked()) return
         if(
             document.body.classList.contains("menu-open") ||
-            navigation.isScrolling()
+            navigation.isClickScrolling()
         ) return
 
         const currentScroll = window.scrollY

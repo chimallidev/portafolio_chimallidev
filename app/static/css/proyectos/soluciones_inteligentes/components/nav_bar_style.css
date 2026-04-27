@@ -81,6 +81,11 @@
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+.hidden-scroll {
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
 @media (max-width: 768px) {
     .nav_bar__menu-btn {
         display: block;

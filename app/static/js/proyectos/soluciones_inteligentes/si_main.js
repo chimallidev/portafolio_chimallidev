@@ -1,5 +1,33 @@
+import {initMenu} from './menu.js'
+import {initNavbar, resetNavbarScroll} from './nav_bar.js'
+import { initNavigation } from './navigation.js'
 import {Slider} from './slider.js'
 
+document.addEventListener("DOMContentLoaded", () => {
+    const navigation = initNavigation()
+
+    initMenu()
+    initNavbar(navigation)
+
+    document.querySelectorAll(".nav_bar__opciones a").forEach(link => {
+        link.addEventListener("click", ()=>{
+            document.body.classList.remove("menu-open")
+
+            const navbar = document.getElementById("navbar")
+            navbar.classList.remove("hidden-scroll")
+
+            resetNavbarScroll()
+        })
+    })
+
+    window.addEventListener("wheel", () => {
+        navigation.unlockNavbar()
+    })
+
+    window.addEventListener("touchstart", () => {
+        navigation.unlockNavbar()
+    })
+})
 const sliders = document.querySelectorAll('.slider')
 
 sliders.forEach(sliderItem => {
