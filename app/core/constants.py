@@ -68,7 +68,7 @@ CARDS = [
         "links": [
             {"url": "https://github.com/chimallidev/solucionint", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
         ],
-        "url": "#portafolio"
+        "url": "/portafolio/app-movil-soluciones-inteligentes"
      },
      {
         "title" : "Web de links chimallidev",

@@ -3,7 +3,7 @@ from app.core.templates import templates
 from fastapi.staticfiles import StaticFiles
 from app.routes.home import router as home_router
 from app.routes.proyectos.soluciones_inteligentes.soluciones_inteligentes import router as soluciones_inteligentes_router
-
+from app.routes.proyectos.app_movil_soluciones_inteligentes.app_movil_soluciones_inteligentes import router as app_movil_soluciones_inteligentes_router
 
 app = FastAPI()
 
@@ -15,3 +15,4 @@ app.include_router(home_router)
 
 #Proyectos
 app.include_router(soluciones_inteligentes_router)
+app.include_router(app_movil_soluciones_inteligentes_router)
