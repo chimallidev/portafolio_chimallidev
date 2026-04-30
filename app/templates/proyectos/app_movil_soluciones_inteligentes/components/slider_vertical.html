@@ -12,7 +12,8 @@
         <div class="slider-vertical__current">
             <span class="slider-vertical__current-number">1</span>
         </div>
-        <span class="slider-vertical__total">| {{ (slider_content.get("images", []) | length) if slider_content else 0}}</span>
+        <span class="slider-vertical__divider">|</span>
+        <span class="slider-vertical__total">{{ (slider_content.get("images", []) | length) if slider_content else 0}}</span>
     </div>
 
     {# viewport #}

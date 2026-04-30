@@ -1,0 +1,119 @@
+.slider-vertical{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background: #111;
+    overflow: hidden;
+}
+
+.slider-vertical__viewport {
+    overflow: hidden;
+    height: 300px;
+}
+
+.slider-vertical__track {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+
+    transform: translateY(calc(var(--index, 1)* -100%));
+    transition: transform var(--speed, .5s) ease;
+}
+
+.slider-vertical__track.is-resetting {
+    transition: none;
+}
+
+.slider-vertical__item {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-vertical__item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.slider-vertical__controls {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.slider-vertical__btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--main-color);
+    color: var(--secondary-color);
+    font-size: 18px;
+    cursor: pointer;
+    border: 3px solid var(--main-color);
+    box-shadow: inset 0 0 0 2px var(--secondary-color);
+}
+
+.slider-vertical__counter {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary-color);
+    color: var(--third-color);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 5px;
+}
+
+.slider-vertical__current {
+    background: var(--third-color);
+    color: var(--secondary-color);
+    overflow: hidden;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.slider-vertical__total {
+    overflow: hidden;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.slider-vertical__current-number {
+    display: inline-block;
+}
+
+.slider-vertical.is-down .slider-vertical__current-number {
+    animation: slideDown var(--speed, .5s) ease;
+}
+
+.slider-vertical.is-up .slider-vertical__current-number {
+    animation: slideUp var(--speed, .5s) ease;
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-100%); }
+    51% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(100%); }
+    51% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
