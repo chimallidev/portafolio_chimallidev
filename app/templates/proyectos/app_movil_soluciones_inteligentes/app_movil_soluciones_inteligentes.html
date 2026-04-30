@@ -1,5 +1,7 @@
 {% extends '/proyectos/app_movil_soluciones_inteligentes/base_app_movil_soluciones_inteligentes.html' %}
 
+{% from '/proyectos/app_movil_soluciones_inteligentes/components/slider_vertical.html' import slider_vertical %}
+
 {% block components_style %}
 <link rel="stylesheet" href="{{url_for('static', path='css/proyectos/app_movil_soluciones_inteligentes/app_movil_soluciones_inteligentes_style.css')}}">
 {% endblock %}
@@ -7,7 +9,9 @@
 {% block content %}
 <section class="app-si__principal">
     <div class="app-si__principal-contenedor">
-        <div class="app-si__imgs-wrapper"></div>
+        <div class="app-si__imgs-wrapper">
+            {{slider_vertical()}}
+        </div>
         <article class="app-si__article">
             <header>
                 <h1 class="app-si__h1">APLICACIÓN MÓVIL DE 

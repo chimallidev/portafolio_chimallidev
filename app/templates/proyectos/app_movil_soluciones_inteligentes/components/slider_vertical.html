@@ -1,0 +1,39 @@
+{% macro slider_vertical(slider_content) %}
+<div class="slider-vertical"
+    data-slider-vertical
+    data-loop="{{(slider_content | default({})).get("config.loop", true)}}"
+    data-speed="{{(slider_content | default({})).get("config.speed", 500)}}"
+    data-autoplay="{{(slider_content | default({})).get("config.autoplay", false)}}"
+    data-delay="{{(slider_content | default({})).get("config.delay", 3000)}}"
+    >
+
+    {# contador #}
+    <div class="slider-vertical__counter">
+        <div class="slider-vertical__current">
+            <span class="slider-vertical__current-number">1</span>
+        </div>
+        <span class="slider-vertical__total">| {{ (slider_content.get("images", []) | length) if slider_content else 0}}</span>
+    </div>
+
+    {# viewport #}
+    <div class="slider-vertical__viewport">
+        <div class="slider-vertical__track">
+            {% if slider_content and slider_content.images %}
+                {% for img in images %}
+                    <div class="slider-vertical__item">
+                        <img src="{{img.url}}" 
+                        alt="Imagen de la app de soluciones inteligentes número {{loop.index}}">
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    {# Controles #}
+    <div class="slider-vertical__controls">
+        <button class="slider-vertical__btn slider-vertical__btn--up">&#9650;</button>
+        <button class="slider-vertical__btn slider-vertical__btn--down">&#9660;</button>
+    </div>
+
+</div>
+{% endmacro %}
