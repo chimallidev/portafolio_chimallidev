@@ -83,7 +83,9 @@ export default class VerticalSlider {
         this.counter.classList.remove('is-up', 'is-down')
 
         const isUp = direction === 'up'
-        console.log("isUp: ", isUp)
+
+        //forzar reflow
+        void this.counter.offsetHeight
         this.counter.classList.add(isUp ? 'is-up' : 'is-down')
 
         setTimeout(()=>{
