@@ -68,12 +68,25 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: var(--main-color);
     color: var(--secondary-color);
+    backdrop-filter: blur(2px);
+    background: oklch(0.5485 0.219959 6.516 / 50%);
     font-size: 18px;
     cursor: pointer;
-    border: 3px solid var(--main-color);
+    border: 3px solid oklch(0.5485 0.219959 6.516 / 50%);
     box-shadow: inset 0 0 0 2px var(--secondary-color);
+    transition: background .3s ease, border .3s ease, scale .1s linear;
+}
+
+.slider-vertical__btn:hover {
+    background: var(--main-color);
+    border: 3px solid var(--main-color);
+}
+
+.slider-vertical__btn:active {
+    scale: .9;
+    background: var(--main-color);
+    border: 3px solid var(--main-color);
 }
 
 .slider-vertical__counter {
