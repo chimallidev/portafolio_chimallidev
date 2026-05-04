@@ -11,7 +11,7 @@
 <section class="app-si__principal">
     <div class="app-si__principal-contenedor">
         <div class="app-si__imgs-wrapper">
-            {{slider_vertical()}}
+            {{slider_vertical(vertical_slider1_content)}}
         </div>
         <article class="app-si__article">
             <header>
@@ -32,5 +32,6 @@
 {% endblock %}
 
 {% block components_scripts %}
-<script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/slider.js"></script>
+<script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/components/app_si_main.js"></script>
+<script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/components/slider.js"></script>
 {% endblock %}

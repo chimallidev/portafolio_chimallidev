@@ -1,18 +1,33 @@
 .slider-vertical{
+    display: flex;
+    flex-direction: column;
     position: relative;
+    height: 100vh;
+    padding: 0 40px 40px 40px;
+    gap: 10px;
+    align-items: center;
+}
+
+.slider-vertical__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    background: #111;
-    overflow: hidden;
+    height: 100%;
 }
 
 .slider-vertical__viewport {
+    height: 100%;
+    flex: 0 0 auto;
+    aspect-ratio: 9/16;
+    display: flex;
     overflow: hidden;
-    height: 300px;
 }
 
 .slider-vertical__track {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     will-change: transform;
@@ -26,23 +41,24 @@
 }
 
 .slider-vertical__item {
-    min-height: 300px;
+    height: 100%;
+    flex: 0 0 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .slider-vertical__item img {
     max-width: 100%;
     max-height: 100%;
+    width: auto;
+    height: auto;
+
     object-fit: contain;
 }
 
-.slider-vertical__controls {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+.slider-vertical__controls { 
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -61,17 +77,17 @@
 }
 
 .slider-vertical__counter {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    --offset-x: -29px;
+    transform: translateX(var(--offset-x));
     background: var(--secondary-color);
     color: var(--third-color);
     padding: 5px 10px;
     display: flex;
-    align-items: center;
     gap: 5px;
     border-radius: 5px;
+    z-index: 3;
+    align-self: center;
+    margin: 0 auto;
 }
 
 .slider-vertical__current {
@@ -96,11 +112,11 @@
     display: inline-block;
 }
 
-.slider-vertical.is-down .slider-vertical__current-number {
+.slider-vertical__current.is-down .slider-vertical__current-number {
     animation: slideDown var(--speed, .5s) ease;
 }
 
-.slider-vertical.is-up .slider-vertical__current-number {
+.slider-vertical__current.is-up .slider-vertical__current-number {
     animation: slideUp var(--speed, .5s) ease;
 }
 

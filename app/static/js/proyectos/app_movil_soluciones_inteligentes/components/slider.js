@@ -1,4 +1,4 @@
-export default class VarticalSlider {
+export default class VerticalSlider {
     constructor(element){
         this.e1 = element
         this.track = element.querySelector('.slider-vertical__track')
@@ -6,6 +6,7 @@ export default class VarticalSlider {
         this.btnUp = element.querySelector('.slider-vertical__btn--up')
         this.btnDown = element.querySelector('.slider-vertical__btn--down')
         this.currentNumber = element.querySelector('.slider-vertical__current-number')
+        this.counter = element.querySelector('.slider-vertical__current')
 
         this.config = {
             loop: element.dataset.loop === "true",
@@ -34,6 +35,7 @@ export default class VarticalSlider {
         if(this.config.autoplay){
             this.startAutoplay()
         }
+        console.log("loop:", this.config.loop)
     }
 
     setSpeed(){
@@ -46,33 +48,48 @@ export default class VarticalSlider {
 
         this.track.appendChild(first)
         this.track.insertBefore(last, this.items[0])
+
+        //recalcular
+        this.items = Array.from(this.track.querySelectorAll('.slider-vertical__item'))
     }
 
     updateCSS(animate = true){
-        if(!animate) this.track.classList.add('is-resetting')
+        if(!animate){
+            this.track.classList.add('is-resetting')
+
+            //FRAME 1 → aplicar index sin animación
+            this.track.style.setProperty('--index', this.index)
+
+            //FRAME 2 → reactivar animaciones
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    this.track.classList.remove('is-resetting')
+                })
+            })
+
+            return
+        }
 
         this.track.style.setProperty('--index', this.index)
-
-        requestAnimationFrame(()=> {
-            this.track.classList.remove('is-resetting')
-        })
     }
 
     getRealIndex(){
         if(!this.config.loop) return this.index + 1
 
-        if(this.index === 0) return this.total
-        if(this.index === this.total + 1) return 1
-
-        return this.index
+        return ((this.index - 1 + this.total) % this.total) + 1
     }
 
     updateCounter(direction){
-        this.e1.classList.remove('is-up', 'is-down')
-        this.e1.classList.add(direction === 'down' ? 'is-down' : 'is-up')
+        this.counter.classList.remove('is-up', 'is-down')
+
+        const isUp = direction === 'up'
+        console.log("isUp: ", isUp)
+        this.counter.classList.add(isUp ? 'is-up' : 'is-down')
 
         setTimeout(()=>{
-            this.currentNumber.textContent = this.getRealIndex()
+            let value = this.getRealIndex()
+
+            this.currentNumber.textContent = value
         }, this.config.speed / 2)
     }
 
@@ -82,7 +99,13 @@ export default class VarticalSlider {
             if(direction === 'up' && this.index <= 0 ) return
         }
 
-        this.index += direction === 'down' ? 1 : -1
+        this.index += direction === 'up' ? 1 : -1
+
+        if(this.config.loop){
+            if(this.index > this.total + 1) this.index = this.total + 1
+            if(this.index < 0) this.index = 0
+        }
+
         this.updateCSS(true)
         this.updateCounter(direction)
     }
