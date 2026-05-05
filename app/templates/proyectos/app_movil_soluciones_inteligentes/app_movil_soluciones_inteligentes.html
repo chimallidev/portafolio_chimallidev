@@ -1,6 +1,7 @@
 {% extends '/proyectos/app_movil_soluciones_inteligentes/base_app_movil_soluciones_inteligentes.html' %}
 
 {% from '/proyectos/app_movil_soluciones_inteligentes/components/slider_vertical.html' import slider_vertical %}
+{% from '/proyectos/app_movil_soluciones_inteligentes/components/carrusel.html' import carrusel %}
 
 {% block components_style %}
 <link rel="stylesheet" href="{{url_for('static', path='css/proyectos/app_movil_soluciones_inteligentes/app_movil_soluciones_inteligentes_style.css')}}">
@@ -31,6 +32,7 @@
 </section>
 <section class="app-si__ver-mas">
     <h2 class="app-si__h2">Ver más:</h2>
+    {{carrusel(carrusel_content, "videos")}}
 </section>
 {% endblock %}
 

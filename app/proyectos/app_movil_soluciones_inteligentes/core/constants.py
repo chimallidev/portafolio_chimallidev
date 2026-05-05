@@ -53,3 +53,13 @@ VERTICAL_SLIDER1_CONTENT = {
         "loop": "true"
     }
 }
+
+#Carrusel content
+CARRUSEL_CONTENT = [
+    {"id": "lxFpyyKrFbk", "alt": "Ponte en Forma Soluciones Inteligentes",
+     "url": "https://img.youtube.com/vi/lxFpyyKrFbk/hqdefault.jpg"},
+     {"id": "c2iGyWguHtA", "alt": "Artículo ponte en forma conexión oculta",
+     "url": "https://img.youtube.com/vi/c2iGyWguHtA/hqdefault.jpg"},
+     {"id": "0s5kbjin1Fo", "alt": "Artículo ciencia calentamiento ponte en forma",
+     "url": "https://img.youtube.com/vi/0s5kbjin1Fo/hqdefault.jpg"}
+]
