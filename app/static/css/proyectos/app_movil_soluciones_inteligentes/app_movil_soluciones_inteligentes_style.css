@@ -72,6 +72,10 @@
     margin-top: 10px;
 }
 
+.app-si__ver-mas {
+    margin: 60px 40px 40px 40px;
+}
+
 @keyframes blink {
     0% {
         opacity: 0;
