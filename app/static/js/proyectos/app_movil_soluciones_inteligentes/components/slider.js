@@ -35,7 +35,6 @@ export default class VerticalSlider {
         if(this.config.autoplay){
             this.startAutoplay()
         }
-        console.log("loop:", this.config.loop)
     }
 
     setSpeed(){

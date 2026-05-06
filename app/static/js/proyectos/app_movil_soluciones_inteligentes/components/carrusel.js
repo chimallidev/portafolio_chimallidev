@@ -7,8 +7,8 @@ class Carrusel{
         this.track = root.querySelector(".carrusel__track")
         this.slides = Array.from(root.querySelectorAll(".carrusel__slide"))
 
-        this.btnPrev = root.querySelector(".carrusel__btn--right")
-        this.btnNext = root.querySelector(".carrusel__btn--righ")
+        this.btnPrev = root.querySelector(".carrusel__btn--left")
+        this.btnNext = root.querySelector(".carrusel__btn--right")
 
         this.index = 0
 
@@ -26,7 +26,7 @@ class Carrusel{
         this.btnNext.addEventListener("click", ()=> this.move(1))
 
         this.track.addEventListener("touchstart", (e)=> this.onStart(e.touches[0].clientX))
-        this.track.addEventListener("touchmove", (e)=> this.onMove(e.toouches[0].clientX))
+        this.track.addEventListener("touchmove", (e)=> this.onMove(e.touches[0].clientX))
         this.track.addEventListener("touchend", ()=> this.onEnd())
 
         this.track.addEventListener("mousedown", (e)=> this.onStart(e.clientX))
@@ -35,12 +35,21 @@ class Carrusel{
     }
 
     getSlideWidth(){
-        const gap = 16
+        const style = window.getComputedStyle(this.track)
+        const gap = parseInt(style.gap || 0)
         return this.slides[0].offsetWidth + gap
     }
 
+    getVisiblesSlides(){
+        const slideWidth = this.slides[0].offsetWidth
+        const viewportWidth = this.root.querySelector(".carrusel__viewport").offsetWidth
+
+        return Math.round(viewportWidth / slideWidth)
+    }
+
     move(direction){
-        const maxIndex = this.slides.length - 1
+        const visible = this.getVisiblesSlides()
+        const maxIndex = this.slides.length - visible
         this.index = Math.max(0, Math.min(this.index + direction, maxIndex))
         this.update()
     }
@@ -53,6 +62,7 @@ class Carrusel{
     onStart(x){
         this.isDragging = true
         this.startX = x
+        this.currentX = x
         this.root.classList.add("carrusel--dragging")
 
         document.body.style.userSelect = "none";
@@ -78,14 +88,13 @@ class Carrusel{
         }
 
         this.isDragging = false
-        this.root.classList.remove("carousel--dragging");
+        this.root.classList.remove("carrusel--dragging");
         document.body.style.userSelect = "";
     }
 }
 
-export function initCarrusel(){
+export function initCarruseles(){
     const carruseles = document.querySelectorAll("[data-carrusel]")
-
     carruseles.forEach(element => {
         new Carrusel(element)
     })
