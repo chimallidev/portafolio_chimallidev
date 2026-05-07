@@ -4,7 +4,7 @@
 }
 
 .app-si__principal {
-    margin: 40px;
+    margin: 50px 40px 40px 40px;
 }
 
 .app-si__principal-contenedor {
@@ -43,6 +43,14 @@
     line-height: 1.5;
 }
 
+.app-si__h2 {
+    font-family: var(--font-title);
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
 .app-si__titulo-animado {
     width: 100%;
     display: inline-block;
@@ -75,6 +83,8 @@
 .app-si__ver-mas {
     margin: 60px 40px 40px 40px;
 }
+
+
 
 @keyframes blink {
     0% {
