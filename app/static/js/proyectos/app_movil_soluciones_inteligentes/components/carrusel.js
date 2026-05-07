@@ -15,6 +15,7 @@ class Carrusel{
         this.startX = 0
         this.currentX = 0
         this.isDragging = false
+        this.hasDragged = false
 
         this.init()
     }
@@ -32,6 +33,13 @@ class Carrusel{
         this.track.addEventListener("mousedown", (e)=> this.onStart(e.clientX))
         window.addEventListener("mousemove", (e)=> this.onMove(e.clientX))
         window.addEventListener("mouseup", ()=> this.onEnd())
+
+        this.track.addEventListener("click", (e) => {
+            if(this.hasDragged){
+                e.preventDefault()
+                e.stopPropagation()
+            }
+        }, true)
     }
 
     getSlideWidth(){
@@ -73,6 +81,12 @@ class Carrusel{
 
         this.currentX = x
         const delta = this.currentX - this.startX
+
+        // Movimiento real
+        if(Math.abs(delta) > 5){
+            this.hasDragged = true
+        }
+
         this.update(delta)
     }
 
@@ -90,6 +104,10 @@ class Carrusel{
         this.isDragging = false
         this.root.classList.remove("carrusel--dragging");
         document.body.style.userSelect = "";
+
+        requestAnimationFrame(() => {
+            this.hasDragged = false
+        })
     }
 }
 
