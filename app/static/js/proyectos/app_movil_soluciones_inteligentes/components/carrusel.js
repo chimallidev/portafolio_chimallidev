@@ -23,8 +23,12 @@ class Carrusel{
     init(){
         this.update()
 
-        this.btnPrev.addEventListener("click", ()=> this.move(-1))
-        this.btnNext.addEventListener("click", ()=> this.move(1))
+        this.btnPrev.addEventListener("mousedown", ()=> {
+            this.startContinuousMove(-1)
+        })
+        this.btnNext.addEventListener("mousedown", ()=> {
+            this.startContinuousMove(1)
+        })
 
         this.track.addEventListener("touchstart", (e)=> this.onStart(e.touches[0].clientX))
         this.track.addEventListener("touchmove", (e)=> this.onMove(e.touches[0].clientX))
@@ -32,7 +36,10 @@ class Carrusel{
 
         this.track.addEventListener("mousedown", (e)=> this.onStart(e.clientX))
         window.addEventListener("mousemove", (e)=> this.onMove(e.clientX))
-        window.addEventListener("mouseup", ()=> this.onEnd())
+        window.addEventListener("mouseup", ()=> {
+            this.onEnd()
+            this.stopContinuousMove()
+        })
 
         this.track.addEventListener("click", (e) => {
             if(this.hasDragged){
@@ -60,6 +67,20 @@ class Carrusel{
         const maxIndex = this.slides.length - visible
         this.index = Math.max(0, Math.min(this.index + direction, maxIndex))
         this.update()
+    }
+
+    startContinuousMove(direction){
+        this.stopContinuousMove()
+
+        this.move(direction)
+
+        this.moveInterval = setInterval(() => {
+            this.move(direction)
+        }, 250)
+    }
+
+    stopContinuousMove(){
+        clearInterval(this.moveInterval)
     }
 
     update(offset = 0){
