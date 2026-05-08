@@ -36,6 +36,7 @@
     display: flex;
     gap: 20px;
     list-style: none;
+    background-color: var(--third-light-color);
 }
 
 .nav_bar__opciones a {
@@ -103,7 +104,7 @@
         top: 70px;
         right: 0;
         width: auto;
-        background: var(--secondary-color);
+        background: var(--third-light-color);
         padding: 20px;
 
         transition: opacity 0.3s ease;
