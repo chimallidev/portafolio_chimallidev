@@ -12,7 +12,7 @@
             <div class="carrusel__slide">
                 <div class="carrusel__video-thumb video__thumb" data-video-id="{{(video | default({})).get("id", "___")}}">
                     <img src="{{(video | default({})).get("url", "___")}}" alt="slide {{loop.index + 1}}: {{(video | default({})).get("alt", "___")}}">
-                    <div class="carrusel__video-play">▶</div>
+                    <div class="carrusel__video-play video__play">▶</div>
                 </div>
             </div>
             {% endfor %}

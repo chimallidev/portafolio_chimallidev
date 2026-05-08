@@ -98,7 +98,9 @@ a:hover {
     margin: 60px 40px 40px 40px;
 }
 
-
+.video__thumb:hover .video__play {
+    opacity: .5;
+}
 
 @keyframes blink {
     0% {
