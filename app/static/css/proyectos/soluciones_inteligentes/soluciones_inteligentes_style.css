@@ -7,6 +7,16 @@
     color: var(--secondary-color);
 }
 
+a {
+    color: var(--main-color);
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+a:hover {
+    color: var(--fourth-color);
+}
+
 .si__principal {
     background-color: var(--third-color);
     color: var(--secondary-color);

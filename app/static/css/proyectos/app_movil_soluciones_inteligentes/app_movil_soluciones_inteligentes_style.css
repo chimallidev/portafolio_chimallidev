@@ -3,6 +3,16 @@
     color: var(--secondary-color);
 }
 
+a {
+    color: var(--main-color);
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+a:hover {
+    color: var(--fourth-color);
+}
+
 .app-si__principal {
     margin: 50px 40px 40px 40px;
 }
