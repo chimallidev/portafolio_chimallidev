@@ -1,0 +1,6 @@
+.venv_portafolio
+__pycache__/*
+*.pyc
+.git
+.gitignore
+.env
