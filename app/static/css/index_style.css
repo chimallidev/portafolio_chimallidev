@@ -24,7 +24,7 @@
     perspective: 700px;
     display: flex;
     flex-wrap: nowrap;
-    font-size: min(6vw, 40px);
+    font-size: min(7vw, 40px);
     
 }
 
@@ -37,49 +37,52 @@
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
-
-.index__h1 > span:nth-child(2) {
-    animation-delay: .3s;
-}
-
-.index__h1 > span:nth-child(3) {
-    animation-delay: .6s;
-}
-
-.index__h1 > span:nth-child(4) {
-    animation-delay: .9s;
-}
-
-.index__h1 > span:nth-child(5) {
-    animation-delay: 1.2s;
-}
-
-.index__h1 > span:nth-child(6) {
-    animation-delay: 1.5s;
-}
-
-.index__h1 > span:nth-child(7) {
-    animation-delay: 1.8s;
-}
-
-.index__h1 > span:nth-child(8) {
-    animation-delay: 2.1s;
-}
-
-.index__h1 > span:nth-child(9) {
-    animation-delay: 2.4s;
-}
-
-.index__h1 > span:nth-child(10) {
-    animation-delay: 2.7s;
-}
-
-.index__h1 > span:nth-child(11) {
+.index__h1 > span:nth-child(1) {
     animation-delay: 3s;
 }
 
+.index__h1 > span:nth-child(2) {
+    animation-delay: 3.3s;
+}
+
+.index__h1 > span:nth-child(3) {
+    animation-delay: 3.6s;
+}
+
+.index__h1 > span:nth-child(4) {
+    animation-delay: 3.9s;
+}
+
+.index__h1 > span:nth-child(5) {
+    animation-delay: 4.2s;
+}
+
+.index__h1 > span:nth-child(6) {
+    animation-delay: 4.5s;
+}
+
+.index__h1 > span:nth-child(7) {
+    animation-delay: 4.8s;
+}
+
+.index__h1 > span:nth-child(8) {
+    animation-delay: 5.1s;
+}
+
+.index__h1 > span:nth-child(9) {
+    animation-delay: 5.4s;
+}
+
+.index__h1 > span:nth-child(10) {
+    animation-delay: 5.7s;
+}
+
+.index__h1 > span:nth-child(11) {
+    animation-delay: 6s;
+}
+
 .index__h2 {
-    font-size: min(6vw, 40px);
+    font-size: min(6.5vw, 40px);
     font-family: var(--font-title);
     color: var(--main-color);
 }
@@ -95,12 +98,14 @@ p {
 
 .index__h1 ~ .index__h2 {
     font-family: var(--font-base);
+    font-size: min(7vw, 40px);
     color: var(--secondary-color);
     margin-top: -10px;
-    width: 12ch;
+    width: 0ch;
     text-wrap: nowrap;
     overflow: hidden;
     animation: typing 15s steps(12) infinite alternate-reverse;
+    animation-delay: 2.7s;
 }
 
 .index__h1 ~ .index__h2 ~ p {
