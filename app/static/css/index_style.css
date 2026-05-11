@@ -314,7 +314,7 @@ p {
     background-color: var(--secondary-color);
     border-radius: 50%;
 
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 .index__redes-sociales a img {
     height: 24px;
