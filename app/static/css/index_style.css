@@ -103,7 +103,7 @@ p {
     color: var(--secondary-color);
     margin-top: -10px;
     width: 0ch;
-    text-wrap: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     animation: typing 15s steps(12) infinite alternate-reverse;
     animation-delay: 1.7s;
