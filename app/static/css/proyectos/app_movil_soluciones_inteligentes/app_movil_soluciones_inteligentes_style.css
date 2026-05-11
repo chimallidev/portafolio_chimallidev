@@ -51,7 +51,7 @@ a:hover {
 
 .app-si__h1 {
     font-family: var(--font-title);
-    font-size: 38px;
+    font-size: min(7vw, 38px);
     font-weight: 700;
     text-align: center;
     line-height: 1.5;
@@ -59,7 +59,7 @@ a:hover {
 
 .app-si__h2 {
     font-family: var(--font-title);
-    font-size: 34px;
+    font-size: min(6vw, 34px);
     font-weight: 700;
     line-height: 1.5;
     margin-bottom: 40px;
