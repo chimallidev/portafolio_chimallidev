@@ -187,6 +187,14 @@ p {
     .index__email-btn--contactar:hover::before {
         box-shadow: 0 0 0 2px #79d1d4, 0 0.5em 0 0 #048f94;
     }
+
+    .index__redes-sociales a:hover {
+        transform: scale(1.1);
+        box-shadow:
+        0 0 8px rgba(3, 152, 158, 0.8),   /* luz cercana */
+        0 0 16px rgba(3, 152, 158, 0.6),  /* expansión */
+        0 0 24px rgba(3, 152, 158, 0.4);  /* halo exterior */
+}
 }
 
 .index__email-btn,
@@ -310,14 +318,6 @@ p {
 }
 .index__redes-sociales a img {
     height: 24px;
-}
-
-.index__redes-sociales a:hover {
-    transform: scale(1.1);
-    box-shadow:
-    0 0 8px rgba(3, 152, 158, 0.8),   /* luz cercana */
-    0 0 16px rgba(3, 152, 158, 0.6),  /* expansión */
-    0 0 24px rgba(3, 152, 158, 0.4);  /* halo exterior */
 }
 
 .index__h2 + p {
