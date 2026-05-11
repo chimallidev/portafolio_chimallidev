@@ -97,6 +97,7 @@ p {
 }
 
 .index__h1 ~ .index__h2 {
+    display: inline-block;
     font-family: var(--font-base);
     font-size: min(7vw, 40px);
     color: var(--secondary-color);
