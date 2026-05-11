@@ -332,6 +332,7 @@ p {
 
 .index__section-class {
     display: flex;
+    flex-wrap: wrap;
     justify-content: left;
     gap: 25px;
     margin-bottom: 10px;
