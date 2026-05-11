@@ -151,7 +151,7 @@ p {
     color: var(--third-color);
     user-select: all;
     cursor: text;
-    letter-spacing: 1;
+    letter-spacing: 1px;
 }
 
 .index__email-box-actions,
