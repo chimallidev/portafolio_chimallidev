@@ -33,6 +33,7 @@
     color: var(--main-color);
     display: inline-block;
     animation: flip 15s infinite linear;
+    will-change: transform;
     transform-origin: 0.70%;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
