@@ -160,7 +160,34 @@ p {
     gap: 10px;
 }
 
+@media (hover: hover) and (pointer: fine) {
 
+    .index__email-btn:hover,
+    .index__ver-cv:hover,
+    .index__descargar-cv:hover,
+    .index__wattsapp-btn:hover {
+        background: #747474;
+        transform: translate(0, 0.25em);
+    }
+
+    .index__email-btn:hover::before,
+    .index__ver-cv:hover::before,
+    .index__descargar-cv:hover::before,
+    .index__wattsapp-btn:hover::before {
+        box-shadow: 0 0 0 2px #dbdbdb, 0 0.5em 0 0 #afaeae;
+        transform: translate3d(0, 0.5em, -1em);
+    }
+
+    .index__email-btn--send:hover,
+    .index__email-btn--contactar:hover {
+        background: #037377;
+    }
+
+    .index__email-btn--send:hover::before,
+    .index__email-btn--contactar:hover::before {
+        box-shadow: 0 0 0 2px #79d1d4, 0 0.5em 0 0 #048f94;
+    }
+}
 
 .index__email-btn,
 .index__ver-cv,
@@ -208,25 +235,6 @@ p {
     transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
 }
 
-.index__email-btn:hover,
-.index__ver-cv:hover,
-.index__descargar-cv:hover,
-.index__wattsapp-btn:hover {
-    background: #747474;
-    -webkit-transform: translate(0, 0.25em);
-    transform: translate(0, 0.25em);
-}
-
-.index__email-btn:hover::before,
-.index__ver-cv:hover::before,
-.index__descargar-cv:hover::before,
-.index__wattsapp-btn:hover::before {
-    -webkit-box-shadow: 0 0 0 2px #dbdbdb, 0 0.5em 0 0 #afaeae;
-    box-shadow: 0 0 0 2px #dbdbdb, 0 0.5em 0 0 #afaeae;
-    -webkit-transform: translate3d(0, 0.5em, -1em);
-    transform: translate3d(0, 0.5em, -1em);
-}
-
 .index__email-btn:active,
 .index__ver-cv:active,
 .index__descargar-cv:active,
@@ -257,17 +265,6 @@ p {
     -webkit-box-shadow: 0 0 0 2px #04a3a8, 0 0.625em 0 0 #03d9e0;
     box-shadow: 0 0 0 2px #04a3a8, 0 0.625em 0 0 #03d9e0;
 
-}
-
-.index__email-btn--send:hover,
-.index__email-btn--contactar:hover {
-    background: #037377;
-}
-
-.index__email-btn--send:hover::before,
-.index__email-btn--contactar:hover::before {
-    -webkit-box-shadow: 0 0 0 2px #79d1d4, 0 0.5em 0 0 #048f94;
-    box-shadow: 0 0 0 2px #79d1d4, 0 0.5em 0 0 #048f94;
 }
 
 .index__email-btn--send:active,
