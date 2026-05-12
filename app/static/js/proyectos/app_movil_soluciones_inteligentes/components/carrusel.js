@@ -17,6 +17,10 @@ class Carrusel{
         this.isDragging = false
         this.hasDragged = false
 
+        this.startY = 0
+        this.currentY = 0
+        this.isHorizontalDrag = false
+
         this.init()
     }
 
@@ -30,12 +34,26 @@ class Carrusel{
             this.startContinuousMove(1)
         })
 
-        this.track.addEventListener("touchstart", (e)=> this.onStart(e.touches[0].clientX))
-        this.track.addEventListener("touchmove", (e)=> this.onMove(e.touches[0].clientX))
+        this.track.addEventListener("touchstart", (e)=> {
+            this.onStart(
+                e.touches[0].clientX,
+                e.touches[0].clientY
+            )
+        }, { passive: true })
+        this.track.addEventListener("touchmove", (e)=> {
+            this.onMove(
+                e,
+                e.touches[0].clientX,
+                e.touches[0].clientY
+            )
+        }, { passive: false })
+
         this.track.addEventListener("touchend", ()=> this.onEnd())
 
         this.track.addEventListener("mousedown", (e)=> this.onStart(e.clientX))
-        window.addEventListener("mousemove", (e)=> this.onMove(e.clientX))
+        window.addEventListener("mousemove", (e)=> {
+            this.onMove(e, e.clientX, 0)
+        })
         window.addEventListener("mouseup", ()=> {
             this.onEnd()
             this.stopContinuousMove()
@@ -88,20 +106,39 @@ class Carrusel{
         this.track.style.transform = `translateX(${translate}px)`
     }
 
-    onStart(x){
+    onStart(x, y){
         this.isDragging = true
         this.startX = x
         this.currentX = x
         this.root.classList.add("carrusel--dragging")
 
+        this.startY = y
+        this.currentY = y
+        this.isHorizontalDrag = false
+
         document.body.style.userSelect = "none";
     }
 
-    onMove(x){
+    onMove(e, x, y){
         if(!this.isDragging) return
 
         this.currentX = x
+        this.currentY = y
+
         const delta = this.currentX - this.startX
+        const deltaY = this.currentY - this.startY
+
+        // Detectar dirección dominante
+        if(!this.isHorizontalDrag){
+            if(Math.abs(deltaX) > Math.abs(deltaY)){
+                this.isHorizontalDrag = true
+            } else {
+                return
+            }
+        }
+
+        // Bloquear scroll vertical del navegador
+        e.preventDefault()
 
         // Movimiento real
         if(Math.abs(delta) > 5){
