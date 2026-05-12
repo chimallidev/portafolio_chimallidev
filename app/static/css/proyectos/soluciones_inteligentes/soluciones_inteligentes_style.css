@@ -17,6 +17,10 @@ a {
     a:hover {
     color: var(--fourth-color);
     }
+
+    .si__video-thumb:hover .si__video-play {
+    opacity: 0.7;
+    }
 }
 
 a:active {
@@ -170,11 +174,6 @@ a:active {
     color: var(--secondary-color);
     background: rgba(0,0,0,0.3);
     transition: opacity 0.4s;
-}
-
-.si__video-thumb:hover .si__video-play {
-    opacity: 0.7;
-    
 }
 
 .modal__content {
