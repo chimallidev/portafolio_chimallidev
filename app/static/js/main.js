@@ -19,4 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
             resetNavbarScroll()
         })
     })
+
+    window.addEventListener("wheel", () => {
+        navigation.unlockNavbar()
+    })
+
+    window.addEventListener("touchstart", () => {
+        navigation.unlockNavbar()
+    })
 })
