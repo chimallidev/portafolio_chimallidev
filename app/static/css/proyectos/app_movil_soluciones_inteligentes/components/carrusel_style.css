@@ -47,16 +47,21 @@
 }
 
 .carrusel__btn {
+    height: 50px;
+    width: 50px;
     position: absolute;
     top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: translateY(-50%);
+    font-family: Arial;
     font-size: 25px;
     z-index: 3;
     backdrop-filter: blur(2px);
     background: oklch(0.5485 0.219959 6.516 / 33%);
     color: var(--secondary-color);
     border: none;
-    padding: 10px;
     cursor: pointer;
     border: 3px solid oklch(0.5485 0.219959 6.516 / 33%);
     box-shadow: inset 0 0 0 2px var(--secondary-color);
