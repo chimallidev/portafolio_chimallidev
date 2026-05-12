@@ -159,6 +159,23 @@
     100% { transform: translateY(0); }
 }
 
+@media (max-width: 900px) {
+
+    .slider-vertical__row {
+        height: auto;
+        width: 100%;
+        min-width: 0;
+        align-self: center;
+    }
+
+    .slider-vertical__viewport {
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+}
+
 @media (max-width: 768px) {
 
     .slider-vertical {
