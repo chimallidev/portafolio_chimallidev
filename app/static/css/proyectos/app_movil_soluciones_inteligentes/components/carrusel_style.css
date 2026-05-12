@@ -68,9 +68,11 @@
     transition: background .3s ease, border .3s ease, scale .1s linear;
 }
 
-.carrusel__btn:hover {
+@media (hover: hover) and (pointer: fine) {
+    .carrusel__btn:hover {
     background: var(--main-color);
     border: 3px solid var(--main-color);
+    }
 }
 
 .carrusel__btn:active {
