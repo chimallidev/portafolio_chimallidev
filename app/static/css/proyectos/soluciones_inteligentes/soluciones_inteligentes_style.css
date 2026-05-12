@@ -40,7 +40,7 @@ a:active {
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
-    height: 980px;
+    height: auto;
     padding: 20px 40px 40px 40px;
 }
 
@@ -48,7 +48,7 @@ a:active {
     flex: 0 0 50%;
     overflow-y: auto;
     min-height: 0;
-    height: 100%;
+    height: 150vh;
 }
 
 .si__img-wrapper img {
@@ -204,6 +204,10 @@ a:active {
     .si__img-wrapper,
     .si__article {
         flex: 0 0 100%;
+    }
+
+    .si__img-wrapper {
+        height: auto;
     }
 
     .si__article {
