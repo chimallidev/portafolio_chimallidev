@@ -74,13 +74,17 @@
     right: 40%;
 }
 
-.arrow:hover {
+@media (hover: hover) and (pointer: fine) {
+    .arrow:hover {
     background: oklch(0.6179 0.1046 199.77 / 45%);
     border: 2px solid var(--fourth-color);
+    }
 }
 
 .arrow:active {
     scale: .9;
+    background: oklch(0.6179 0.1046 199.77 / 45%);
+    border: 2px solid var(--fourth-color);
 }
 
 .dots {
