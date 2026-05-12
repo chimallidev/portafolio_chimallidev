@@ -80,9 +80,11 @@
     transition: background .3s ease, border .3s ease, scale .1s linear;
 }
 
-.slider-vertical__btn:hover {
-    background: var(--main-color);
-    border: 3px solid var(--main-color);
+@media (hover: hover) and (pointer: fine){
+    .slider-vertical__btn:hover {
+        background: var(--main-color);
+        border: 3px solid var(--main-color);
+    }
 }
 
 .slider-vertical__btn:active {
