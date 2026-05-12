@@ -13,7 +13,13 @@ a {
     transition: all .2s ease-in-out;
 }
 
-a:hover {
+@media (hover: hover) and (pointer: fine) {
+    a:hover {
+    color: var(--fourth-color);
+    }
+}
+
+a:active {
     color: var(--fourth-color);
 }
 
