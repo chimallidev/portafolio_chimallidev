@@ -10,6 +10,7 @@
 .slides {
     display: flex;
     transition: transform .6s ease-in-out;
+    touch-action: pan-y;
 }
 
 .slide {
@@ -72,6 +73,13 @@
 .arrow.right::before {
     transform: rotate(45deg);
     right: 40%;
+}
+
+.slider,
+.slides,
+.slide {
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: auto;
 }
 
 @media (hover: hover) and (pointer: fine) {

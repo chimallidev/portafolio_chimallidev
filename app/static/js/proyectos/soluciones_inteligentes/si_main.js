@@ -52,19 +52,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Swipe
     let startX = 0;
+    let startY = 0;
+    let isSwiping = false;
 
-    slidesE1.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-    });
+    slidesE1.addEventListener(
+      "touchstart",
+      (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isSwiping = false;
+      },
+      { passive: true }
+    );
 
-    slidesE1.addEventListener("touchend", (e) => {
-      const diff = startX - e.changedTouches[0].clientX;
+    slidesE1.addEventListener(
+      "touchmove",
+      (e) => {
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
 
-      if (diff > 50) slider.next();
-      if (diff < -50) slider.prev();
-    });
+        const diffX = currentX - startX;
+        const diffY = currentY - startY;
+
+        // swipe horizontal dominante
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+          isSwiping = true;
+
+          // bloquear scroll global
+          e.preventDefault();
+        }
+      },
+      { passive: false }
+    );
+
+    slidesE1.addEventListener(
+      "touchend",
+      (e) => {
+        if (!isSwiping) return;
+
+        const diff = startX - e.changedTouches[0].clientX;
+
+        if (diff > 50) slider.next();
+        if (diff < -50) slider.prev();
+      },
+      { passive: true }
+    );
   });
-
   //Modal
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modalImg");
