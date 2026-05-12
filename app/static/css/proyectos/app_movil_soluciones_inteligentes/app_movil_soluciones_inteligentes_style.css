@@ -130,7 +130,7 @@ a:hover {
 
 @media (max-width: 768px) {
     .app-si__principal-contenedor {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         gap: 40px;
         grid-template-areas: 
@@ -139,6 +139,7 @@ a:hover {
     }
 
     .app-si__imgs-wrapper {
+        grid-area: imagenes;
         position: relative;
         top: auto;
     }
