@@ -421,7 +421,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const videoId = thumb.dataset.videoId;
 
       videoModal.classList.add("active");
-      modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      modalVideo.src =
+        `https://www.youtube-nocookie.com/embed/${videoId}` +
+        `?autoplay=1` +
+        `&playsinline=1` +
+        `&rel=0` +
+        `&modestbranding=1` +
+        `&fs=1`;
     });
   });
 
