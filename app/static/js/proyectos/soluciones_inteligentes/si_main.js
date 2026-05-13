@@ -6,6 +6,16 @@ import { Slider } from "./slider.js";
 document.addEventListener("DOMContentLoaded", () => {
   const navigation = initNavigation();
 
+  const navbar = document.getElementById("navbar");
+
+  function hideNavbar() {
+    navbar.classList.add("hidden-scroll");
+  }
+
+  function showNavbar() {
+    navbar.classList.remove("hidden-scroll");
+  }
+
   initMenu();
   initNavbar(navigation);
 
@@ -53,14 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // Swipe
     let startX = 0;
     let startY = 0;
+
     let isSwiping = false;
+    let isScrolling = false;
 
     slidesE1.addEventListener(
       "touchstart",
       (e) => {
+
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
+
         isSwiping = false;
+        isScrolling = false;
       },
       { passive: true }
     );
@@ -68,17 +83,37 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesE1.addEventListener(
       "touchmove",
       (e) => {
+
         const currentX = e.touches[0].clientX;
         const currentY = e.touches[0].clientY;
 
         const diffX = currentX - startX;
         const diffY = currentY - startY;
 
-        // swipe horizontal dominante
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-          isSwiping = true;
+        const absX = Math.abs(diffX);
+        const absY = Math.abs(diffY);
 
-          // bloquear scroll global
+        const threshold = 12;
+
+        // aún no decidimos dirección
+        if (!isSwiping && !isScrolling) {
+
+          if (absX < threshold && absY < threshold) {
+            return;
+          }
+
+          // vertical
+          if (absY > absX) {
+            isScrolling = true;
+            return;
+          }
+
+          // horizontal
+          isSwiping = true;
+        }
+
+        // SOLO horizontal
+        if (isSwiping) {
           e.preventDefault();
         }
       },
@@ -88,12 +123,18 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesE1.addEventListener(
       "touchend",
       (e) => {
+
         if (!isSwiping) return;
 
         const diff = startX - e.changedTouches[0].clientX;
 
-        if (diff > 50) slider.next();
-        if (diff < -50) slider.prev();
+        if (diff > 50) {
+          slider.next();
+        }
+
+        if (diff < -50) {
+          slider.prev();
+        }
       },
       { passive: true }
     );
@@ -109,8 +150,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let isDragging = false;
   let modalStartX = 0;
   let modalStartY = 0;
+  let lastTouchDistance = 0;
+  let initialPinchDistance = 0;
+  let initialScale = 1;
 
-  //Calcular estado inicial (fit al viewport)
+  //Calcular estado inicial
   function getInitialScale(img) {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
@@ -118,17 +162,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const imgWidth = img.naturalWidth;
     const imgHeight = img.naturalHeight;
 
-    const scaleX = vw / imgWidth;
-    const scaleY = vh / imgHeight;
+    // Imagen vertical
+    if (imgHeight > imgWidth) {
+      return (vh * 0.9) / imgHeight;
+    }
 
-    const fitScale = Math.min(scaleX, scaleY);
-
-    return Math.min(1, fitScale);
+    // Imagen horizontal
+    return (vw * 0.9) / imgWidth;
   }
 
   //Abrir modal
   document.querySelectorAll(".slide img").forEach((img) => {
     img.addEventListener("click", () => {
+      hideNavbar();
       modal.classList.add("active");
 
       // limpiar estado SIEMPRE
@@ -137,6 +183,9 @@ document.addEventListener("DOMContentLoaded", () => {
       modalImg.src = img.src;
 
       modalImg.onload = () => {
+        modalImg.style.width = `${modalImg.naturalWidth}px`;
+        modalImg.style.height = `${modalImg.naturalHeight}px`;
+
         scale = getInitialScale(modalImg);
         offsetX = 0;
         offsetY = 0;
@@ -145,6 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // fallback por si ya estaba en caché
       if (modalImg.complete) {
+        modalImg.style.width = `${modalImg.naturalWidth}px`;
+        modalImg.style.height = `${modalImg.naturalHeight}px`;
+
         scale = getInitialScale(modalImg);
         offsetX = 0;
         offsetY = 0;
@@ -157,6 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.classList.remove("active");
+      showNavbar();
       resetTransform();
     }
   });
@@ -165,6 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       modal.classList.remove("active");
+      showNavbar();
       resetTransform();
     }
   });
@@ -204,19 +258,21 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: false },
   );
 
-  //Drag
+  // =========================
+  // DRAG PC
+  // =========================
+
   modalImg.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse") return;
+
     isDragging = true;
-    modalImg.style.cursor = "grabbing";
-    modalImg.style.transition = "none";
-
-    e.preventDefault();
-
-    //captura el puntero, el elemento se queda con los eventos
-    modalImg.setPointerCapture(e.pointerId);
 
     modalStartX = e.clientX - offsetX;
     modalStartY = e.clientY - offsetY;
+
+    modalImg.setPointerCapture(e.pointerId);
+
+    e.preventDefault();
   });
 
   window.addEventListener("pointermove", (e) => {
@@ -228,21 +284,95 @@ document.addEventListener("DOMContentLoaded", () => {
     applyTransform();
   });
 
-  window.addEventListener("pointerup", (e) => {
+  window.addEventListener("pointerup", () => {
     isDragging = false;
-    modalImg.style.cursor = "grab";
-    modalImg.style.transition = "transform 0.1s ease-out";
-
-    try {
-      modalImg.releasePointerCapture(e.pointerId);
-    } catch { }
   });
 
-  //Cuando el navegador cancela el drag por algun evento adicional (notificaciones, etc)
-  modalImg.addEventListener("pointercancel", () => {
-    isDragging = false;
-    modalImg.style.cursor = "grab";
-    modalImg.style.transition = "transform 0.1s ease-out";
+  // =========================
+  // TOUCH PINCH + DRAG
+  // =========================
+
+
+  function getTouchDistance(touches) {
+    const dx = touches[0].clientX - touches[1].clientX;
+    const dy = touches[0].clientY - touches[1].clientY;
+
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  modalImg.addEventListener(
+    "touchstart",
+    (e) => {
+
+      // DRAG
+      if (e.touches.length === 1) {
+        isDragging = true;
+
+        modalStartX = e.touches[0].clientX - offsetX;
+        modalStartY = e.touches[0].clientY - offsetY;
+      }
+
+      // PINCH INIT
+      if (e.touches.length === 2) {
+        isDragging = false;
+
+        initialPinchDistance = getTouchDistance(e.touches);
+
+        initialScale = scale;
+      }
+    },
+    { passive: false }
+  );
+
+  modalImg.addEventListener(
+    "touchmove",
+    (e) => {
+      e.preventDefault();
+
+      // =====================
+      // DRAG
+      // =====================
+
+      if (e.touches.length === 1 && isDragging) {
+
+        offsetX = e.touches[0].clientX - modalStartX;
+        offsetY = e.touches[0].clientY - modalStartY;
+
+        applyTransform();
+      }
+
+      // =====================
+      // PINCH
+      // =====================
+
+      if (e.touches.length === 2) {
+
+        const currentDistance = getTouchDistance(e.touches);
+
+        const zoomFactor = currentDistance / initialPinchDistance;
+
+        scale = initialScale * zoomFactor;
+
+        const minScale = getInitialScale(modalImg);
+
+        scale = Math.min(Math.max(minScale, scale), 5);
+
+        applyTransform();
+      }
+    },
+    { passive: false }
+  );
+
+  modalImg.addEventListener("touchend", (e) => {
+
+    if (e.touches.length === 0) {
+      isDragging = false;
+    }
+
+    // si ya no hay 2 dedos
+    if (e.touches.length < 2) {
+      initialPinchDistance = 0;
+    }
   });
 
   //Doble click -> Zoom rápido
@@ -285,6 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Abrir modal
   document.querySelectorAll(".si__video-thumb").forEach((thumb) => {
     thumb.addEventListener("click", (e) => {
+      hideNavbar();
       e.stopPropagation();
 
       const videoId = thumb.dataset.videoId;
@@ -298,7 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
   videoModal.addEventListener("click", (e) => {
     if (e.target === videoModal) {
       videoModal.classList.remove("active");
-
+      showNavbar();
       //esto detiene el video
       modalVideo.src = "";
     }
@@ -308,6 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       videoModal.classList.remove("active");
+      showNavbar();
       modalVideo.src = "";
     }
   });
