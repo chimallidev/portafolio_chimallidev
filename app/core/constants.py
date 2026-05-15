@@ -9,7 +9,7 @@ OG = {
     "descripcion" : "Soy desarrollador web Full Stack especializado en Python, junto con FastAPI y Jinja2 creo sitios web funcionales.",
     "image" : "https://portafolio-chimallidev.onrender.com/static/img/og_chimallidev_portafolio.png",
     "width" : 1200,
-    "height" : 600,
+    "height" : 630,
     "url" : "https://portafolio-chimallidev.onrender.com/",
     "name" : "Chimallidev",
     "locale" : "es_MX"
