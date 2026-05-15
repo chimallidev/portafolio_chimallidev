@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request, HTTPException, status
 from fastapi.responses import HTMLResponse
 from app.core.templates import templates
-from app.core.constants import META, REDES, SKILLS, BANNERS, CARDS, SITIO_BANNERS, PAGE_GITHUB_LINKS
+from app.core.constants import META, REDES, SKILLS, BANNERS, CARDS, SITIO_BANNERS, PAGE_GITHUB_LINKS, OG
 
 router = APIRouter()
 
@@ -10,6 +10,7 @@ router = APIRouter()
 async def home(request: Request):
     context = {
         "meta": META,
+        "og": OG,
         "redes" : REDES,
         "skills": SKILLS,
         "banners": BANNERS,

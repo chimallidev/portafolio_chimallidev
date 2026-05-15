@@ -1,6 +1,18 @@
 META = {
     "titulo" : "Chimallidev",
-    "descripcion" : "Erick Roman | Chimallidev. Desarrollador full stack especializado en Python, con experiencia en FastAPI y Jinja2 para construir soluciones web modernas y escalables."
+    "descripcion" : "Soy Desarrollador Web Full Stack especializado en 🐍 Python, junto con FastAPI y Jinja2 creo sitios web funcionales, eficientes y centrados en la experiencia del usuario."
+}
+
+#Open Graph
+OG = {
+    "titulo" : "Chimallidev | Portafolio",
+    "descripcion" : "Soy desarrollador web Full Stack especializado en Python, junto con FastAPI y Jinja2 creo sitios web funcionales",
+    "image" : "https://portafolio-chimallidev.onrender.com/static/img/og_chimallidev_portafolio.png",
+    "width" : 1200,
+    "height" : 600,
+    "url" : "https://portafolio-chimallidev.onrender.com/",
+    "name" : "Chimallidev",
+    "locale" : "es_MX"
 }
 
 #Redes sociales
