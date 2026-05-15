@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request, HTTPException, status
 from fastapi.responses import HTMLResponse
 from app.core.templates import templates
-from app.proyectos.app_movil_soluciones_inteligentes.core.constants import APP_MOVIL_SOLUCIONES_INTELIGENTES_META, VERTICAL_SLIDER1_CONTENT, CARRUSEL_CONTENT
+from app.proyectos.app_movil_soluciones_inteligentes.core.constants import APP_MOVIL_SOLUCIONES_INTELIGENTES_META, VERTICAL_SLIDER1_CONTENT, CARRUSEL_CONTENT, OG_APP_SI
 
 router = APIRouter()
 
@@ -9,6 +9,7 @@ router = APIRouter()
 async def app_movil_soluciones_inteligentes(request: Request):
     context = {
         "meta_app_movil_soluciones_inteligentes" : APP_MOVIL_SOLUCIONES_INTELIGENTES_META,
+        "og": OG_APP_SI,
         "vertical_slider1_content" : VERTICAL_SLIDER1_CONTENT,
         "carrusel_content": CARRUSEL_CONTENT
     }

@@ -4,6 +4,18 @@ APP_MOVIL_SOLUCIONES_INTELIGENTES_META = {
     "descripcion": "Aplicación móvil de Soluciones Inteligentes desarrollada con Kotlin y Android Studio que centraliza contenido de fitness, alimentación y salud, con herramientas para mejorar el entrenamiento y hábitos saludables."
 }
 
+#Open Graph
+OG_APP_SI = {
+    "titulo" : "App Móvil Soluciones Inteligentes",
+    "descripcion" : "Aplicación móvil de Soluciones Inteligentes desarrollada con Kotlin y Android Studio que centraliza contenido de fitness, alimentación y salud, con herramientas para mejorar el entrenamiento y hábitos saludables.",
+    "image" : "https://portafolio-chimallidev.onrender.com/static/img/proyectos/soluciones_inteligentes/og_soluciones_inteligentes.png",
+    "width" : 1200,
+    "height" : 630,
+    "url" : "https://portafolio-chimallidev.onrender.com/portafolio/app-movil-soluciones-inteligentes",
+    "name" : "Soluciones Inteligentes",
+    "locale" : "es_MX"
+}
+
 #Sliders content
 VERTICAL_SLIDER1_CONTENT = {
     "images": [

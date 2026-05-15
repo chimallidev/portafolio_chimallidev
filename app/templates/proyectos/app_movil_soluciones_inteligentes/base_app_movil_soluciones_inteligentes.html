@@ -9,6 +9,26 @@
     <title>{{(meta_app_movil_soluciones_inteligentes | default({})).get("titulo", "...")}}</title>
     <meta name="description" content="{{(meta_app_movil_soluciones_inteligentes | default({})).get("descripcion", "...")}}">
 
+    {# Open Graph #}
+    <meta property="og:title" content="{{(og | default({})).get("titulo", "___")}}">
+    <meta property="og:description" content="{{(og | default({})).get("descripcion", "___")}}">
+    <meta property="og:image" content="{{(og | default({})).get("image", "___")}}">
+    <meta property="og:image:width" content="{{(og | default({})).get("width", "___")}}">
+    <meta property="og:image:height" content="{{(og | default({})).get("height", "___")}}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:url" content="{{(og | default({})).get("url", "___")}}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{(og | default({})).get("name", "___")}}">
+    <meta property="og:locale" content="{{(og | default({})).get("locale", "___")}}">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="{{(og | default({})).get("titulo", "___")}}">
+
+    <meta name="twitter:description" content="{{(og | default({})).get("descripcion", "___")}}">
+
+    <meta name="twitter:image" content="{{(og | default({})).get("image", "___")}}">
+
     {# Favicon #}
     <link rel="icon" href="{{url_for('static', path='img/proyectos/app_movil_soluciones_inteligentes/icons/soluciones_inteligentes.ico')}}"
     type="image/x-icon">
