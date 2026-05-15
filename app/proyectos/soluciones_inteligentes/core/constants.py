@@ -4,6 +4,18 @@ SOLUCIONES_INTELIGENTES_META = {
     "descripcion" : "Soluciones Inteligentes ofrece artículos científicos sobre fitness, nutrición y salud mental, ayudándote a mejorar tu estilo de vida con información confiable y hábitos saludables."
 }
 
+#Open Graph
+OG_SI = {
+    "titulo" : "Soluciones Inteligentes",
+    "descripcion" : "Soluciones Inteligentes ofrece artículos científicos sobre fitness, nutrición y salud mental, ayudándote a mejorar tu estilo de vida con información confiable y hábitos saludables.",
+    "image" : "https://portafolio-chimallidev.onrender.com/static/img/proyectos/soluciones_inteligentes/og_soluciones_inteligentes.png",
+    "width" : 1200,
+    "height" : 630,
+    "url" : "https://portafolio-chimallidev.onrender.com/portafolio/soluciones_inteligentes",
+    "name" : "Soluciones Inteligentes",
+    "locale" : "es_MX"
+}
+
 #Slider
 SLIDER_IMAGES = [
     {"url": "/static/img/proyectos/soluciones_inteligentes/home_ponte_en_forma_soluciones_inteligentes.webp"},
