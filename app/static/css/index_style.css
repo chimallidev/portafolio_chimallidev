@@ -302,6 +302,7 @@ p {
 
 .index__redes-sociales {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 25px;
     gap: 10px;
 }
