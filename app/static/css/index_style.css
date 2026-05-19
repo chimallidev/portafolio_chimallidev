@@ -315,10 +315,12 @@ p {
 
     background-color: var(--secondary-color);
     border-radius: 50%;
+    color: var(--main-color);
 
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
-.index__redes-sociales a img {
+.index__redes-sociales a img,
+.index__redes-sociales a svg {
     height: 24px;
 }
 

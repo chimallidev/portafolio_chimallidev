@@ -1,189 +1,343 @@
-{% extends 'base.html' %}
-{% from 'components/skill.html' import skill %}
-{% from 'components/card_item.html' import card_item %}
-{% from 'components/banner_item.html' import banner_item %}
-{% from 'components/link_item.html' import link_item %}
+{% extends 'base.html' %} {% from 'components/skill.html' import skill %} 
+{% from 'components/card_item.html' import card_item %} 
+{% from 'components/banner_item.html' import banner_item %} 
+{% from 'components/link_item.html' import link_item %} 
+{% include 'components/svg-sprite.html' %}
 
 {% block components_style %}
-<link rel="stylesheet" href="{{url_for('static', path='css/index_style.css')}}">
-<link rel="stylesheet" href="{{url_for('static', path='css/components/skill_style.css')}}">
-<link rel="stylesheet" href="{{url_for('static', path='css/components/link_item_style.css')}}">
-<link rel="stylesheet" href="{{url_for('static', path='css/components/banner_item_style.css')}}">
-<link rel="stylesheet" href="{{url_for('static', path='css/components/card_item_style.css')}}">
-{% endblock %}
 
-{% block content %}
+<link
+  rel="stylesheet"
+  href="{{url_for('static', path='css/index_style.css')}}"
+/>
+<link
+  rel="stylesheet"
+  href="{{url_for('static', path='css/components/skill_style.css')}}"
+/>
+<link
+  rel="stylesheet"
+  href="{{url_for('static', path='css/components/link_item_style.css')}}"
+/>
+<link
+  rel="stylesheet"
+  href="{{url_for('static', path='css/components/banner_item_style.css')}}"
+/>
+<link
+  rel="stylesheet"
+  href="{{url_for('static', path='css/components/card_item_style.css')}}"
+/>
+{% endblock %} {% block content %}
 <section class="index__portafolio-section" id="chimallidev">
-    <h1 class="index__h1">
-        <span>C</span>
-        <span>h</span>
-        <span>i</span>
-        <span>m</span>
-        <span>a</span>
-        <span>l</span>
-        <span>l</span>
-        <span>i</span>
-        <span>d</span>
-        <span>e</span>
-        <span>v</span>
-    </h1>
-    <h2 class="index__h2">Erick Roman</h2>
-    <p>Bienvenidx a mi portafolio. Soy desarrollador full stack y creo experiencias digitales funcionales, rápidas y atractivas.</p>
-    <section class="index__email-box">
-        <h3 class="index__h3">Si quieres ponerte en contacto conmigo escribeme a:</h3>
-        <div class="index__email-box-e">
-            <div class="index__email-outline">
-                <div class="index__email-box-inner">
-                    <span class="index__email-box-text">
-                        chimalli.dev@gmail.com
-                    </span>
-                </div>
-            </div>
-            <div class="index__email-box-actions">
-                <button class="index__email-btn index__email-btn--copy copyBtn" data-copy="chimalli.dev@gmail.com">Copiar</button>
-                <a href="mailto:chimallidev.dev@gmail.com" class="index__email-btn index__email-btn--send">Contactar</a>
-            </div>
+  <h1 class="index__h1">
+    <span>C</span>
+    <span>h</span>
+    <span>i</span>
+    <span>m</span>
+    <span>a</span>
+    <span>l</span>
+    <span>l</span>
+    <span>i</span>
+    <span>d</span>
+    <span>e</span>
+    <span>v</span>
+  </h1>
+  <h2 class="index__h2">Erick Roman</h2>
+  <p>
+    Bienvenidx a mi portafolio. Soy desarrollador full stack y creo experiencias
+    digitales funcionales, rápidas y atractivas.
+  </p>
+  <section class="index__email-box">
+    <h3 class="index__h3">
+      Si quieres ponerte en contacto conmigo escribeme a:
+    </h3>
+    <div class="index__email-box-e">
+      <div class="index__email-outline">
+        <div class="index__email-box-inner">
+          <span class="index__email-box-text"> chimalli.dev@gmail.com </span>
         </div>
-    </section>
-    <section class="index__cv">
-        <h3 class="index__h3">Puedes consultar mi CV:</h3>
-        <div class="index__btns-cv">
-            <a href="{{url_for('static', path='/documents/cv.pdf')}}" target="_blank" rel="noopener" class="index__ver-cv">Ver</a>
-            <a href="{{url_for('static', path='/documents/cv.pdf')}}" download="Erick_Roman_desarrollador_FullStack.pdf" class="index__descargar-cv">Descargar</a>
-        </div>
-    </section>
-    <section class="index__redes-sociales">
-        <a href="{{(redes | default({})).get('github', '#')}}" target="_blank" rel="noopener">
-            <img src="{{url_for('static', path='/img/icons/github.webp')}}" alt="enlace a github" title="github">
-        </a>
-        <a href="{{(redes | default({})).get('youtube', '#')}}" target="_blank" rel="noopener">
-            <img src="{{url_for('static', path='/img/icons/youtube.webp')}}" alt="enlace a youtube" title="youtube">
-        </a>
-        <a href="{{(redes | default({})).get('tik_tok', '#')}}" target="_blank" rel="noopener">
-            <img src="{{url_for('static', path='/img/icons/tik_tok.webp')}}" alt="enlace a tiktok" title="tiktok">
-        </a>
-        <a href="{{(redes | default({})).get('instagram', '#')}}" target="_blank" rel="noopener">
-            <img src="{{url_for('static', path='/img/icons/instagram.webp')}}" alt="enlace a instagram" title="instagram">
-        </a>
-    </section>
+      </div>
+      <div class="index__email-box-actions">
+        <button
+          class="index__email-btn index__email-btn--copy copyBtn"
+          data-copy="chimalli.dev@gmail.com"
+        >
+          Copiar
+        </button>
+        <a
+          href="mailto:chimallidev.dev@gmail.com"
+          class="index__email-btn index__email-btn--send"
+          >Contactar</a
+        >
+      </div>
+    </div>
+  </section>
+  <section class="index__cv">
+    <h3 class="index__h3">Puedes consultar mi CV:</h3>
+    <div class="index__btns-cv">
+      <a
+        href="{{url_for('static', path='/documents/cv.pdf')}}"
+        target="_blank"
+        rel="noopener"
+        class="index__ver-cv"
+        >Ver</a
+      >
+      <a
+        href="{{url_for('static', path='/documents/cv.pdf')}}"
+        download="Erick_Roman_desarrollador_FullStack.pdf"
+        class="index__descargar-cv"
+        >Descargar</a
+      >
+    </div>
+  </section>
+  <section class="index__redes-sociales">
+    <a
+        href="{{ (redes | default({})).get('linkedin', '#') }}"
+        target="_blank"
+        rel="noopener"
+        class="social-link"
+        aria-label="LinkedIn"
+    >
+        <svg
+            class="icon icon-linkedin"
+            aria-hidden="true"
+        >
+            <use href="#icon-linkedin"></use>
+        </svg>
+    </a>
+    <a
+      href="{{(redes | default({})).get('github', '#')}}"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        src="{{url_for('static', path='/img/icons/github.webp')}}"
+        alt="enlace a github"
+        title="github"
+      />
+    </a>
+    <a
+      href="{{(redes | default({})).get('youtube', '#')}}"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        src="{{url_for('static', path='/img/icons/youtube.webp')}}"
+        alt="enlace a youtube"
+        title="youtube"
+      />
+    </a>
+    <a
+      href="{{(redes | default({})).get('tik_tok', '#')}}"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        src="{{url_for('static', path='/img/icons/tik_tok.webp')}}"
+        alt="enlace a tiktok"
+        title="tiktok"
+      />
+    </a>
+    <a
+      href="{{(redes | default({})).get('instagram', '#')}}"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        src="{{url_for('static', path='/img/icons/instagram.webp')}}"
+        alt="enlace a instagram"
+        title="instagram"
+      />
+    </a>
+  </section>
 </section>
 <section class="index__portafolio-section" id="sobre_mi">
-    <h2 class="index__h2">SOBRE MÍ</h2>
-    <p>Desde mis inicios, mi interés por la tecnología y el conocimiento me llevó a crear un blog de cálculo en Blogspot, donde comencé a compartir ideas y desarrollar habilidades de comunicación.</p>
-    <p>Posteriormente, llevé ese interés más allá al crear y gestionar una página web de divulgación científica enfocada en el estilo de vida fitness. Utilizando herramientas como WordPress y Elementor con Hostinger, no solo desarrollé la página web, sino que también me encargué de su administración, mantenimiento y redacción de artículos durante más de cuatro años.</p>
-    <p>Como complemento a este ecosistema, diseñé y desarrollé una aplicación móvil en Kotlin que integraba el contenido de la página y ofrecía herramientas prácticas enfocadas en mejorar la experiencia del usuario en su camino para desarrollar y consevar un estilo de vida más saludable.</p>
-    <p>Actualmente, me especializo en el desarrollo de páginas web utilizando Python como lenguaje principal, creando soluciones funcionales, eficientes y centradas en el usuario. Además, comparto mis conocimientos y experiencias como programador a través de contenido en distintas plataformas digitales.</p>
-    <p>Mi objetivo es integrarme en proyectos profesionales donde pueda aportar mis habilidades y experiencia, enfrentar nuevos retos y continuar creciendo tanto a nivel profesional como personal e intelectual, construyendo una trayectoria sólida a mediano y largo plazo.</p>
+  <h2 class="index__h2">SOBRE MÍ</h2>
+  <p>
+    Desde mis inicios, mi interés por la tecnología y el conocimiento me llevó a
+    crear un blog de cálculo en Blogspot, donde comencé a compartir ideas y
+    desarrollar habilidades de comunicación.
+  </p>
+  <p>
+    Posteriormente, llevé ese interés más allá al crear y gestionar una página
+    web de divulgación científica enfocada en el estilo de vida fitness.
+    Utilizando herramientas como WordPress y Elementor con Hostinger, no solo
+    desarrollé la página web, sino que también me encargué de su administración,
+    mantenimiento y redacción de artículos durante más de cuatro años.
+  </p>
+  <p>
+    Como complemento a este ecosistema, diseñé y desarrollé una aplicación móvil
+    en Kotlin que integraba el contenido de la página y ofrecía herramientas
+    prácticas enfocadas en mejorar la experiencia del usuario en su camino para
+    desarrollar y consevar un estilo de vida más saludable.
+  </p>
+  <p>
+    Actualmente, me especializo en el desarrollo de páginas web utilizando
+    Python como lenguaje principal, creando soluciones funcionales, eficientes y
+    centradas en el usuario. Además, comparto mis conocimientos y experiencias
+    como programador a través de contenido en distintas plataformas digitales.
+  </p>
+  <p>
+    Mi objetivo es integrarme en proyectos profesionales donde pueda aportar mis
+    habilidades y experiencia, enfrentar nuevos retos y continuar creciendo
+    tanto a nivel profesional como personal e intelectual, construyendo una
+    trayectoria sólida a mediano y largo plazo.
+  </p>
 </section>
 <section class="index__portafolio-section" id="habilidades">
-    <h2 class="index__h2">HABILIDADES</h2>
-    <h3 class="index__h3">LENGUAJE</h3>
-    <section class="index__section-class">
-        {% if skills %}
-            {% for s in skills.get('principal', {}) %}
-                {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
-            {% endfor %}
-        {% endif %}
-    </section>
-    <h3 class="index__h3">FRONTEND</h3>
-    <section class="index__section-class">
-        {% if skills %}
-            {% for s in skills.get('frontend', {}) %}
-                {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
-            {% endfor %}
-        {% endif %}
-    </section>
-    <h3 class="index__h3">BACKEND</h3>
-    <section class="index__section-class">
-        {% if skills %}
-            {% for s in skills.get('backend', {}) %}
-                {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
-            {% endfor %}
-        {% endif %}
-    </section>
-    <h3 class="index__h3">HERRAMIENTAS</h3>
-    <section class="index__section-class">
-        {% if skills %}
-            {% for s in skills.get('herramientas', {}) %}
-                {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
-            {% endfor %}
-        {% endif %}
-    </section>
+  <h2 class="index__h2">HABILIDADES</h2>
+  <h3 class="index__h3">LENGUAJE</h3>
+  <section class="index__section-class">
+    {% if skills %} {% for s in skills.get('principal', {}) %}
+    {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
+    {% endfor %} {% endif %}
+  </section>
+  <h3 class="index__h3">FRONTEND</h3>
+  <section class="index__section-class">
+    {% if skills %} {% for s in skills.get('frontend', {}) %}
+    {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
+    {% endfor %} {% endif %}
+  </section>
+  <h3 class="index__h3">BACKEND</h3>
+  <section class="index__section-class">
+    {% if skills %} {% for s in skills.get('backend', {}) %}
+    {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
+    {% endfor %} {% endif %}
+  </section>
+  <h3 class="index__h3">HERRAMIENTAS</h3>
+  <section class="index__section-class">
+    {% if skills %} {% for s in skills.get('herramientas', {}) %}
+    {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
+    {% endfor %} {% endif %}
+  </section>
 </section>
 <section class="index__portafolio-section" id="portafolio">
-    <h2 class="index__h2">PORTAFOLIO</h2>
-    <section class="index__cards-section">
-        {% if cards %}
-            {% for c in cards | reverse %}
-                {{card_item(c)}}
-            {% endfor %}
-        {% endif %}
-    </section>
+  <h2 class="index__h2">PORTAFOLIO</h2>
+  <section class="index__cards-section">
+    {% if cards %} {% for c in cards | reverse %} {{card_item(c)}} {% endfor %}
+    {% endif %}
+  </section>
 </section>
 <section class="index__portafolio-section" id="contacto">
-    <h2 class="index__h2">¡CONTÁCTAME!</h2>
-    <div class="index__email-box-e">
-        <img class="index__img-email" src="{{url_for('static', path='/img/mail.webp')}}" title="Correo electrónico" alt="Logo de correo electrónico">
-        <div class="index__email-outline">
-            <div class="index__email-box-inner">
-                <span class="index__email-box-text">
-                    chimalli.dev@gmail.com
-                </span>
-            </div>
-        </div>
-        <div class="index__email-box-actions">
-            <button class="index__email-btn index__email-btn--copy copyBtn" data-copy="chimalli.dev@gmail.com">Copiar</button>
-            <a href="mailto:chimallidev.dev@gmail.com" class="index__email-btn index__email-btn--send">Contactar</a>
-        </div>
+  <h2 class="index__h2">¡CONTÁCTAME!</h2>
+  <div class="index__email-box-e">
+    <img
+      class="index__img-email"
+      src="{{url_for('static', path='/img/mail.webp')}}"
+      title="Correo electrónico"
+      alt="Logo de correo electrónico"
+    />
+    <div class="index__email-outline">
+      <div class="index__email-box-inner">
+        <span class="index__email-box-text"> chimalli.dev@gmail.com </span>
+      </div>
     </div>
-    <div class="index__box-e">
-            <img class="index__img-box" src="{{url_for('static', path='/img/wattsapp.webp')}}" title="Watssapp" alt="Logo de watssapp">
-            <div class="index__box-outline">
-                <div class="index__box-inner">
-                    <span class="index__box-text">
-                        +52 55 7460 6567
-                    </span>
-                </div>
-            </div>
-            <div class="index__wattsapp-box-actions">
-                <a href="https://wa.me/5215574606557?text=Hola%2C%20me%20interesa%20tu%20trabajo%20como%20desarrollador%20web%2C%20%C2%BFpodemos%20hablar%3F" 
-                class="index__wattsapp-btn index__email-btn--contactar"
-                target="_blank"
-                rel="noopener">Contactar</a>
-            </div>
+    <div class="index__email-box-actions">
+      <button
+        class="index__email-btn index__email-btn--copy copyBtn"
+        data-copy="chimalli.dev@gmail.com"
+      >
+        Copiar
+      </button>
+      <a
+        href="mailto:chimallidev.dev@gmail.com"
+        class="index__email-btn index__email-btn--send"
+        >Contactar</a
+      >
     </div>
-    <section class="index__redes-sociales">
-        <a href="{{(redes | default({})).get('github', '#')}}" target="_blank" rel="noopener">
-            <img src="{{url_for('static', path='/img/icons/github.webp')}}" alt="enlace a github" title="github">
-        </a>
-        <a href="{{(redes | default({})).get('youtube', '#')}}" target="_blank" rel="noopener">
-            <img src="{{url_for('static', path='/img/icons/youtube.webp')}}" alt="enlace a youtube" title="youtube">
-        </a>
-        <a href="{{(redes | default({})).get('tik_tok', '#')}}" target="_blank" rel="noopener">
-            <img src="{{url_for('static', path='/img/icons/tik_tok.webp')}}" alt="enlace a tiktok" title="tiktok">
-        </a>
-        <a href="{{(redes | default({})).get('instagram', '#')}}" target="_blank" rel="noopener">
-            <img src="{{url_for('static', path='/img/icons/instagram.webp')}}" alt="enlace a instagram" title="instagram">
-        </a>
-    </section>
-    <h3 class="index__h3">Este sitio está desarrollado con:</h3>
-    <section class="index__banner-section">
-        {% if sitio_banners %}
-            {% for sb in sitio_banners %}
-                {{banner_item(sb)}}
-            {% endfor%}
-        {% endif %}
-    </section>
-    <h3 class="index__h3">Ver en:</h3>
-    <section class="index__link-items-section">
-        {% if page_github_links %}
-            {{link_item(page_github_links)}}
-        {% endif %}
-    </section>
+  </div>
+  <div class="index__box-e">
+    <img
+      class="index__img-box"
+      src="{{url_for('static', path='/img/wattsapp.webp')}}"
+      title="Watssapp"
+      alt="Logo de watssapp"
+    />
+    <div class="index__box-outline">
+      <div class="index__box-inner">
+        <span class="index__box-text"> +52 55 7460 6567 </span>
+      </div>
+    </div>
+    <div class="index__wattsapp-box-actions">
+      <a
+        href="https://wa.me/5215574606557?text=Hola%2C%20me%20interesa%20tu%20trabajo%20como%20desarrollador%20web%2C%20%C2%BFpodemos%20hablar%3F"
+        class="index__wattsapp-btn index__email-btn--contactar"
+        target="_blank"
+        rel="noopener"
+        >Contactar</a
+      >
+    </div>
+  </div>
+  <section class="index__redes-sociales">
+    <a
+        href="{{ (redes | default({})).get('linkedin', '#') }}"
+        target="_blank"
+        rel="noopener"
+        class="social-link"
+        aria-label="LinkedIn"
+    >
+        <svg
+            class="icon icon-linkedin"
+            aria-hidden="true"
+        >
+            <use href="#icon-linkedin"></use>
+        </svg>
+    </a>
+    <a
+      href="{{(redes | default({})).get('github', '#')}}"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        src="{{url_for('static', path='/img/icons/github.webp')}}"
+        alt="enlace a github"
+        title="github"
+      />
+    </a>
+    <a
+      href="{{(redes | default({})).get('youtube', '#')}}"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        src="{{url_for('static', path='/img/icons/youtube.webp')}}"
+        alt="enlace a youtube"
+        title="youtube"
+      />
+    </a>
+    <a
+      href="{{(redes | default({})).get('tik_tok', '#')}}"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        src="{{url_for('static', path='/img/icons/tik_tok.webp')}}"
+        alt="enlace a tiktok"
+        title="tiktok"
+      />
+    </a>
+    <a
+      href="{{(redes | default({})).get('instagram', '#')}}"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        src="{{url_for('static', path='/img/icons/instagram.webp')}}"
+        alt="enlace a instagram"
+        title="instagram"
+      />
+    </a>
+  </section>
+  <h3 class="index__h3">Este sitio está desarrollado con:</h3>
+  <section class="index__banner-section">
+    {% if sitio_banners %} {% for sb in sitio_banners %} {{banner_item(sb)}} {%
+    endfor%} {% endif %}
+  </section>
+  <h3 class="index__h3">Ver en:</h3>
+  <section class="index__link-items-section">
+    {% if page_github_links %} {{link_item(page_github_links)}} {% endif %}
+  </section>
 </section>
-{% endblock %}
-
-{% block components_scripts %}
+{% endblock %} {% block components_scripts %}
 <script src="/static/js/index/copy_email.js"></script>
 <script src="/static/js/index/btn_download.js"></script>
 {% endblock %}

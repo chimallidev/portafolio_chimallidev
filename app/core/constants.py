@@ -20,7 +20,8 @@ REDES = {
     "github" : "https://github.com/chimallidev",
     "youtube" : "https://www.youtube.com/@Chimallidev",
     "tik_tok" : "https://www.tiktok.com/@chimallidev",
-    "instagram" : "https://www.instagram.com/chimallidev"
+    "instagram" : "https://www.instagram.com/chimallidev",
+    "linkedin" : "https://www.linkedin.com/in/chimallidev"
 }
 
 #Habilidades
