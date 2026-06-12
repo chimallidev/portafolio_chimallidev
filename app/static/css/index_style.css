@@ -414,6 +414,12 @@ p {
     }
 }
 
+@media (max-width: 1024px) {
+    .index__portafolio-section {
+        min-height: unset;
+    }
+}
+
 @media(max-width: 768px) {
 
     .index__portafolio-section .index__h2 {
@@ -421,7 +427,7 @@ p {
     }
 
     .base__content {
-        padding: 60px 30px 30px 30px;
+        padding: 60px 20px 30px 20px;
     }
 
     .index__email-box-e + .index__box-e {
