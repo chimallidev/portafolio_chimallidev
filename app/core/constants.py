@@ -84,7 +84,7 @@ CARDS = [
         "url": "/portafolio/app-movil-soluciones-inteligentes"
      },
      {
-        "title" : "Web de links chimallidev",
+        "title" : "Web de enlaces chimallidev",
         "img" : "/static/img/web_links_chimallidev_reflex.webp",
         "img_title": "link in bio",
         "img_alt": "página de enlaces de chimallidev hecha con reflex",
@@ -97,6 +97,25 @@ CARDS = [
             {"url": "https://github.com/chimallidev/links_chimalli", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
         ],
         "url": "https://chimallidev-links-web.vercel.app/"
+     },
+     {
+        "title" : "Web de enlaces chimallidev v4",
+        "img" : "/static/img/chimallidev_links_v4.webp",
+        "img_title": "link in bio chimallidev",
+        "img_alt": "página de enlaces de chimallidev versión 4",
+        "banners": [
+            {"img": "/static/img/python.webp", "title": "Python", "color": "#2596be"},
+            {"img": "/static/img/fastapi.webp", "title": "FastAPI", "color": "#029a85"},
+            {"img": "/static/img/jinja.webp", "title": "Jinja2", "color": "#c20706"},
+            {"img": "/static/img/html.webp", "title": "HTML", "color": "#fb6121"},
+            {"img": "/static/img/css.webp", "title": "CSS", "color": "#016fba"},
+            {"img": "/static/img/js.webp", "title": "JS", "color": "#f0dc4e"}
+        ],
+        "description": "Sitio que concentra los enlaces a mis proyectos y contenido de programación, versión más reciente.",
+        "links": [
+            {"url": "https://github.com/chimallidev/chimallidev_links_2", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
+        ],
+        "url": "https://chimallidev-links.onrender.com"
      }
 ]
 

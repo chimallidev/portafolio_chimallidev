@@ -187,9 +187,11 @@
   <h2 class="index__h2">HABILIDADES</h2>
   <h3 class="index__h3">LENGUAJE</h3>
   <section class="index__section-class">
-    {% if skills %} {% for s in skills.get('principal', {}) %}
-    {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
-    {% endfor %} {% endif %}
+    {% if skills %} 
+      {% for s in skills.get('principal', {}) %}
+        {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
+      {% endfor %} 
+    {% endif %}
   </section>
   <h3 class="index__h3">FRONTEND</h3>
   <section class="index__section-class">
@@ -213,7 +215,10 @@
 <section class="index__portafolio-section" id="portafolio">
   <h2 class="index__h2">PORTAFOLIO</h2>
   <section class="index__cards-section">
-    {% if cards %} {% for c in cards | reverse %} {{card_item(c)}} {% endfor %}
+    {% if cards %} 
+      {% for c in cards | reverse %} 
+        {{card_item(c)}} 
+      {% endfor %}
     {% endif %}
   </section>
 </section>
