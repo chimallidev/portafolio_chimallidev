@@ -9,6 +9,21 @@
     <title>{{(meta_soluciones_inteligentes | default({})).get("titulo", "...")}}</title>
     <meta name="description" content="{{(meta_soluciones_inteligentes | default({})).get("descripcion", "...")}}">
 
+    {% block url_canonica %}
+    {% endblock %}
+
+    <!-- Robots -->
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <!-- Autor -->
+    <meta
+        name="author"
+        content="Chimallidev"
+    >
+
     {# Open Graph #}
     <meta property="og:title" content="{{(og | default({})).get("titulo", "___")}}">
     <meta property="og:description" content="{{(og | default({})).get("descripcion", "___")}}">

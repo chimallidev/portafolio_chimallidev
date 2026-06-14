@@ -4,6 +4,14 @@
 {% from '/proyectos/soluciones_inteligentes/components/slider.html' import slider %}
 {% from '/proyectos/soluciones_inteligentes/components/slider_videos.html' import slider_videos %}
 
+{% block url_canonica %}
+<!-- URL canónica -->
+<link
+    rel="canonical"
+    href="https://portafolio-chimallidev.onrender.com/portafolio/soluciones_inteligentes"
+>
+{% endblock %}
+
 {% block components_style %}
 <link rel="stylesheet" href="{{url_for('static', path='css/proyectos/soluciones_inteligentes/soluciones_inteligentes_style.css')}}">
 <link rel="stylesheet" href="{{url_for('static', path='css/proyectos/soluciones_inteligentes/components/divider_item_style.css')}}">

@@ -3,6 +3,14 @@
 {% from '/proyectos/app_movil_soluciones_inteligentes/components/slider_vertical.html' import slider_vertical %}
 {% from '/proyectos/app_movil_soluciones_inteligentes/components/carrusel.html' import carrusel %}
 
+{% block url_canonica %}
+<!-- URL canónica -->
+<link
+    rel="canonical"
+    href="https://portafolio-chimallidev.onrender.com/portafolio/app-movil-soluciones-inteligentes"
+>
+{% endblock %}
+
 {% block components_style %}
 <link rel="stylesheet" href="{{url_for('static', path='css/proyectos/app_movil_soluciones_inteligentes/app_movil_soluciones_inteligentes_style.css')}}">
 <link rel="stylesheet" href="{{url_for('static', path='css/proyectos/app_movil_soluciones_inteligentes/components/slider_vertical_style.css')}}">
