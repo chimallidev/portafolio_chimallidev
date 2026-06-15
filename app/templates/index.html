@@ -1,15 +1,19 @@
-{% extends 'base.html' %} {% from 'components/skill.html' import skill %} 
+{% extends 'base.html' %} 
+
+{% from 'components/skill.html' import skill %} 
 {% from 'components/card_item.html' import card_item %} 
 {% from 'components/banner_item.html' import banner_item %} 
 {% from 'components/link_item.html' import link_item %} 
-{% include 'components/svg-sprite.html' %}
+
 
 {% block url_canonica %}
-<!-- URL canónica -->
+
+{# URL canónica #}
 <link
     rel="canonical"
     href="https://portafolio-chimallidev.onrender.com/"
 >
+
 {% endblock %}
 
 {% block components_style %}
@@ -37,6 +41,9 @@
 {% endblock %} 
 
 {% block content %}
+
+{% include 'components/svg-sprite.html' %}
+
 <section class="index__portafolio-section" id="chimallidev">
   <h1 class="index__h1">
     <span>C</span>
@@ -352,7 +359,8 @@
     {% if page_github_links %} {{link_item(page_github_links)}} {% endif %}
   </section>
 </section>
-{% endblock %} {% block components_scripts %}
+{% endblock %} 
+{% block components_scripts %}
 <script src="/static/js/index/copy_email.js"></script>
 <script src="/static/js/index/btn_download.js"></script>
 {% endblock %}
