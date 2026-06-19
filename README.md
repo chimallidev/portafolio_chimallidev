@@ -16,6 +16,10 @@ Portafolio profesional donde comparto proyectos, conocimientos y experiencia en 
 
 ![Vista previa portafolio Chimallidev](app/static/img/screenshots/vista_previa.png)
 
+## DEMO, Ver ejemplo en vivo
+
+[DEMO](https://portafolio-chimallidev.onrender.com/)
+
 ## Tecnologías
 
 <h4> Lenguaje </h4>
@@ -47,5 +51,24 @@ Portafolio profesional donde comparto proyectos, conocimientos y experiencia en 
   
   ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
   ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+
+</span>
+
+## Proyectos
+
+* [Web de enlaces Chimallidev V4](https://github.com/chimallidev/chimallidev_links_2)
+* [Web de enlaces Chimallidev](https://github.com/chimallidev/links_chimalli)
+* [APP Móvil Soluciones Inteligentes](https://github.com/chimallidev/solucionint)
+* Soluciones Inteligentes
+
+## 🌌 Apoya mi contenido y proyectos
+
+🚀 Si te gusta esta proyecto, puedes darle una ⭐ y compartirlo con amigos.
+
+<span>
+
+[![Static Badge](https://img.shields.io/badge/Invitame_un_caf%C3%A9-Donar?style=flat-square&logo=buymeacoffee&logoColor=%23ffffff&logoSize=40&label=Donar&labelColor=%23000000&color=%2303989e&link=https%3A%2F%2Fko-fi.com%2Fchimallidev)](https://ko-fi.com/chimallidev)
+[![Static Badge](https://img.shields.io/badge/Suscribete-suscribete?style=flat-square&logo=youtube&logoColor=%23ffffff&logoSize=auto&label=YouTube&labelColor=%23000000&color=%23FF0000)
+](https://www.youtube.com/@Chimallidev?sub_confirmation=1)
 
 </span>
