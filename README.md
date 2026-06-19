@@ -61,9 +61,9 @@ Portafolio profesional donde comparto proyectos, conocimientos y experiencia en 
 * [APP Móvil Soluciones Inteligentes](https://github.com/chimallidev/solucionint)
 * Soluciones Inteligentes
 
-## 🌌 Apoya mi contenido y proyectos
+## 🚀 Impulsa nuevos proyectos y contenido
 
-🚀 Si te gusta esta proyecto, puedes darle una ⭐ y compartirlo con amigos.
+🌌 Si te gusta esta proyecto, puedes darle una ⭐ y compartirlo con amigos.
 
 <span>
 
