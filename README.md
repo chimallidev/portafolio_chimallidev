@@ -6,7 +6,7 @@
 
 Portafolio profesional donde comparto proyectos, conocimientos y experiencia en desarrollo web full stack. Desde mis primeros proyectos de divulgación digital hasta soluciones modernas construidas con Python, este espacio refleja mi evolución como desarrollador y creador de contenido tecnológico.
 
-## Autor
+## Autor 💻
 **Erick Roman**
 
 * [LinkedIn](https://www.linkedin.com/in/chimallidev)
