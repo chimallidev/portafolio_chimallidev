@@ -61,6 +61,10 @@ Portafolio profesional donde comparto proyectos, conocimientos y experiencia en 
 * [APP Móvil Soluciones Inteligentes](https://github.com/chimallidev/solucionint)
 * Soluciones Inteligentes
 
+## Contratación
+
+Si quieres contratarme puedes escribirme a chimalli.dev@gmail.com para consultas.
+
 ## 🚀 Impulsa nuevos proyectos y contenido
 
 🌌 Si te gusta esta proyecto, puedes darle una ⭐ y compartirlo con amigos.
