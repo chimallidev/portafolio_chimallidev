@@ -20,7 +20,7 @@ Portafolio profesional donde comparto proyectos, conocimientos y experiencia en 
 
 [DEMO](https://portafolio-chimallidev.onrender.com/)
 
-## Tecnologías
+## Tecnologías utilizadas
 
 <h4> Lenguaje </h4>
 <span> 
