@@ -2,8 +2,8 @@ from pathlib import Path
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-from app.routes.home import router as home_router
-from app.routes.cursos import router as cursos_router
+from .routes.home import router as home_router
+from .routes.cursos import router as cursos_router
 
 
 BASE_DIR = Path(__file__).resolve().parent

@@ -1,6 +1,6 @@
 from pathlib import Path
 from fastapi.templating import Jinja2Templates
-from app.core.jinja_filters import register_jinja_filters
+from ..core.jinja_filters import register_jinja_filters
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
