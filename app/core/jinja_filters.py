@@ -1,4 +1,4 @@
-from app.filters.truncate_chars_filter import truncate_chars
+from ..filters.truncate_chars_filter import truncate_chars
 
 
 def register_jinja_filters(templates):

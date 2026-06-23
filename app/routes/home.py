@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Request, HTTPException, status
 from fastapi.responses import HTMLResponse
-from app.core.templates import templates
-from app.core.constants import META, HEADER_LINKS, OG,MAIN_BUTTONS, DESTACADOS_CARDS, CONTACTO_BUTTONS
-from app.utils.datetime import get_current_year
+from ..core.templates import templates
+from ..core.constants import META, HEADER_LINKS, OG,MAIN_BUTTONS, DESTACADOS_CARDS, CONTACTO_BUTTONS
+from ..utils.datetime import get_current_year
 
 router = APIRouter()
 
