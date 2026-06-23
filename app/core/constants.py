@@ -115,7 +115,7 @@ CARDS = [
         "links": [
             {"url": "https://github.com/chimallidev/chimallidev_links_2", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
         ],
-        "url": "https://chimallidev-links.onrender.com"
+        "url": "/proyectos/chimallidev_enlaces_v4"
      }
 ]
 

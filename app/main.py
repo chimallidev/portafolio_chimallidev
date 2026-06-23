@@ -5,7 +5,11 @@ from app.routes.home import router as home_router
 from app.routes.proyectos.soluciones_inteligentes.soluciones_inteligentes import router as soluciones_inteligentes_router
 from app.routes.proyectos.app_movil_soluciones_inteligentes.app_movil_soluciones_inteligentes import router as app_movil_soluciones_inteligentes_router
 
+from proyectos_git_subtree.chimallidev_links_2.app.application import create_app
+
 app = FastAPI()
+
+chimallidev_enlaces_v4 = create_app()
 
 #Archivos estáticos (infraestructura)
 app.mount("/static", StaticFiles(directory = "app/static"), name = "static")
@@ -16,3 +20,6 @@ app.include_router(home_router)
 #Proyectos
 app.include_router(soluciones_inteligentes_router)
 app.include_router(app_movil_soluciones_inteligentes_router)
+
+#Proyectos git subtree
+app.mount( "/proyectos/chimallidev_enlaces_v4", chimallidev_enlaces_v4)
