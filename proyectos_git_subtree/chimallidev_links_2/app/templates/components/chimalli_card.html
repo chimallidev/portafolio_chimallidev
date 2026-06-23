@@ -1,0 +1,36 @@
+{% macro chimalli_card(card_data={}) %}
+
+{% set image = card_data.get('image', '') %}
+{% set description = card_data.get('description', '') %}
+{% set url = card_data.get('url', '#') %}
+{% set identifier = card_data.get('id', 'chimalli-card') %}
+
+<article
+    class="chimalli-card"
+    data-id="{{ identifier }}"
+>
+
+    <a 
+        class="chimalli-card__content" 
+        href="{{ url }}"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <div class="chimalli-card__image-container">
+            <img
+                class="chimalli-card__image"
+                src="{{ image }}"
+                alt="{{ description }}"
+                loading="lazy"
+            >
+        </div>
+
+        <div class="chimalli-card__description">
+            {{ description | truncate_chars }}
+        </div>
+
+    </a>
+
+</article>
+
+{% endmacro %}

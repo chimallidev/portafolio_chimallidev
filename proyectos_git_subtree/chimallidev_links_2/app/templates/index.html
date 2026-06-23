@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% from 'components/separator.html' import separator %}
+{% from 'components/chimalli_button.html' import chimalli_button %}
+{% from 'components/chimalli_card.html' import chimalli_card %}
+
+{% block url_canonica %}
+<!-- URL canónica -->
+<link
+    rel="canonical"
+    href="https://chimallidev-links.onrender.com/"
+>
+{% endblock %}
+
+{% block components_style %}
+<link rel="stylesheet" href="{{url_for('static', path='css/index_style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', path='css/components/header_style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', path='css/components/icon_link_style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', path='css/components/separator_style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', path='css/components/chimalli_button_style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', path='css/components/chimalli_card_style.css')}}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'svg/svg_sprite.html' %}
+
+<div class="index__content">
+    {% include 'components/header.html' %}
+
+    {{separator(
+        css_id = "header-separator",
+        thickness = "3px"
+    )}}
+    <section class="index__descripcion">
+        <p>Desarrollador Web Full Stack y creador de contenido.</p>
+        <p>Especializado en 🐍 Python, FastAPI y Jinja2 para construir soluciones web modernas, complementadas con HTML, CSS y JavaScript en el frontend.</p>
+        <p>Comparto recursos, experiencias y aprendizajes sobre programación. ¡Bienvenidx! 🚀</p>
+    </section>
+
+    <section class="index__main-buttons">
+        {% if main_buttons %}
+            {% for main_button in main_buttons %}
+                {{chimalli_button(main_button)}}
+            {% endfor %}
+        {% endif %}
+    </section>
+
+    <section class="index__destacado">
+
+        <h2 class="index__h2">
+            {{ "Destacado" | upper }}
+        </h2>
+        <section class="index__destacado-cards">
+            {% if destacados_cards %}
+            {% for card in destacados_cards %}
+                <div class="index__destacado-item-{{loop.index}}">
+                    {{ chimalli_card(card) }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        </section>
+
+    </section>
+
+    <section class="index__contacto">
+        <h2 class="index__h2">{{ "Contacto" | upper }}</h2>
+
+        <section class="index__contacto-buttons">
+            {% if contacto_buttons %}
+                {% for contacto_button in contacto_buttons %}
+                    {{chimalli_button(contacto_button)}}
+                {% endfor %}
+            {% endif %}
+        </section>
+    </section>
+
+</div>
+{% endblock %}
+
+{% block components_scripts %}
+<script type="module" src="/static/js/copy-button.js"></script>
+<script type="module" src="/static/js/main.js"></script>
+{% endblock %}

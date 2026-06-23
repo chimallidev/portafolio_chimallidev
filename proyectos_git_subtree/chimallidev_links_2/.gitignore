@@ -1,0 +1,4 @@
+.venv_chimallidev_links
+chimallidev_links_workspace.code-workspace
+__pycache__/
+*.pyc

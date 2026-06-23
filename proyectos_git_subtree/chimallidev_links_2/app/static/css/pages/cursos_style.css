@@ -1,0 +1,54 @@
+.cursos__content {
+    grid-area: principal;
+    margin-top: 80px;
+    width: 100%;
+}
+
+#header-separator {
+    margin-top: 5px;
+}
+
+.cursos__h2 {
+    font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+    font-size: clamp(18px, 5vw, 28px);
+    line-height: 1.1;
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.cursos__cursos-gratis {
+    margin-top: 25px;
+}
+
+.cursos__botones-cursos-gratis {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.cursos__mas {
+    margin-top: 50px;
+}
+
+.cursos__botones-mas {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.cursos__boton-volver {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.cursos__boton-volver {
+   margin: 80px 0 110px 0;
+}

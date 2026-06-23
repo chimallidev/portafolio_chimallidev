@@ -1,0 +1,31 @@
+<footer class="chimalli-footer">
+    <a
+        href="https://portafolio-chimallidev.onrender.com/"
+        class="chimalli-footer__link"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <span class="chimalli-footer__date">
+            ©2021-{{ footer_year | default("____") }}
+        </span>
+
+        <img
+            src="{{ url_for('static', path='img/logo_chimallidev_100.webp') }}"
+            alt="ChimalliDev"
+            class="chimalli-footer__logo"
+            loading="lazy"
+        >
+
+        <span class="chimalli-footer__brand">
+            Chimallidev
+        </span>
+
+        <span class="chimalli-footer__brand2">
+            by Erick Roman
+        </span>
+
+        <span class="chimalli-footer__version">
+            v4.
+        </span>
+    </a>
+</footer>
