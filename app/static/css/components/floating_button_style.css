@@ -1,0 +1,360 @@
+.floating-button {
+    --button-size: 4rem;
+
+    position: fixed;
+
+    right: 1.5rem;
+    bottom: 1.5rem;
+
+    width: var(--button-size);
+    height: var(--button-size);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--main-color);
+
+    background-color: var(--secondary-color);
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    z-index: 1000;
+
+    visibility: visible;
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition:
+        background-color 250ms ease,
+        border-color 250ms ease;
+}
+
+.floating-button--visible {
+
+    visibility: visible;
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    animation:
+        floating-button-show
+        350ms
+        ease-out
+        forwards;
+}
+
+.floating-button--hidden {
+
+    pointer-events: none;
+
+    animation:
+        floating-button-hide
+        300ms
+        cubic-bezier(
+            0.25,
+            0.1,
+            0.25,
+            1
+        )
+        forwards;
+}
+
+.floating-button__icon {
+
+    position: absolute;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    color: var(--third-color);
+}
+
+.floating-button__icon--active {
+
+    opacity: 0;
+
+    transform:
+        rotate(90deg)
+        scale(0);
+}
+
+/* ==========================================
+   ACTIVE
+========================================== */
+
+.floating-button--pressed {
+
+    background-color:
+        var(--main-color-light);
+
+    border-color:
+        var(--secondary-color);
+}
+
+.floating-button--pressed
+.floating-button__icon {
+
+    color:
+        var(--third-color);
+}
+
+.floating-button--pressed
+.floating-button__icon--default {
+
+    animation:
+        icon-out
+        300ms
+        ease
+        forwards;
+}
+
+.floating-button--pressed
+.floating-button__icon--active {
+
+    animation:
+        icon-in
+        300ms
+        ease
+        forwards;
+}
+
+/* ==========================================
+   RETURN
+========================================== */
+
+.floating-button--releasing {
+
+    background-color:
+        var(--secondary-color);
+
+    border-color:
+        var(--main-color);
+}
+
+.floating-button--releasing
+.floating-button__icon {
+
+    color:
+        var(--third-color);
+}
+
+.floating-button--releasing
+.floating-button__icon--active {
+
+    animation:
+        icon-active-out
+        300ms
+        ease
+        forwards;
+}
+
+.floating-button--releasing
+.floating-button__icon--default {
+
+    animation:
+        icon-default-in
+        300ms
+        ease
+        forwards;
+}
+
+/* ==========================================
+   HOVER
+========================================== */
+
+@media (hover: hover) {
+
+    .floating-button:not(
+        .floating-button--pressed
+    ):not(
+        .floating-button--releasing
+    ):hover {
+
+        background-color:
+            var(--main-color);
+
+        border-color:
+            var(--main-color-light);
+    }
+
+    .floating-button:not(
+        .floating-button--pressed
+    ):not(
+        .floating-button--releasing
+    ):hover
+    .floating-button__icon {
+
+        color:
+            var(--secondary-color);
+    }
+}
+
+/* ==========================================
+   BUTTON SHOW
+========================================== */
+
+@keyframes floating-button-show {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.25);
+    }
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+/* ==========================================
+   BUTTON HIDE
+========================================== */
+
+@keyframes floating-button-hide {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            scale(0);
+    }
+}
+
+/* ==========================================
+   ICON ANIMATIONS
+========================================== */
+
+@keyframes icon-out {
+
+    from {
+
+        opacity: 1;
+
+        transform:
+            rotate(0deg)
+            scale(1);
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            rotate(-180deg)
+            scale(0);
+    }
+}
+
+@keyframes icon-in {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            rotate(180deg)
+            scale(0);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            rotate(0deg)
+            scale(1);
+    }
+}
+
+@keyframes icon-active-out {
+
+    from {
+
+        opacity: 1;
+
+        transform:
+            rotate(0deg)
+            scale(1);
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            rotate(180deg)
+            scale(0);
+    }
+}
+
+@keyframes icon-default-in {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            rotate(-180deg)
+            scale(0);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            rotate(0deg)
+            scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .floating-button {
+
+        --button-size: 3.5rem;
+
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .floating-button__icon {
+
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}

@@ -1,0 +1,45 @@
+{% from 'components/icon_link.html' import icon_link %}
+
+<section class="header">
+
+    <div class="header__image-container">
+        <img
+            src="{{url_for('static', path='img/logo_chimallidev_100.webp')}}"
+            alt="Logo de Chimallidev"
+            class="header__image"
+        >
+    </div>
+
+    <div class="header__content">
+
+        <h1 class="header__title">
+            Erick Roman
+        </h1>
+
+        <p class="header__subtitle">
+            @chimallidev
+        </p>
+
+
+        <div class="header__tags">
+            {% if header_links %}
+                {% for link_content in header_links %}
+                    {{icon_link(
+                        svg_id=(link_content | default({})).get('svg_id', ''),
+                        href=(link_content | default({})).get('url', '#'),
+                        size=(link_content | default({})).get('size', '16px'),
+                        color=(link_content | default({})).get('color', 'currentColor'),
+                        background=(link_content | default({})).get('background', 'transparent'),
+                        hover_color=(link_content | default({})).get('hover_color'),
+                        hover_background=(link_content | default({})).get('hover_background'),
+                        active_color=(link_content | default({})).get('active_color'),
+                        active_background=(link_content | default({})).get('active_background'),
+                        name=(link_content | default({})).get('name', 'icon-link')
+                    )}}
+                {% endfor %}
+            {% endif %}
+        </div>
+
+    </div>
+
+</section>

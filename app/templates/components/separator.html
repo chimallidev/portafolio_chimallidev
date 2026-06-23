@@ -1,0 +1,20 @@
+{# components/separator.html #}
+
+{% macro separator(
+    identifier='separator',
+    css_id= None,
+    color='#ffffff',
+    thickness='5px'
+) %}
+
+<div
+    class="separator"
+    id="{{css_id}}"
+    data-separator-id="{{ identifier }}"
+    style="
+        --separator-color: {{ color }};
+        --separator-thickness: {{ thickness }};
+    "
+></div>
+
+{% endmacro %}

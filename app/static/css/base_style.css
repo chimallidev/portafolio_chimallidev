@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('/static/fonts/RobotoMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('/static/fonts/RobotoMono-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('/static/fonts/RobotoMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('/static/fonts/RobotoSlab-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('/static/fonts/RobotoSlab-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('/static/fonts/RobotoSlab-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url("/static/fonts/PressStart2P-Regular.ttf") format('truetype');
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --font-base: "Roboto Mono";
+    --font-title: "Roboto Slab";
+    --font-universal-weight: 400;
+    --font-universal-size: 16px;
+    --main-color: oklch(0.6179 0.1046 199.77);
+    --main-color-light: oklch(0.8783 0.1046 199.77);
+    --secondary-color: oklch(1 0 0);
+    --third-color: oklch(0 0 0);
+    --fourth-color: oklch(0.754 0 0);
+    --fourth-color-dark: oklch(0.4243 0 0);
+    --fourth-color-light: oklch(0.9318 0 0);
+}
+
+html {
+    font-family: var(--font-base), Arial, Helvetica, sans-serif;
+    font-size: var(--font-universal-size);
+    font-weight: var(--font-universal-weight);
+    background-color: var(--third-color);
+    color: var(--secondary-color);
+}
+
+.base__content {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-areas: ". principal .";
+}
+
+.base__content::selection {
+    background: var(--main-color);
+    color: var(--secondary-color);
+}
+
+@media (max-width: 1024px) {
+    .base__content {
+        
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas: ". principal .";
+    }
+}
+
+@media (max-width: 768px) {
+    .base__content { 
+        grid-template-columns: 20px 1fr 20px;
+        grid-template-areas: ". principal .";
+    }
+}

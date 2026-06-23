@@ -1,0 +1,7 @@
+.separator {
+    width: 100%;
+    height: var(--separator-thickness);
+    background-color: var(--separator-color);
+    display: block;
+    flex-shrink: 0;
+}

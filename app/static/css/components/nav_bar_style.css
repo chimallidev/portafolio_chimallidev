@@ -1,0 +1,46 @@
+.chimalli-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+
+    background: var(--main-color);
+
+    z-index: 11;
+
+    transition:
+        background-color 0.2s linear,
+        backdrop-filter 0.2s linear,
+        -webkit-backdrop-filter 0.2s linear,
+        border-color 0.2s linear;
+}
+
+.chimalli-navbar__brand {
+    margin-left: 30px;
+
+    color: var(--secondary-color);
+    text-decoration: none;
+
+    font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .chimalli-navbar__brand:hover {
+        opacity: 0.9;
+    }
+
+}
+
+.chimalli-navbar__brand:active {
+    opacity: 0.8;
+}

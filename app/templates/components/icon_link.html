@@ -1,0 +1,56 @@
+{#
+    Macro: icon_link
+
+    Parámetros:
+    - svg_id: id del símbolo SVG dentro del sprite
+    - href: url del enlace
+
+    Opcionales:
+    - size: tamaño del componente
+    - color: color del icono
+    - background: color de fondo
+    - hover_color: color en hover
+    - active_color: color en active
+    - name: valor del data-name
+#}
+
+{% macro icon_link(
+    svg_id,
+    href="#",
+    size="16px",
+    color="currentColor",
+    background="transparent",
+    hover_color=None,
+    hover_background=None,
+    active_color=None,
+    active_background=None,
+    name="icon-link"
+) %}
+
+<a
+    href="{{ href }}"
+    class="icon-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-name="{{ name }}"
+    aria-label="{{ name }}"
+    style="
+        --icon-link-size: {{ size }};
+        --icon-link-color: {{ color }};
+        --icon-link-background: {{ background }};
+        --icon-link-hover-color: {{ hover_color or color }};
+        --icon-link-hover-background: {{ hover_background or background }};
+        --icon-link-active-color: {{ active_color or color }};
+        --icon-link-active-background: {{ active_background or background }};
+    "
+>
+    <svg
+        class="icon-link__svg"
+        aria-hidden="true"
+        focusable="false"
+    >
+        <use href="#{{ svg_id }}"></use>
+    </svg>
+</a>
+
+{% endmacro %}

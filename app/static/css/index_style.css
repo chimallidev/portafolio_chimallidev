@@ -1,0 +1,96 @@
+.index__content {
+    grid-area: principal;
+    margin-top: 80px;
+    width: 100%;
+}
+
+#header-separator {
+    margin-top: 5px;
+}
+
+.index__descripcion {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.index__descripcion p {
+    text-align: left;
+}
+
+.index__main-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+.index__main-buttons .chimalli-button:last-child {
+    margin-top: 25px;
+}
+
+.index__destacado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.index__h2 {
+    font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+
+    font-size: clamp(18px, 5vw, 28px);
+    line-height: 1.1;
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.index__destacado-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    grid-template-areas: 
+    "card1 card2";
+}
+
+.index__destacado-item-1 {
+    grid-area: card1;
+    width: 100%;
+}
+
+.index__destacado-item-2 {
+    grid-area: card2;
+    width: 100%;
+}
+
+.index__contacto {
+    margin: 25px 0 110px 0;
+}
+
+.index__contacto-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+@media (max-width: 768px) {
+    .index__destacado-item {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .index__destacado-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        grid-template-areas: 
+        "card1"
+        "card2";
+    }
+}

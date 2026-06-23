@@ -1,0 +1,6 @@
+.venv_chimallidev_links
+__pycache__/*
+*.pyc
+.git
+.gitignore
+.env

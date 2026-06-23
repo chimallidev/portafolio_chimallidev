@@ -1,0 +1,87 @@
+{% macro chimalli_button(chimalli_button={}) %}
+
+{% set type = chimalli_button.get('type', 'link') %}
+{% set url = chimalli_button.get('url', '#') %}
+
+{% set open_new_tab = chimalli_button.get('open_new_tab', true) %}
+
+{% set identifier = chimalli_button.get('identifier', 'chimalli-button') %}
+{% set copy_text = chimalli_button.get('copy_text', '') %}
+
+{% set state = chimalli_button.get('state', 'gray') %}
+
+{% set border_state = chimalli_button.get('border_state', 'inactive') %}
+
+{% set border_color = chimalli_button.get('border_color', '#04c7ce') %}
+{% set border_hover_color = chimalli_button.get('border_hover_color', '#7df5f9') %}
+{% set border_active_color = chimalli_button.get('border_active_color', '#ffffff') %}
+
+{% set svg_id = chimalli_button.get('svg_id', 'icon-default') %}
+
+{% set title = chimalli_button.get('title', 'Título') %}
+{% set description = chimalli_button.get('description', 'Descripción') %}
+
+{% if type == 'button' %}
+
+<button
+    type="button"
+    class="chimalli-button chimalli-button--{{ state }}"
+    data-id="{{ identifier }}"
+    data-copy="{{ copy_text }}"
+>
+
+{% else %}
+
+<a
+    href="{{ url }}"
+    class="chimalli-button chimalli-button--{{ state }}"
+    data-id="{{ identifier }}"
+
+    {% if open_new_tab %}
+    target="_blank"
+    rel="noopener noreferrer"
+    {% endif %}
+>
+
+{% endif %}
+
+    <span
+        class="chimalli-button__border {% if border_state == 'active' %}chimalli-button__border--active{% endif %}"
+        style="
+            --chimalli-border-color: {{ border_color }};
+            --chimalli-border-hover-color: {{ border_hover_color }};
+            --chimalli-border-active-color: {{ border_active_color }};
+        "
+        aria-hidden="true"
+    ></span>
+
+    <div class="chimalli-button__icon-container">
+
+        <svg
+            class="chimalli-button__icon"
+            aria-hidden="true"
+        >
+            <use href="#{{ svg_id }}"></use>
+        </svg>
+
+    </div>
+
+    <div class="chimalli-button__content">
+
+        <span class="chimalli-button__title">
+            {{ title }}
+        </span>
+
+        <span class="chimalli-button__description">
+            {{ description }}
+        </span>
+
+    </div>
+
+{% if type == 'button' %}
+</button>
+{% else %}
+</a>
+{% endif %}
+
+{% endmacro %}

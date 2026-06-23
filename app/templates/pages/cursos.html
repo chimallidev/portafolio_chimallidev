@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% from 'components/separator.html' import separator %}
+{% from 'components/chimalli_button.html' import chimalli_button %}
+
+{% block url_canonica %}
+<!-- URL canónica -->
+<link
+    rel="canonical"
+    href="https://chimallidev-links.onrender.com/cursos"
+>
+{% endblock %}
+
+{% block components_style %}
+<link rel="stylesheet" href="{{url_for('static', path='css/pages/cursos_style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', path='css/components/header_style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', path='css/components/icon_link_style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', path='css/components/separator_style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', path='css/components/chimalli_button_style.css')}}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'svg/svg_sprite.html' %}
+
+<div class="cursos__content">
+    {% include 'components/header.html' %}
+
+    {{separator(
+        css_id = "header-separator",
+        thickness = "3px"
+    )}}
+
+    <section class="cursos__cursos-gratis">
+        <h2 class="cursos__h2">{{ 'Cursos gratis' | upper }}</h2>
+
+        <section class="cursos__botones-cursos-gratis">
+            {% if cursos_gratis_buttons %}
+                {% for curso_button in cursos_gratis_buttons %}
+                    {{chimalli_button(curso_button)}}
+                {% endfor %}
+            {% endif %}
+        </section>
+    </section>
+
+    <section class="cursos__mas">
+        <h2 class="cursos__h2">{{ 'Mucho más en' | upper }}</h2>
+
+        <section class="cursos__botones-mas">
+            {{chimalli_button(mucho_mas_button)}}
+        </section>
+    </section>
+
+    <section class="cursos__boton-volver">
+        {{chimalli_button(volver_button)}}
+    </section>
+</div>
+{% endblock %}
+
+{% block components_scripts %}
+{% endblock %}
