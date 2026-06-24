@@ -45,14 +45,14 @@
     <meta name="twitter:image" content="{{(og | default({})).get("image", "___")}}">
 
     {# Favicon #}
-    <link rel="icon" href="{{url_for('static', path='img/proyectos/app_movil_soluciones_inteligentes/icons/soluciones_inteligentes.ico')}}"
+    <link rel="icon" href="{{url_for('portafolio_static', path='img/proyectos/app_movil_soluciones_inteligentes/icons/soluciones_inteligentes.ico')}}"
     type="image/x-icon">
 
     {# Hoja de estilos principal #}
-    <link rel="stylesheet" href="{{url_for('static', path='css/proyectos/app_movil_soluciones_inteligentes/base_app_movil_soluciones_inteligentes_style.css')}}">
+    <link rel="stylesheet" href="{{url_for('portafolio_static', path='css/proyectos/app_movil_soluciones_inteligentes/base_app_movil_soluciones_inteligentes_style.css')}}">
 
     {# Estilos de componentes más usados #}
-    <link rel="stylesheet" href="{{url_for('static', path='css/proyectos/app_movil_soluciones_inteligentes/components/nav_bar_style.css')}}">
+    <link rel="stylesheet" href="{{url_for('portafolio_static', path='css/proyectos/app_movil_soluciones_inteligentes/components/nav_bar_style.css')}}">
 
     {# Estilos de componentes de cada página #}
     {% block components_style %}
@@ -68,10 +68,10 @@
     </main>
 
     {# JS Global #}
-    <script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/navigation.js"></script>
-    <script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/menu.js"></script>
-    <script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/nav_bar.js"></script>
-    <script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/main.js"></script>
+    <script type="module" src="{{url_for('portafolio_static', path='js/proyectos/app_movil_soluciones_inteligentes/navigation.js')}}"></script>
+    <script type="module" src="{{url_for('portafolio_static', path='js/proyectos/app_movil_soluciones_inteligentes/menu.js')}}"></script>
+    <script type="module" src="{{url_for('portafolio_static', path='js/proyectos/app_movil_soluciones_inteligentes/nav_bar.js')}}"></script>
+    <script type="module" src="{{url_for('portafolio_static', path='js/proyectos/app_movil_soluciones_inteligentes/main.js')}}"></script>
 
     {# JS para cada página #}
     {% block components_scripts %}

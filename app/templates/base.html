@@ -45,15 +45,15 @@
     <meta name="twitter:image" content="{{(og | default({})).get("image", "___")}}">
     
     {# favicon #}
-    <link rel="icon" href="{{url_for('static', path='img/icons/chimallidev.ico')}}"
+    <link rel="icon" href="{{url_for('portafolio_static', path='img/icons/chimallidev.ico')}}"
     type="image/x-icon" >
 
     {# Hoja de estilos principal #}
-    <link rel="stylesheet" href="{{url_for('static', path='css/base_style.css')}}">
+    <link rel="stylesheet" href="{{url_for('portafolio_static', path='css/base_style.css')}}">
 
     {# Estilos de componentes más usados #}
-    <link rel="stylesheet" href="{{url_for('static', path='css/components/sidebar_style.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', path='css/components/nav_bar_style.css')}}">
+    <link rel="stylesheet" href="{{url_for('portafolio_static', path='css/components/sidebar_style.css')}}">
+    <link rel="stylesheet" href="{{url_for('portafolio_static', path='css/components/nav_bar_style.css')}}">
     {# Estilos de componentes de cada página #}
     {% block components_style %}
     {% endblock %}
@@ -72,10 +72,10 @@
     </main>
 
     {# JS global #}
-    <script type="module" src="/static/js/navigation.js"></script>
-    <script type="module" src="/static/js/navbar.js"></script>
-    <script type="module" src="/static/js/sidebar.js"></script>
-    <script type="module" src="/static/js/main.js"></script>
+    <script type="module" src="{{url_for('portafolio_static', path='js/navigation.js')}}"></script>
+    <script type="module" src="{{url_for('portafolio_static', path='js/navbar.js')}}"></script>
+    <script type="module" src="{{url_for('portafolio_static', path='js/sidebar.js')}}"></script>
+    <script type="module" src="{{url_for('portafolio_static', path='js/main.js')}}"></script>
 
     {# JS para cada página #}
     {% block components_scripts %}

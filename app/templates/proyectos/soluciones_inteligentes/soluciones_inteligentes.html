@@ -13,9 +13,9 @@
 {% endblock %}
 
 {% block components_style %}
-<link rel="stylesheet" href="{{url_for('static', path='css/proyectos/soluciones_inteligentes/soluciones_inteligentes_style.css')}}">
-<link rel="stylesheet" href="{{url_for('static', path='css/proyectos/soluciones_inteligentes/components/divider_item_style.css')}}">
-<link rel="stylesheet" href="{{url_for('static', path='css/proyectos/soluciones_inteligentes/components/slider_style.css')}}">
+<link rel="stylesheet" href="{{url_for('portafolio_static', path='css/proyectos/soluciones_inteligentes/soluciones_inteligentes_style.css')}}">
+<link rel="stylesheet" href="{{url_for('portafolio_static', path='css/proyectos/soluciones_inteligentes/components/divider_item_style.css')}}">
+<link rel="stylesheet" href="{{url_for('portafolio_static', path='css/proyectos/soluciones_inteligentes/components/slider_style.css')}}">
 {% endblock %}
 
 {% block content %}
@@ -24,7 +24,7 @@
 
     <section class="si__description">
         <div class="si__img-wrapper">
-            <img src="{{url_for('static', path='img/proyectos/soluciones_inteligentes/soluciones_inteligentes_principal.webp')}}"
+            <img src="{{url_for('portafolio_static', path='img/proyectos/soluciones_inteligentes/soluciones_inteligentes_principal.webp')}}"
             title="Soluciones Inteligentes principal" 
             alt="Página Soluciones Inteligentes">
         </div>
@@ -72,5 +72,5 @@
 {% endblock %}
 
 {% block components_scripts %}
-<script type="module" src="/static/js/proyectos/soluciones_inteligentes/slider.js"></script>
+<script type="module" src="{{url_for('portafolio_static', path='js/proyectos/soluciones_inteligentes/slider.js')}}"></script>
 {% endblock %}

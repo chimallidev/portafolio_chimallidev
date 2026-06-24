@@ -12,10 +12,10 @@
 {% endblock %}
 
 {% block components_style %}
-<link rel="stylesheet" href="{{url_for('static', path='css/proyectos/app_movil_soluciones_inteligentes/app_movil_soluciones_inteligentes_style.css')}}">
-<link rel="stylesheet" href="{{url_for('static', path='css/proyectos/app_movil_soluciones_inteligentes/components/slider_vertical_style.css')}}">
-<link rel="stylesheet" href="{{url_for('static', path='css/proyectos/app_movil_soluciones_inteligentes/components/carrusel_style.css')}}">
-<link rel="stylesheet" href="{{url_for('static', path='css/proyectos/app_movil_soluciones_inteligentes/components/modal_videos_style.css')}}">
+<link rel="stylesheet" href="{{url_for('portafolio_static', path='css/proyectos/app_movil_soluciones_inteligentes/app_movil_soluciones_inteligentes_style.css')}}">
+<link rel="stylesheet" href="{{url_for('portafolio_static', path='css/proyectos/app_movil_soluciones_inteligentes/components/slider_vertical_style.css')}}">
+<link rel="stylesheet" href="{{url_for('portafolio_static', path='css/proyectos/app_movil_soluciones_inteligentes/components/carrusel_style.css')}}">
+<link rel="stylesheet" href="{{url_for('portafolio_static', path='css/proyectos/app_movil_soluciones_inteligentes/components/modal_videos_style.css')}}">
 {% endblock %}
 
 {% block content %}
@@ -49,8 +49,8 @@
 {% endblock %}
 
 {% block components_scripts %}
-<script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/components/app_si_main.js"></script>
-<script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/components/slider.js"></script>
-<script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/components/carrusel.js"></script>
-<script type="module" src="/static/js/proyectos/app_movil_soluciones_inteligentes/components/video_modal.js"></script>
+<script type="module" src="{{url_for('portafolio_static', path='js/proyectos/app_movil_soluciones_inteligentes/components/app_si_main.js')}}"></script>
+<script type="module" src="{{url_for('portafolio_static', path='js/proyectos/app_movil_soluciones_inteligentes/components/slider.js')}}"></script>
+<script type="module" src="{{url_for('portafolio_static', path='js/proyectos/app_movil_soluciones_inteligentes/components/carrusel.js')}}"></script>
+<script type="module" src="{{url_for('portafolio_static', path='js/proyectos/app_movil_soluciones_inteligentes/components/video_modal.js')}}"></script>
 {% endblock %}

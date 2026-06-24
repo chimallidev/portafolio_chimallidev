@@ -20,23 +20,23 @@
 
 <link
   rel="stylesheet"
-  href="{{url_for('static', path='css/index_style.css')}}"
+  href="{{url_for('portafolio_static', path='css/index_style.css')}}"
 />
 <link
   rel="stylesheet"
-  href="{{url_for('static', path='css/components/skill_style.css')}}"
+  href="{{url_for('portafolio_static', path='css/components/skill_style.css')}}"
 />
 <link
   rel="stylesheet"
-  href="{{url_for('static', path='css/components/link_item_style.css')}}"
+  href="{{url_for('portafolio_static', path='css/components/link_item_style.css')}}"
 />
 <link
   rel="stylesheet"
-  href="{{url_for('static', path='css/components/banner_item_style.css')}}"
+  href="{{url_for('portafolio_static', path='css/components/banner_item_style.css')}}"
 />
 <link
   rel="stylesheet"
-  href="{{url_for('static', path='css/components/card_item_style.css')}}"
+  href="{{url_for('portafolio_static', path='css/components/card_item_style.css')}}"
 />
 {% endblock %} 
 
@@ -92,14 +92,14 @@
     <h3 class="index__h3">Puedes consultar mi CV:</h3>
     <div class="index__btns-cv">
       <a
-        href="{{url_for('static', path='/documents/Chimallidev_Erick_Roman_cv.pdf')}}"
+        href="{{url_for('portafolio_static', path='/documents/Chimallidev_Erick_Roman_cv.pdf')}}"
         target="_blank"
         rel="noopener"
         class="index__ver-cv"
         >Ver</a
       >
       <a
-        href="{{url_for('static', path='/documents/Chimallidev_Erick_Roman_cv.pdf')}}"
+        href="{{url_for('portafolio_static', path='/documents/Chimallidev_Erick_Roman_cv.pdf')}}"
         download="Chimallidev_Erick_Roman_cv.pdf"
         class="index__descargar-cv"
         >Descargar</a
@@ -127,7 +127,7 @@
       rel="noopener"
     >
       <img
-        src="{{url_for('static', path='/img/icons/github.webp')}}"
+        src="{{url_for('portafolio_static', path='/img/icons/github.webp')}}"
         alt="enlace a github"
         title="github"
       />
@@ -138,7 +138,7 @@
       rel="noopener"
     >
       <img
-        src="{{url_for('static', path='/img/icons/youtube.webp')}}"
+        src="{{url_for('portafolio_static', path='/img/icons/youtube.webp')}}"
         alt="enlace a youtube"
         title="youtube"
       />
@@ -149,7 +149,7 @@
       rel="noopener"
     >
       <img
-        src="{{url_for('static', path='/img/icons/tik_tok.webp')}}"
+        src="{{url_for('portafolio_static', path='/img/icons/tik_tok.webp')}}"
         alt="enlace a tiktok"
         title="tiktok"
       />
@@ -160,7 +160,7 @@
       rel="noopener"
     >
       <img
-        src="{{url_for('static', path='/img/icons/instagram.webp')}}"
+        src="{{url_for('portafolio_static', path='/img/icons/instagram.webp')}}"
         alt="enlace a instagram"
         title="instagram"
       />
@@ -244,7 +244,7 @@
   <div class="index__email-box-e">
     <img
       class="index__img-email"
-      src="{{url_for('static', path='/img/mail.webp')}}"
+      src="{{url_for('portafolio_static', path='/img/mail.webp')}}"
       title="Correo electrónico"
       alt="Logo de correo electrónico"
     />
@@ -270,7 +270,7 @@
   <div class="index__box-e">
     <img
       class="index__img-box"
-      src="{{url_for('static', path='/img/wattsapp.webp')}}"
+      src="{{url_for('portafolio_static', path='/img/wattsapp.webp')}}"
       title="Watssapp"
       alt="Logo de watssapp"
     />
@@ -310,7 +310,7 @@
       rel="noopener"
     >
       <img
-        src="{{url_for('static', path='/img/icons/github.webp')}}"
+        src="{{url_for('portafolio_static', path='/img/icons/github.webp')}}"
         alt="enlace a github"
         title="github"
       />
@@ -321,7 +321,7 @@
       rel="noopener"
     >
       <img
-        src="{{url_for('static', path='/img/icons/youtube.webp')}}"
+        src="{{url_for('portafolio_static', path='/img/icons/youtube.webp')}}"
         alt="enlace a youtube"
         title="youtube"
       />
@@ -332,7 +332,7 @@
       rel="noopener"
     >
       <img
-        src="{{url_for('static', path='/img/icons/tik_tok.webp')}}"
+        src="{{url_for('portafolio_static', path='/img/icons/tik_tok.webp')}}"
         alt="enlace a tiktok"
         title="tiktok"
       />
@@ -343,7 +343,7 @@
       rel="noopener"
     >
       <img
-        src="{{url_for('static', path='/img/icons/instagram.webp')}}"
+        src="{{url_for('portafolio_static', path='/img/icons/instagram.webp')}}"
         alt="enlace a instagram"
         title="instagram"
       />
@@ -361,6 +361,6 @@
 </section>
 {% endblock %} 
 {% block components_scripts %}
-<script src="/static/js/index/copy_email.js"></script>
-<script src="/static/js/index/btn_download.js"></script>
+<script src="{{url_for('portafolio_static', path='js/index/copy_email.js')}}"></script>
+<script src="{{url_for('portafolio_static', path='js/index/btn_download.js')}}"></script>
 {% endblock %}

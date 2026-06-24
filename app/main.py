@@ -9,10 +9,10 @@ from proyectos_git_subtree.chimallidev_links_2.app.application import create_app
 
 app = FastAPI()
 
-chimallidev_enlaces_v4 = create_app()
+chimallidev_enlaces_v4 = create_app(root_path= "/proyectos/chimallidev_enlaces_v4")
 
 #Archivos estáticos (infraestructura)
-app.mount("/static", StaticFiles(directory = "app/static"), name = "static")
+app.mount("/static", StaticFiles(directory = "app/static"), name = "portafolio_static")
 
 #Rutas
 app.include_router(home_router)
