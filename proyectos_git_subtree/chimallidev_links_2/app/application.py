@@ -9,9 +9,9 @@ from .routes.cursos import router as cursos_router
 BASE_DIR = Path(__file__).resolve().parent
 
 
-def create_app() -> FastAPI:
+def create_app(root_path: str = "") -> FastAPI:
 
-    app = FastAPI()
+    app = FastAPI(root_path= root_path)
 
     #Archivos estáticos (infraestructura)
     app.mount(
