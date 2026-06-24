@@ -79,6 +79,6 @@
 {% endblock %}
 
 {% block components_scripts %}
-<script type="module" src="/static/js/copy-button.js"></script>
-<script type="module" src="/static/js/main.js"></script>
+<script type="module" src="{{url_for('static', path='js/copy-button.js')}}"></script>
+<script type="module" src="{{url_for('static', path='js/main.js')}}"></script>
 {% endblock %}
