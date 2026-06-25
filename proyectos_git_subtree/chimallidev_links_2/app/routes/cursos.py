@@ -6,7 +6,7 @@ from ..utils.datetime import get_current_year
 
 router = APIRouter()
 
-@router.get('/cursos', response_class= HTMLResponse, status_code= status.HTTP_200_OK)
+@router.get('/cursos', name= 'cursos', response_class= HTMLResponse, status_code= status.HTTP_200_OK)
 async def cursos(request: Request):
     context = {
         "meta": CURSOS_META,
