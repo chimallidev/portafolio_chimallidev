@@ -1,42 +1,42 @@
 @font-face {
     font-family: 'Roboto Mono';
-    src: url('/static/fonts/RobotoMono-Regular.ttf') format('truetype');
+    src: url('../fonts/RobotoMono-Regular.ttf') format('truetype');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Roboto Mono';
-    src: url('/static/fonts/RobotoMono-Medium.ttf') format('truetype');
+    src: url('../fonts/RobotoMono-Medium.ttf') format('truetype');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'Roboto Mono';
-    src: url('/static/fonts/RobotoMono-Bold.ttf') format('truetype');
+    src: url('../fonts/RobotoMono-Bold.ttf') format('truetype');
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'Roboto Slab';
-    src: url('/static/fonts/RobotoSlab-Regular.ttf') format('truetype');
+    src: url('../fonts/RobotoSlab-Regular.ttf') format('truetype');
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Roboto Slab';
-    src: url('/static/fonts/RobotoSlab-Medium.ttf') format('truetype');
+    src: url('../fonts/RobotoSlab-Medium.ttf') format('truetype');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'Roboto Slab';
-    src: url('/static/fonts/RobotoSlab-Bold.ttf') format('truetype');
+    src: url('../fonts/RobotoSlab-Bold.ttf') format('truetype');
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'Press Start 2P';
-    src: url("/static/fonts/PressStart2P-Regular.ttf") format('truetype');
+    src: url("../fonts/PressStart2P-Regular.ttf") format('truetype');
     font-weight: 400;
 }
 
