@@ -6,7 +6,7 @@ from ..utils.datetime import get_current_year
 
 router = APIRouter()
 
-@router.get("/", response_class= HTMLResponse, status_code= status.HTTP_200_OK)
+@router.get("/", name= "chimallidev_links_v4_home",response_class= HTMLResponse, status_code= status.HTTP_200_OK)
 async def home(request: Request):
     context = {
         "meta": META,
