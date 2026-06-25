@@ -208,7 +208,7 @@ CURSOS_GRATIS_BUTTONS = [
     {
         "type": "link",
 
-        "url": "/cursos",
+        "url": "{{url_for('cursos')}}",
 
         "open_new_tab": False,
 
