@@ -208,7 +208,7 @@ CURSOS_GRATIS_BUTTONS = [
     {
         "type": "link",
 
-        "url": "{{url_for('cursos')}}",
+        "url": "{{url_for('chimallidev_links_v4_cursos')}}",
 
         "open_new_tab": False,
 
