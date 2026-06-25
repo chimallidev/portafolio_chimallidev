@@ -79,7 +79,7 @@ MAIN_BUTTONS = [
     {
         "type": "link",
 
-        "url": "/cursos",
+        "url": "{{url_for('chimallidev_links_v4_cursos')}}",
 
         "open_new_tab": False,
 
