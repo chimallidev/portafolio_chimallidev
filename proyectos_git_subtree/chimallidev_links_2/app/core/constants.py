@@ -79,23 +79,6 @@ MAIN_BUTTONS = [
     {
         "type": "link",
 
-        "url": "{{url_for('chimallidev_links_v4_cursos')}}",
-
-        "open_new_tab": False,
-
-        "state": "turquoise",
-
-        "border_state": "active",
-
-        "svg_id": "icon-code-slash",
-
-        "title": "Cursos",
-
-        "description": "Recursos gratis de programación"
-    },
-    {
-        "type": "link",
-
         "url": "https://www.youtube.com/@Chimallidev",
 
         "open_new_tab": True,

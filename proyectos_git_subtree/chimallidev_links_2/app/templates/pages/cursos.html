@@ -52,7 +52,19 @@
     </section>
 
     <section class="cursos__boton-volver">
-        {{chimalli_button(volver_button)}}
+        {{chimalli_button({
+            "type": "link",
+
+            "url": url_for('chimallidev_links_v4_home'),
+
+            "open_new_tab": False,
+
+            "svg_id": "icon-home",
+
+            "title": "Volver",
+
+            "description": "Sitio de enlaces de Chimallidev"
+        })}}
     </section>
 </div>
 {% endblock %}

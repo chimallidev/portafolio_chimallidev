@@ -39,6 +39,25 @@
     </section>
 
     <section class="index__main-buttons">
+
+        {{chimalli_button({
+                "type": "link",
+
+                "url": url_for('chimallidev_links_v4_cursos'),
+
+                "open_new_tab": False,
+
+                "state": "turquoise",
+
+                "border_state": "active",
+
+                "svg_id": "icon-code-slash",
+
+                "title": "Cursos",
+
+                "description": "Recursos gratis de programación"
+        })}}
+
         {% if main_buttons %}
             {% for main_button in main_buttons %}
                 {{chimalli_button(main_button)}}
