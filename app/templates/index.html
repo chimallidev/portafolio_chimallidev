@@ -3,7 +3,8 @@
 {% from 'components/skill.html' import skill %} 
 {% from 'components/card_item.html' import card_item %} 
 {% from 'components/banner_item.html' import banner_item %} 
-{% from 'components/link_item.html' import link_item %} 
+{% from 'components/link_item.html' import link_item %}
+{% from 'components/chimalli_button.html' import chimalli_button %} 
 
 
 {% block url_canonica %}
@@ -38,6 +39,11 @@
   rel="stylesheet"
   href="{{url_for('portafolio_static', path='css/components/card_item_style.css')}}"
 />
+
+<link
+  rel="stylesheet"
+  href="{{url_for('portafolio_static', path='css/components/chimalli_button_style.css')}}"
+/>
 {% endblock %} 
 
 {% block content %}
@@ -61,49 +67,67 @@
   <h2 class="index__h2">Erick Roman</h2>
   <p>
     Bienvenidx a mi portafolio. Soy desarrollador full stack y creo experiencias
-    digitales funcionales, rápidas y atractivas.
+    digitales modernas, rápidas y atractivas.
   </p>
   <section class="index__email-box">
     <h3 class="index__h3">
       Si quieres ponerte en contacto conmigo escribeme a:
     </h3>
     <div class="index__email-box-e">
-      <div class="index__email-outline">
-        <div class="index__email-box-inner">
-          <span class="index__email-box-text"> chimalli.dev@gmail.com </span>
-        </div>
-      </div>
+      <img
+        class="index__img-email"
+        src="{{url_for('portafolio_static', path='/img/mail.webp')}}"
+        title="Correo electrónico"
+        alt="Logo de correo electrónico"
+      />
       <div class="index__email-box-actions">
-        <button
-          class="index__email-btn index__email-btn--copy copyBtn"
-          data-copy="chimalli.dev@gmail.com"
-        >
-          Copiar
-        </button>
-        <a
-          href="mailto:chimallidev.dev@gmail.com"
-          class="index__email-btn index__email-btn--send"
-          >Contactar</a
-        >
+        
+        {% if email_buttons %}
+          {% for email_btn in email_buttons %}
+            {{ chimalli_button(email_btn) }}
+          {% endfor %}
+        {% endif %}
+        
       </div>
     </div>
   </section>
   <section class="index__cv">
     <h3 class="index__h3">Puedes consultar mi CV:</h3>
     <div class="index__btns-cv">
-      <a
-        href="{{url_for('portafolio_static', path='/documents/Chimallidev_Erick_Roman_cv.pdf')}}"
-        target="_blank"
-        rel="noopener"
-        class="index__ver-cv"
-        >Ver</a
-      >
-      <a
-        href="{{url_for('portafolio_static', path='/documents/Chimallidev_Erick_Roman_cv.pdf')}}"
-        download="Chimallidev_Erick_Roman_cv.pdf"
-        class="index__descargar-cv"
-        >Descargar</a
-      >
+
+      <img
+        class="index__img-cv"
+        src="{{url_for('portafolio_static', path='/img/cv_icon.webp')}}"
+        title="CV"
+        alt="Icono del documento de curriculum"
+      />
+
+      {{ chimalli_button({
+        "type": "link",
+
+        "url": url_for('portafolio_static', path='/documents/Chimallidev_Erick_Roman_cv.pdf'),
+
+        "open_new_tab": True,
+
+        "border_state": "False",
+
+        "text": "Ver"
+      }) }}
+
+      {{ chimalli_button({
+        "type": "link",
+
+        "url": url_for('portafolio_static', path='/documents/Chimallidev_Erick_Roman_cv.pdf'),
+
+        "download": "Chimallidev_Erick_Roman_cv.pdf",
+
+        "open_new_tab": "False",
+
+        "border_state": "False",
+
+        "text": "Descargar"
+      }) }}
+
     </div>
   </section>
   <section class="index__redes-sociales">
@@ -242,31 +266,22 @@
 <section class="index__portafolio-section" id="contacto">
   <h2 class="index__h2">¡CONTÁCTAME!</h2>
   <div class="index__email-box-e">
-    <img
-      class="index__img-email"
-      src="{{url_for('portafolio_static', path='/img/mail.webp')}}"
-      title="Correo electrónico"
-      alt="Logo de correo electrónico"
-    />
-    <div class="index__email-outline">
-      <div class="index__email-box-inner">
-        <span class="index__email-box-text"> chimalli.dev@gmail.com </span>
+      <img
+        class="index__img-email"
+        src="{{url_for('portafolio_static', path='/img/mail.webp')}}"
+        title="Correo electrónico"
+        alt="Logo de correo electrónico"
+      />
+      <div class="index__email-box-actions">
+        
+        {% if email_buttons %}
+          {% for email_btn in email_buttons %}
+            {{ chimalli_button(email_btn) }}
+          {% endfor %}
+        {% endif %}
+        
       </div>
     </div>
-    <div class="index__email-box-actions">
-      <button
-        class="index__email-btn index__email-btn--copy copyBtn"
-        data-copy="chimalli.dev@gmail.com"
-      >
-        Copiar
-      </button>
-      <a
-        href="mailto:chimallidev.dev@gmail.com"
-        class="index__email-btn index__email-btn--send"
-        >Contactar</a
-      >
-    </div>
-  </div>
   <div class="index__box-e">
     <img
       class="index__img-box"
@@ -274,19 +289,13 @@
       title="Watssapp"
       alt="Logo de watssapp"
     />
-    <div class="index__box-outline">
-      <div class="index__box-inner">
-        <span class="index__box-text"> +52 55 7460 6567 </span>
-      </div>
-    </div>
+    
     <div class="index__wattsapp-box-actions">
-      <a
-        href="https://wa.me/5215574606557?text=Hola%2C%20me%20interesa%20tu%20trabajo%20como%20desarrollador%20web%2C%20%C2%BFpodemos%20hablar%3F"
-        class="index__wattsapp-btn index__email-btn--contactar"
-        target="_blank"
-        rel="noopener"
-        >Contactar</a
-      >
+
+      {% if whatsapp_button %}
+        {{ chimalli_button(whatsapp_button) }}
+      {% endif %}
+
     </div>
   </div>
   <section class="index__redes-sociales">
@@ -363,4 +372,6 @@
 {% block components_scripts %}
 <script src="{{url_for('portafolio_static', path='js/index/copy_email.js')}}"></script>
 <script src="{{url_for('portafolio_static', path='js/index/btn_download.js')}}"></script>
+<script type="module" src="{{url_for('portafolio_static', path='js/index/copy_btn.js')}}"></script>
+<script type="module" src="{{url_for('portafolio_static', path='js/index/main_index.js')}}"></script>
 {% endblock %}

@@ -15,6 +15,51 @@ OG = {
     "locale" : "es_MX"
 }
 
+#Botones correo
+EMAIL_BUTTONS = [
+    {
+        "type": "button",
+
+        "identifier": "copy-button",
+
+        "copy_text": "chimalli.dev@gmail.com",
+
+        "open_new_tab": False,
+
+        "border_state": "False",
+
+        "text": "Copiar"
+    },
+    {
+        "type": "link",
+
+        "url": "mailto:chimallidev.dev@gmail.com",
+
+        "open_new_tab": False,
+
+        "state": "turquoise",
+
+        "border_state": "active",
+
+        "text": "Contactar"
+    }
+]
+
+#Boton WhatsApp
+WHATSAPP_BUTTON = {
+    "type": "link",
+
+    "url": "https://wa.me/5215574606557?text=Hola%2C%20me%20interesa%20tu%20trabajo%20como%20desarrollador%20web%2C%20%C2%BFpodemos%20hablar%3F",
+
+    "open_new_tab": True,
+
+    "state": "turquoise",
+
+    "border_state": "active",
+
+    "text": "Contactar"
+}
+
 #Redes sociales
 REDES = {
     "github" : "https://github.com/chimallidev",
