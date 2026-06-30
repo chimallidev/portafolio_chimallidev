@@ -1,6 +1,7 @@
 {% macro chimalli_button(chimalli_button={}) %}
 
 {% set type = chimalli_button.get('type', 'link') %}
+
 {% set url = chimalli_button.get('url', '#') %}
 
 {% set open_new_tab = chimalli_button.get('open_new_tab', true) %}
@@ -35,24 +36,23 @@
 
 <a
     {% if not is_developing %}
-    href="{{ url }}"
+        href = "{{url}}"
     {% endif %}
 
     class="chimalli-button chimalli-button--{{ state }}"
-
     data-id="{{ identifier }}"
 
     {% if download is not none %}
         {% if download %}
-        download="{{ download }}"
+            download="{{ download }}"
         {% else %}
-        download
+            download
         {% endif %}
     {% endif %}
 
     {% if open_new_tab and not is_developing %}
-    target="_blank"
-    rel="noopener noreferrer"
+        target="_blank"
+        rel="noopener noreferrer"
     {% endif %}
 >
 
@@ -69,7 +69,7 @@
     ></span>
 
     <span class="chimalli-button__text">
-        {{ text }}
+       {{text}}
     </span>
 
 {% if type == 'button' %}

@@ -6,7 +6,7 @@ from app.core.constants import META, EMAIL_BUTTONS, REDES, SKILLS, BANNERS, CARD
 router = APIRouter()
 
 
-@router.get("/", response_class= HTMLResponse, status_code= status.HTTP_200_OK)
+@router.get("/", name= "portafolio_home",response_class= HTMLResponse, status_code= status.HTTP_200_OK)
 async def home(request: Request):
     context = {
         "meta": META,

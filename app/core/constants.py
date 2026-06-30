@@ -112,7 +112,19 @@ CARDS = [
         ],
         "description": "Página web de articulos de divulgación científca sobre estilo de vida fitness.",
         "links": [],
-        "url": "/portafolio/soluciones_inteligentes"
+        "button": {
+            "type": "link",
+
+            "url": "/portafolio/soluciones_inteligentes",
+
+            "open_new_tab": True,
+
+            "state": "turquoise",
+
+            "border_state": "inactive",
+
+            "text": "Ver"
+        }
      },
      {
         "title" : "app móvil Soluciones Inteligentes",
@@ -126,7 +138,19 @@ CARDS = [
         "links": [
             {"url": "https://github.com/chimallidev/solucionint", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
         ],
-        "url": "/portafolio/app-movil-soluciones-inteligentes"
+        "button": {
+            "type": "link",
+
+            "url": "/portafolio/app-movil-soluciones-inteligentes",
+
+            "open_new_tab": True,
+
+            "state": "turquoise",
+
+            "border_state": "inactive",
+
+            "text": "Ver"
+        }
      },
      {
         "title" : "Web de enlaces chimallidev",
@@ -141,7 +165,19 @@ CARDS = [
         "links": [
             {"url": "https://github.com/chimallidev/links_chimalli", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
         ],
-        "url": "https://chimallidev-links-web.vercel.app/"
+        "button": {
+            "type": "link",
+
+            "url": "https://chimallidev-links-web.vercel.app/",
+
+            "open_new_tab": True,
+
+            "state": "turquoise",
+
+            "border_state": "inactive",
+
+            "text": "Ver"
+        }
      },
      {
         "title" : "Web de enlaces chimallidev v4",
@@ -160,7 +196,19 @@ CARDS = [
         "links": [
             {"url": "https://github.com/chimallidev/chimallidev_links_2", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
         ],
-        "url": "/proyectos/chimallidev_enlaces_v4"
+        "button": {
+            "type": "link",
+
+            "url": "/proyectos/chimallidev_enlaces_v4/",
+
+            "open_new_tab": True,
+
+            "state": "turquoise",
+
+            "border_state": "inactive",
+
+            "text": "Ver"
+        }
      }
 ]
 

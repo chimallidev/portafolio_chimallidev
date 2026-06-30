@@ -1,5 +1,7 @@
 {% from 'components/link_item.html' import link_item %}
 {% from 'components/banner_item.html' import banner_item %}
+{% from 'components/chimalli_button.html' import chimalli_button with context %}
+
 {% macro card_item(card) %}
 <article class="card">
     <header class="card__title-border">
@@ -26,7 +28,9 @@
         {% endif %}
     </section>
     <section class="card__action-section">
-        <a href="{{card.url}}" target="_blank" rel="noopener" class="card__button">Ver</a>
+        {% set button_content = card.button %}
+        
+        {{ chimalli_button(card.button) }}
     </section>
 </article>
 {% endmacro %}
