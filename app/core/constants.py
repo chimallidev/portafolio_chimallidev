@@ -209,6 +209,34 @@ CARDS = [
 
             "text": "Ver"
         }
+     },
+     {
+        "title" : "ATL bikes",
+        "img" : "/static/img/atl_bikes.webp",
+        "img_title": "tienda mexicana de bicicletas",
+        "img_alt": "tienda mexicana de bicicletas",
+        "banners": [
+            {"img": "/static/img/python.webp", "title": "Python", "color": "#2596be"},
+            {"img": "/static/img/fastapi.webp", "title": "FastAPI", "color": "#029a85"},
+            {"img": "/static/img/jinja.webp", "title": "Jinja2", "color": "#c20706"},
+            {"img": "/static/img/html.webp", "title": "HTML", "color": "#fb6121"},
+            {"img": "/static/img/css.webp", "title": "CSS", "color": "#016fba"},
+            {"img": "/static/img/js.webp", "title": "JS", "color": "#f0dc4e"},
+            {"img": "/static/img/postgresql.webp", "title": "PostgreSQL", "color": "#2596be"},
+            {"img": "/static/img/supabase.webp", "title": "supabase", "color": "#3dce8d"}
+        ],
+        "description": "Inspirados en la fuerza y la fluidez del agua, ofrecemos bicicletas para cualquier terreno y aventura.",
+        "button": {
+            "type": "link",
+
+            "open_new_tab": True,
+
+            "state": "developing",
+
+            "border_state": "inactive",
+
+            "text": "En desarrollo"
+        }
      }
 ]
 

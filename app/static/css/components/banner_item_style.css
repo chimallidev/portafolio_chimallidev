@@ -6,6 +6,7 @@
     border: 2px solid var(--banner-color);
     padding: 4px 6px;
     width: fit-content;
+    background-color: #000000;
 }
 
 .banner__border img {
