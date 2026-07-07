@@ -216,6 +216,10 @@ p {
     margin-top: 20px;
 }
 
+#habilidades .index__h3 {
+    font-family: var(--font-title);
+}
+
 .index__section-class {
     display: flex;
     flex-wrap: wrap;

@@ -246,6 +246,12 @@
     {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
     {% endfor %} {% endif %}
   </section>
+  <h3 class="index__h3">BASES DE DATOS</h3>
+  <section class="index__section-class">
+    {% if skills %} {% for s in skills.get('bases_datos', {}) %}
+    {{skill(s.get('title', '...'), s.get('alt', '...'), s.get('img', '...'))}}
+    {% endfor %} {% endif %}
+  </section>
   <h3 class="index__h3">HERRAMIENTAS</h3>
   <section class="index__section-class">
     {% if skills %} {% for s in skills.get('herramientas', {}) %}

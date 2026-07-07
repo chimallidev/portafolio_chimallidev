@@ -83,6 +83,10 @@ SKILLS = {
         {"title": "FastAPI", "alt": "Logo de fastapi","img": "/static/img/fastapi.webp"},
         {"title": "Jinja2", "alt": "Logo de jinja2","img": "/static/img/jinja.webp"}
     ],
+    "bases_datos" : [
+        {"title": "PostgreSQL", "alt": "Logo de PostgreSQL","img": "/static/img/postgresql.webp"},
+        {"title": "Supabase", "alt": "Logo de supabase","img": "/static/img/supabase.webp"}
+    ],
     "herramientas" : [
         {"title": "Docker", "alt": "Logo de docker","img": "/static/img/docker.webp"},
         {"title": "Git", "alt": "Logo de Git","img": "/static/img/git.webp"},
