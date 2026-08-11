@@ -117,6 +117,8 @@
       {{ chimalli_button({
         "type": "link",
 
+        "identifier": "btn_download_cv",
+
         "url": url_for('portafolio_static', path='/documents/Chimallidev_Erick_Roman_cv.pdf'),
 
         "download": "Chimallidev_Erick_Roman_cv.pdf",
@@ -379,8 +381,8 @@
 </section>
 {% endblock %} 
 {% block components_scripts %}
-<script src="{{url_for('portafolio_static', path='js/index/copy_email.js')}}"></script>
-<script src="{{url_for('portafolio_static', path='js/index/btn_download.js')}}"></script>
+<script type="module" src="{{url_for('portafolio_static', path='js/index/copy_email.js')}}"></script>
+<script type="module" src="{{url_for('portafolio_static', path='js/index/btn_download.js')}}"></script>
 <script type="module" src="{{url_for('portafolio_static', path='js/index/copy_btn.js')}}"></script>
 <script type="module" src="{{url_for('portafolio_static', path='js/index/main_index.js')}}"></script>
 {% endblock %}

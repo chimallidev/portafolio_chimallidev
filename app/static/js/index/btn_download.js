@@ -1,4 +1,4 @@
-const downloadBtn = document.querySelector(".index__descargar-cv")
+const downloadBtn = document.querySelector('[data-id="btn_download_cv"]')
 
 downloadBtn.addEventListener("click", ()=>{
     downloadBtn.textContent = "DESCARGANDO..."
