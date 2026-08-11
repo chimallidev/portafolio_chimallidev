@@ -2,8 +2,9 @@ export function initNavigation() {
 
     let isClickScrolling = false
     let lockNavbar = false
+    let duration = 150
 
-    function smoothScrollTo(targetY, duration = 700) {
+    function smoothScrollTo(targetY, duration = duration) {
         const startY = window.scrollY
         const distance = targetY - startY
         let startTime = null
@@ -89,12 +90,12 @@ export function initNavigation() {
                 window.scrollY -
                 offset
 
-                smoothScrollTo(targetY, 700)
+                smoothScrollTo(targetY, duration)
             })
 
             setTimeout(()=>{
                 isClickScrolling = false
-            }, 700)
+            }, duration)
         })
     })
     return {
