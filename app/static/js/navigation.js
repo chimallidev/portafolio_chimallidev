@@ -1,5 +1,4 @@
 export function initNavigation() {
-
     let isClickScrolling = false
     let lockNavbar = false
     let duration = 150
@@ -29,41 +28,65 @@ export function initNavigation() {
     }
 
     const links = document.querySelectorAll(".sidebar a")
-    const sections = document.querySelectorAll(".index__portafolio-section")
+    const sections = document.querySelectorAll(
+        ".index__portafolio-section"
+    )
 
-    isClickScrolling = false
+    function updateActiveSection() {
 
-    const obeserver = new IntersectionObserver((entries)=>{
-        if(isClickScrolling) return
+        if (isClickScrolling) return
 
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                const id = entry.target.id
+        const navbar = document.getElementById("navbar")
 
-                links.forEach(link => {
-                    link.classList.remove("active")
+        const offset = navbar
+            ? navbar.getBoundingClientRect().height + 30
+            : 80
 
-                    if(link.getAttribute("href") === `#${id}`){
-                        link.classList.add("active")
-                    }
-                })
+        let currentSection = null
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.getBoundingClientRect().top +
+                window.scrollY
+
+            if (window.scrollY + offset >= sectionTop) {
+                currentSection = section
             }
         })
-    },{
-        threshold: 0.5,
-        rootMargin: "-80px 0px 0px 0px"
-    })
 
-    sections.forEach(section => obeserver.observe(section))
+        if (!currentSection) return
+
+        const id = currentSection.id
+
+        links.forEach(link => {
+
+            link.classList.toggle(
+                "active",
+                link.getAttribute("href") === `#${id}`
+            )
+        })
+    }
+
+    window.addEventListener(
+        "scroll",
+        updateActiveSection
+    )
 
     links.forEach(link => {
-        link.addEventListener("click", function (e){
+
+        link.addEventListener("click", function (e) {
+
             e.preventDefault()
 
             const href = this.getAttribute("href")
 
             if (href === "#") {
-                window.scrollTo({ top: 0, behavior: "smooth" })
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                })
+
                 return
             }
 
@@ -71,36 +94,59 @@ export function initNavigation() {
                 this.getAttribute("href")
             )
 
-            isClickScrolling = true;
-            lockNavbar = true;
+            if (!target) return
 
-            links.forEach(l => l.classList.remove("active"))
+            isClickScrolling = true
+            lockNavbar = true
+
+            links.forEach(l =>
+                l.classList.remove("active")
+            )
+
             this.classList.add("active")
 
-            document.body.classList.remove("menu-open");
+            document.body.classList.remove(
+                "menu-open"
+            )
 
             requestAnimationFrame(() => {
 
-                const navbar = document.getElementById("navbar")
+                const navbar =
+                    document.getElementById("navbar")
 
-                const offset = navbar.getBoundingClientRect().height + 30
+                const offset =
+                    navbar.getBoundingClientRect().height + 30
 
                 const targetY =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                offset
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    offset
 
-                smoothScrollTo(targetY, duration)
+                smoothScrollTo(
+                    targetY,
+                    duration
+                )
             })
 
-            setTimeout(()=>{
+            setTimeout(() => {
+
                 isClickScrolling = false
+
+                updateActiveSection()
+
             }, duration)
         })
     })
+
     return {
-        isClickScrolling: ()=> isClickScrolling,
-        isNavbarLocked: () => lockNavbar,
-        unlockNavbar: () => {lockNavbar = false}
+        isClickScrolling: () =>
+            isClickScrolling,
+
+        isNavbarLocked: () =>
+            lockNavbar,
+
+        unlockNavbar: () => {
+            lockNavbar = false
+        }
     }
 }
