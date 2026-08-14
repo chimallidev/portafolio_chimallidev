@@ -130,6 +130,10 @@
     --btn-shadow-hover-bottom: #afaeae;
 
     --btn-shadow-active: #afafaf;
+
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 500;
 }
 
 /* ==========================
@@ -252,6 +256,10 @@
     color: var(--third-color);
 
     pointer-events: none;
+
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 500;
 
     cursor: default;
 

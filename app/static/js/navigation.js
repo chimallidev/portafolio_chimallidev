@@ -3,7 +3,7 @@ export function initNavigation() {
     let isActiveDelay = false
     let lockNavbar = false
 
-    const duration = 150
+    const duration = 200
     const activeDelay = 1500
 
     let activeTimeout = null
