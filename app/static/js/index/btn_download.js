@@ -9,7 +9,7 @@ downloadBtn.addEventListener("click", ()=>{
 
     downloadBtn.dataset.copyLocked = "true";
 
-    downloadBtn.textContent = "Descargando.."
+    downloadBtn.textContent = "Descargando..."
 
     downloadBtn.classList.add(
         "chimalli-button--locked"
