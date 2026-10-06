@@ -1,0 +1,98 @@
+.index__h1, .index__h2 {
+    font-size: clamp(2rem,3.5vw,4rem);
+    font-family: var(--font-title);
+    color: var(--black-color);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.index__productos-destacados {
+    padding: 8% 6% 4% 6%;
+}
+
+.index__title span {
+    color: var(--main-color);
+}
+
+.index__cards-productos {
+    display:grid;
+
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+}
+
+.index__categorias {
+    padding: 4% 0;
+}
+
+.index__bicicletas-mas-vendidas {
+    padding: 4% 6%;
+}
+
+.index__best-selling-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.index__atl-brands {
+    padding: 8% 6% 4% 6%;
+}
+
+.index__atl-brands-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    justify-items: center;
+
+    gap: 30px;
+}
+
+@media (max-width:900px){
+
+    .index__cards-productos{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .index__best-selling-container {
+        display:grid;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .index__atl-brands-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+
+@media (max-width:600px){
+
+    .index__cards-productos{
+        display:grid;
+
+
+        grid-template-columns:1fr;
+
+    }
+
+    .index__best-selling-container {
+        display:grid;
+
+        grid-template-columns: 1fr;
+    }
+
+    .index__atl-brands-grid {
+        grid-template-columns: 1fr;
+        padding-bottom: 8%;
+    }
+
+    .index__atl-brands-grid .atl-brands-card {
+        --atl-brands-card-animation-delay: 0s;
+    }
+}
