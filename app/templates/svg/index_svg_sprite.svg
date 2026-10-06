@@ -1,0 +1,385 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    style="display: none;"
+>
+
+    <symbol id="icon-cart" viewBox="0 0 512 512">
+        <path
+            fill="currentColor"
+            d="M160 96.039v32h304v63.345l-35.5 112.655H149.932L109.932 16H16v32h66.068l40 288.039h329.9L496 196.306V96.039zm16.984 272.305a64.073 64.073 0 0 0-64 64a64 64 0 0 0 128 0a64.07 64.07 0 0 0-64-64m0 96a32 32 0 1 1 32-32a32.04 32.04 0 0 1-32 32m224-96a64.073 64.073 0 0 0-64 64a64 64 0 0 0 128 0a64.07 64.07 0 0 0-64-64m0 96a32 32 0 1 1 32-32a32.04 32.04 0 0 1-32 32"
+        />
+    </symbol>
+
+    <!-- ==========================================================
+     WEATHER ICONS
+========================================================== -->
+
+<symbol id="icon-weather-clear" viewBox="0 0 24 24">
+    <!-- Sol -->
+    <circle
+        cx="12"
+        cy="12"
+        r="4"
+        fill="#FFD54F"
+    />
+
+    <!-- Rayos -->
+    <path
+        d="M12 2V5"
+        stroke="#FFA000"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M12 19V22"
+        stroke="#FFA000"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M2 12H5"
+        stroke="#FFA000"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M19 12H22"
+        stroke="#FFA000"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M4.93 4.93L7.05 7.05"
+        stroke="#FFA000"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M16.95 16.95L19.07 19.07"
+        stroke="#FFA000"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M19.07 4.93L16.95 7.05"
+        stroke="#FFA000"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M7.05 16.95L4.93 19.07"
+        stroke="#FFA000"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+</symbol>
+
+
+<symbol id="icon-weather-partly-cloudy" viewBox="0 0 24 24">
+    <!-- Sol -->
+    <circle
+        cx="9"
+        cy="9"
+        r="4"
+        fill="#FFD54F"
+    />
+
+    <!-- Nube -->
+    <path
+        d="M7 19H17.5C19.43 19 21 17.43 21 15.5C21 13.69 19.62 12.2 17.86 12.03C17.43 9.7 15.39 8 13 8C10.46 8 8.33 9.92 8.03 12.39C5.76 12.55 4 14.44 4 16.75C4 18 5.34 19 7 19Z"
+        fill="#ECEFF1"
+        stroke="#90A4AE"
+        stroke-width="1"
+    />
+</symbol>
+
+
+<symbol id="icon-weather-cloudy" viewBox="0 0 24 24">
+    <!-- Nube principal -->
+    <path
+        d="M6 19H18C20.21 19 22 17.21 22 15C22 12.93 20.43 11.23 18.41 11.02C17.86 8.16 15.34 6 12.3 6C9.1 6 6.47 8.4 6.13 11.51C3.79 11.7 2 13.66 2 16C2 17.66 3.79 19 6 19Z"
+        fill="#B0BEC5"
+        stroke="#78909C"
+        stroke-width="1"
+    />
+</symbol>
+
+
+<symbol id="icon-weather-rain" viewBox="0 0 24 24">
+    <!-- Nube -->
+    <path
+        d="M6 14H18C20.21 14 22 12.21 22 10C22 7.93 20.43 6.23 18.41 6.02C17.86 3.16 15.34 1 12.3 1C9.1 1 6.47 3.4 6.13 6.51C3.79 6.7 2 8.66 2 11C2 12.66 3.79 14 6 14Z"
+        fill="#78909C"
+    />
+
+    <!-- Lluvia -->
+    <path
+        d="M7 17L6 20"
+        stroke="#42A5F5"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M12 17L11 20"
+        stroke="#42A5F5"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M17 17L16 20"
+        stroke="#42A5F5"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+</symbol>
+
+
+<symbol id="icon-weather-storm" viewBox="0 0 24 24">
+    <!-- Nube -->
+    <path
+        d="M5 14H18C20.21 14 22 12.21 22 10C22 7.93 20.43 6.23 18.41 6.02C17.86 3.16 15.34 1 12.3 1C9.1 1 6.47 3.4 6.13 6.51C3.79 6.7 2 8.66 2 11C2 12.66 3.79 14 5 14Z"
+        fill="#546E7A"
+    />
+
+    <!-- Rayo -->
+    <path
+        d="M13 13L9 19H12L11 23L17 16H14L16 13Z"
+        fill="#FFD54F"
+    />
+</symbol>
+
+
+<symbol id="icon-weather-snow" viewBox="0 0 24 24">
+    <!-- Nube -->
+    <path
+        d="M6 14H18C20.21 14 22 12.21 22 10C22 7.93 20.43 6.23 18.41 6.02C17.86 3.16 15.34 1 12.3 1C9.1 1 6.47 3.4 6.13 6.51C3.79 6.7 2 8.66 2 11C2 12.66 3.79 14 6 14Z"
+        fill="#B0BEC5"
+    />
+
+    <!-- Copos -->
+    <g
+        stroke="#42A5F5"
+        stroke-width="1.5"
+        stroke-linecap="round"
+    >
+        <path d="M7 17V21" />
+        <path d="M5.3 18L8.7 20" />
+        <path d="M8.7 18L5.3 20" />
+
+        <path d="M13 17V21" />
+        <path d="M11.3 18L14.7 20" />
+        <path d="M14.7 18L11.3 20" />
+
+        <path d="M19 17V21" />
+        <path d="M17.3 18L20.7 20" />
+        <path d="M20.7 18L17.3 20" />
+    </g>
+</symbol>
+
+
+<symbol id="icon-weather-fog" viewBox="0 0 24 24">
+    <!-- Niebla -->
+    <g
+        stroke="#90A4AE"
+        stroke-width="2"
+        stroke-linecap="round"
+    >
+        <path d="M4 7H20" />
+        <path d="M2 12H22" />
+        <path d="M4 17H20" />
+    </g>
+</symbol>
+
+
+<!-- ==========================================================
+     UI STATES
+========================================================== -->
+
+<symbol id="icon-weather-loading" viewBox="0 0 24 24">
+    <!-- Parte superior -->
+    <path
+        d="M6 3H18"
+        stroke="#90A4AE"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <!-- Parte inferior -->
+    <path
+        d="M6 21H18"
+        stroke="#90A4AE"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <!-- Vidrio -->
+    <path
+        d="M7 4C7 8 9 9.5 12 12C9 14.5 7 16 7 20"
+        fill="none"
+        stroke="#78909C"
+        stroke-width="1.5"
+    />
+
+    <path
+        d="M17 4C17 8 15 9.5 12 12C15 14.5 17 16 17 20"
+        fill="none"
+        stroke="#78909C"
+        stroke-width="1.5"
+    />
+
+    <!-- Arena superior -->
+    <path
+        d="M8.5 5H15.5C15.2 7.5 14 9 12 10.5C10 9 8.8 7.5 8.5 5Z"
+        fill="#FFD54F"
+    />
+
+    <!-- Arena inferior -->
+    <path
+        d="M9 19H15C14.7 17 13.7 15.5 12 14C10.3 15.5 9.3 17 9 19Z"
+        fill="#FFD54F"
+    />
+</symbol>
+
+
+<symbol id="icon-weather-unavailable" viewBox="0 0 24 24">
+
+    <!-- Sol -->
+    <circle
+        cx="9"
+        cy="9"
+        r="4"
+        fill="#FFD54F"
+    />
+
+    <path
+        d="M9 2V4"
+        stroke="#FFA000"
+        stroke-width="1.5"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M9 14V16"
+        stroke="#FFA000"
+        stroke-width="1.5"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M2 9H4"
+        stroke="#FFA000"
+        stroke-width="1.5"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M14 9H16"
+        stroke="#FFA000"
+        stroke-width="1.5"
+        stroke-linecap="round"
+    />
+
+    <!-- X -->
+    <path
+        d="M14 14L21 21"
+        stroke="#EF5350"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+    <path
+        d="M21 14L14 21"
+        stroke="#EF5350"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+
+</symbol>
+
+ <symbol
+        id="icon-location"
+        viewBox="0 0 24 24"
+    >
+        <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"
+        />
+    </symbol>
+
+    <symbol
+        id="icon-clock"
+        viewBox="0 0 24 24"
+    >
+        <path
+            d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 10.41 3.29 3.3-1.42 1.41L11 13V7h2Z"
+        />
+    </symbol>
+	
+	<symbol id="icon-search" viewBox="0 0 512 512" fill="currentColor">
+        <path d="M172.625,102.4c-42.674,0-77.392,34.739-77.392,77.438c0,5.932,4.806,10.74,10.733,10.74
+        c5.928,0,10.733-4.808,10.733-10.74c0-30.856,25.088-55.959,55.926-55.959
+        c5.928,0,10.733-4.808,10.733-10.74C183.358,107.208,178.553,102.4,172.625,102.4z"/>
+
+        <path d="M361.657,301.511c19.402-30.436,30.645-66.546,30.645-105.244
+        C392.302,88.036,304.318,0,196.151,0c-38.676,0-74.765,11.25-105.182,30.663
+        C66.734,46.123,46.11,66.759,30.659,91.008C11.257,121.444,0,157.568,0,196.267
+        c0,108.217,87.998,196.266,196.151,196.266c38.676,0,74.779-11.264,105.197-30.677
+        C325.582,346.396,346.206,325.76,361.657,301.511z
+        M259.758,320.242c-19.075,9.842-40.708,15.403-63.607,15.403
+        c-76.797,0-139.296-62.535-139.296-139.378c0-22.912,5.558-44.558,15.394-63.644
+        c13.318-25.856,34.483-47.019,60.323-60.331c19.075-9.842,40.694-15.403,63.578-15.403
+        c76.812,0,139.296,62.521,139.296,139.378c0,22.898-5.558,44.53-15.394,63.616
+        C306.749,285.739,285.598,306.916,259.758,320.242z"/>
+
+        <path d="M499.516,439.154L386.275,326.13c-16.119,23.552-36.771,44.202-60.309,60.345
+        l113.241,113.024c8.329,8.334,19.246,12.501,30.148,12.501
+        c10.916,0,21.833-4.167,30.162-12.501C516.161,482.83,516.161,455.822,499.516,439.154z"/>
+    </symbol>
+
+	<symbol
+    id="icon-user"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+>
+    <path d="M18 21a6 6 0 0 0-12 0"/>
+    <circle cx="12" cy="11" r="4"/>
+    <rect width="18" height="18" x="3" y="3" rx="2"/>
+</symbol>
+
+<symbol
+    id="icon-arrow-right"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+>
+    <path d="M13 15L16 12M16 12L13 9M16 12H8M7.2 20H16.8C17.9201 20 18.4802 20 18.908 19.782C19.2843 19.5903 19.5903 19.2843 19.782 18.908C20 18.4802 20 17.9201 20 16.8V7.2C20 6.0799 20 5.51984 19.782 5.09202C19.5903 4.71569 19.2843 4.40973 18.908 4.21799C18.4802 4 17.9201 4 16.8 4H7.2C6.0799 4 5.51984 4 5.09202 4.21799C4.71569 4.40973 4.40973 4.71569 4.21799 5.09202C4 5.51984 4 6.07989 4 7.2V16.8C4 17.9201 4 18.4802 4.21799 18.908C4.40973 19.2843 4.71569 19.5903 5.09202 19.782C5.51984 20 6.07989 20 7.2 20Z"/>
+</symbol>
+
+<symbol
+    id="icon-arrow-left"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+>
+    <path d="M11 9L8 12M8 12L11 15M8 12H16M7.2 20H16.8C17.9201 20 18.4802 20 18.908 19.782C19.2843 19.5903 19.5903 19.2843 19.782 18.908C20 18.4802 20 17.9201 20 16.8V7.2C20 6.0799 20 5.51984 19.782 5.09202C19.5903 4.71569 19.2843 4.40973 18.908 4.21799C18.4802 4 17.9201 4 16.8 4H7.2C6.0799 4 5.51984 4 5.09202 4.21799C4.71569 4.40973 4.40973 4.71569 4.21799 5.09202C4 5.51984 4 6.07989 4 7.2V16.8C4 17.9201 4 18.4802 4.21799 18.908C4.40973 19.2843 4.71569 19.5903 5.09202 19.782C5.51984 20 6.07989 20 7.2 20Z"/>
+</symbol>
+</svg>
+
