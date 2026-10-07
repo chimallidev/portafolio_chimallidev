@@ -22,13 +22,9 @@ from proyectos_git_subtree.atl_bikes.app.init_application import (
 app = FastAPI()
 
 
-chimallidev_enlaces_v4 = create_chimallidev_enlaces_app(
-    root_path="/proyectos/chimallidev_enlaces_v4"
-)
+chimallidev_enlaces_v4 = create_chimallidev_enlaces_app()
 
-atl_bikes = create_atl_bikes_app(
-    root_path="/proyectos/atl_bikes"
-)
+atl_bikes = create_atl_bikes_app()
 
 
 # Archivos estáticos (infraestructura)
