@@ -230,12 +230,17 @@ CARDS = [
             {"img": "/static/img/supabase.webp", "title": "supabase", "color": "#3dce8d"}
         ],
         "description": "Inspirados en la fuerza y la fluidez del agua, ofrecemos bicicletas para cualquier terreno y aventura.",
+        "links": [
+                    {"url": "https://github.com/chimallidev/atl_bikes", "img" : "/static/img/github.webp", "title": "github", "alt": "Enlace a github"}
+                ],
         "button": {
             "type": "link",
 
+            "url": "/proyectos/atl_bikes/",
+            
             "open_new_tab": True,
 
-            "state": "developing",
+            "state": "red",
 
             "border_state": "inactive",
 

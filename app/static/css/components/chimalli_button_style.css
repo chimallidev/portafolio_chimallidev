@@ -15,6 +15,7 @@
     position: relative;
 
     min-height: 60px;
+    min-width: 120px;
 
     display: flex;
     justify-content: center;
@@ -174,6 +175,27 @@
     --btn-shadow-active: #FFD700;
 
     color: var(--third-color);
+}
+
+/* ==========================
+   ESTADO ROJO
+   ========================== */
+
+.chimalli-button--red {
+    --btn-bg: oklch(58.091% 0.23817 28.944);
+    --btn-bg-hover: oklch(51.717% 0.21203 28.926);
+    --btn-bg-active: oklch(60.014% 0.21397 25.872);
+
+    --btn-shadow-bg: oklch(51.717% 0.21203 28.926);
+    --btn-shadow-border: oklch(0.625 0.2072 27);
+    --btn-shadow-bottom: oklch(88.676% 0.04285 17.862);
+
+    --btn-shadow-hover-border: oklch(67.091% 0.16423 21.642);
+    --btn-shadow-hover-bottom: oklch(56.328% 0.17873 23.905);
+
+    --btn-shadow-active: oklch(58.091% 0.23817 28.944);
+
+    color: var(--secondary-color);
 }
 
 /* ==========================
